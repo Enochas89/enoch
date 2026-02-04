@@ -1,4 +1,4 @@
-import { notFound } from "next/navigation";
+import { notFound, redirect } from "next/navigation";
 import type { Metadata } from "next";
 import { getAllWriting, getWritingBySlug } from "@/lib/content/writing";
 import { articleJsonLd, absoluteUrl } from "@/lib/seo";
@@ -39,6 +39,10 @@ export function generateMetadata({ params }: Props): Metadata {
 export default async function WritingArticlePage({ params }: Props) {
   const article = await getWritingBySlug(params.slug);
   if (!article) return notFound();
+
+  if (article.externalUrl) {
+    redirect(article.externalUrl);
+  }
 
   return (
     <div className="bg-white">
