@@ -1,13 +1,13 @@
-import Link from "next/link";
 import { WritingMeta } from "@/lib/content/writing";
 import { formatDate } from "@/lib/utils";
+import Link from "next/link";
 
 export default function ArticleCard({ article }: { article: WritingMeta }) {
-  return (
-    <Link
-      href={`/writing/${article.slug}`}
-      className="card flex flex-col gap-3 p-5 transition hover:-translate-y-1 hover:shadow-lg"
-    >
+  const cardClass =
+    "card flex flex-col gap-3 p-5 transition hover:-translate-y-1 hover:shadow-lg";
+
+  const body = (
+    <>
       <div className="flex items-center gap-3 text-sm text-[var(--muted)]">
         <span className="pill capitalize">{article.type}</span>
         <span>{formatDate(article.publishedAt)}</span>
@@ -26,6 +26,25 @@ export default function ArticleCard({ article }: { article: WritingMeta }) {
           </span>
         ))}
       </div>
+    </>
+  );
+
+  if (article.externalUrl) {
+    return (
+      <a
+        href={article.externalUrl}
+        target="_blank"
+        rel="noreferrer"
+        className={cardClass}
+      >
+        {body}
+      </a>
+    );
+  }
+
+  return (
+    <Link href={`/writing/${article.slug}`} className={cardClass}>
+      {body}
     </Link>
   );
 }

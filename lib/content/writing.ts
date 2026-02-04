@@ -19,6 +19,7 @@ export type WritingMeta = {
   excerpt: string;
   body: string;
   year: number;
+  externalUrl?: string;
 };
 
 export type WritingWithContent = WritingMeta & {
@@ -75,6 +76,7 @@ const listWriting = cache((): WritingMeta[] => {
       type: (data.type as WritingType) || "essay",
       publishedAt,
       updatedAt: data.updatedAt as string | undefined,
+      externalUrl: data.externalUrl as string | undefined,
       readingMinutes: Math.max(1, Math.round(readingStats.minutes)),
       excerpt: excerpt || summary,
       body: content,
