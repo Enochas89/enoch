@@ -1,7 +1,16 @@
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
-  /* config options here */
+  async redirects() {
+    return [
+      {
+        source: "/writing/why-the-u-2-created-half-of-americas-ufo-sightings",
+        destination:
+          "https://enochschmaltz89.substack.com/p/why-the-u-2-created-half-of-americas",
+        permanent: false,
+      },
+    ];
+  },
 };
 
 export default nextConfig;
