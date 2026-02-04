@@ -67,6 +67,16 @@ export default async function WritingArticlePage({ params }: Props) {
             </div>
             <h1 className="text-3xl font-semibold text-[var(--ink)]">{article.title}</h1>
             <p className="text-[var(--muted)]">{article.summary}</p>
+            {article.externalUrl && (
+              <a
+                href={article.externalUrl}
+                target="_blank"
+                rel="noreferrer"
+                className="inline-flex items-center gap-2 text-sm font-semibold text-[var(--accent)] underline underline-offset-4"
+              >
+                Read on Substack
+              </a>
+            )}
             <div className="flex flex-wrap gap-2">
               {article.topics.map((topic) => (
                 <span
