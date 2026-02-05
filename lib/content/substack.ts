@@ -45,12 +45,12 @@ export const getSubstackPosts = cache(async (): Promise<SubstackPost[]> => {
     const rawItems = (json?.rss?.channel?.item ?? []) as
       | Array<Record<string, unknown>>
       | Record<string, unknown>;
-    const items: Array<Record<string, unknown>> = Array.isArray(rawItems)
+    const itemsRaw: Array<Record<string, unknown>> = Array.isArray(rawItems)
       ? rawItems
       : rawItems
         ? [rawItems]
         : [];
-    return items.map((item) => {
+    const mapped: SubstackPost[] = itemsRaw.map((item) => {
       const url = item.link as string;
       const slug = url?.split("/").filter(Boolean).pop() || url;
       return {
@@ -61,8 +61,8 @@ export const getSubstackPosts = cache(async (): Promise<SubstackPost[]> => {
         externalUrl: url,
       };
     });
-    if (items.length === 0) return fallbackPosts;
-    return items;
+    if (mapped.length === 0) return fallbackPosts;
+    return mapped;
   } catch (err) {
     console.error("Failed to load Substack feed", err);
     return fallbackPosts;
