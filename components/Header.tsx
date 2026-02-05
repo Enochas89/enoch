@@ -26,7 +26,7 @@ export default function Header() {
     <header className="sticky top-0 z-40 bg-white/90 backdrop-blur-md border-b border-slate-200">
       <div className="max-w-6xl mx-auto px-6 py-4 flex items-center justify-between">
         <Link href="/" className="text-2xl font-serif font-bold tracking-tight">
-          E. S. Schmaltz
+          E. A. Schmaltz
         </Link>
         <div className="hidden md:flex items-center space-x-10">
           {navItems.map((item) => (

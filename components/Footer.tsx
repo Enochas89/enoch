@@ -62,7 +62,7 @@ export default function Footer() {
         </div>
 
         <div className="border-t border-slate-200 pt-8 flex flex-col md:flex-row justify-between items-center text-xs text-slate-400 uppercase tracking-widest">
-          <p>© {year} E. S. Schmaltz. All Rights Reserved.</p>
+          <p>© {year} E. A. Schmaltz. All Rights Reserved.</p>
           <p className="mt-4 md:mt-0 text-[10px]">Deployed via Vercel</p>
         </div>
       </div>
