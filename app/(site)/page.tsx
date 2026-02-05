@@ -39,7 +39,12 @@ export default async function HomePage() {
                 height={28}
                 className="h-7 w-auto"
               />
-              <h2 className="text-2xl font-semibold text-slate-900">Latest from Substack</h2>
+              <div>
+                <h2 className="text-2xl font-semibold text-slate-900">
+                  Latest from Substack
+                </h2>
+                <p className="text-sm text-slate-500">By: Enoch Schmaltz</p>
+              </div>
             </div>
           </div>
           <div className="grid gap-4">
