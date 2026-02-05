@@ -28,32 +28,41 @@ export default function BookCard({ book }: { book: Book }) {
             </p>
           )}
           <p className="text-[var(--muted)]">{book.description}</p>
-          <div className="flex flex-wrap gap-2">
-            {book.formats.map((format) => (
-              <a
-                key={format.label}
-                href={format.url || "#"}
-                target="_blank"
-                rel="noreferrer"
-                className="rounded-full bg-[var(--accent)] px-3 py-2 text-sm font-semibold text-white shadow-sm transition hover:-translate-y-0.5 hover:shadow-md"
-              >
-                {format.label}
-              </a>
-            ))}
-          </div>
-          <div className="mt-2 flex flex-wrap gap-2">
-            {book.retailers?.map((retailer) => (
-              <a
-                key={retailer.label}
-                href={retailer.url || "#"}
-                target="_blank"
-                rel="noreferrer"
-                className="rounded-full bg-[var(--accent-soft)] px-3 py-2 text-sm font-semibold text-[var(--accent)] transition hover:bg-[var(--accent)] hover:text-white"
-              >
-                {retailer.label}
-              </a>
-            ))}
-          </div>
+          {book.releaseNote && (
+            <p className="text-sm font-semibold text-[var(--accent)]">
+              {book.releaseNote}
+            </p>
+          )}
+          {book.formats.length > 0 && (
+            <div className="flex flex-wrap gap-2">
+              {book.formats.map((format) => (
+                <a
+                  key={format.label}
+                  href={format.url || "#"}
+                  target="_blank"
+                  rel="noreferrer"
+                  className="rounded-full bg-[var(--accent)] px-3 py-2 text-sm font-semibold text-white shadow-sm transition hover:-translate-y-0.5 hover:shadow-md"
+                >
+                  {format.label}
+                </a>
+              ))}
+            </div>
+          )}
+          {book.retailers && book.retailers.length > 0 && (
+            <div className="mt-2 flex flex-wrap gap-2">
+              {book.retailers.map((retailer) => (
+                <a
+                  key={retailer.label}
+                  href={retailer.url || "#"}
+                  target="_blank"
+                  rel="noreferrer"
+                  className="rounded-full bg-[var(--accent-soft)] px-3 py-2 text-sm font-semibold text-[var(--accent)] transition hover:bg-[var(--accent)] hover:text-white"
+                >
+                  {retailer.label}
+                </a>
+              ))}
+            </div>
+          )}
           <Link
             href={`/books/${book.slug}`}
             className="mt-auto text-sm font-semibold text-[var(--accent)] underline underline-offset-4"

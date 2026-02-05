@@ -14,6 +14,7 @@ export type Book = {
   description: string;
   releaseDate: string;
   status: "available" | "coming-soon";
+  releaseNote?: string;
   formats: BookFormat[];
   retailers?: BookFormat[];
   coverImage: string;
@@ -40,6 +41,7 @@ const listBooks = cache((): Book[] => {
         description: data.description || "",
         releaseDate: data.releaseDate || "",
         status: (data.status as Book["status"]) || "coming-soon",
+        releaseNote: data.releaseNote as string | undefined,
         formats: data.formats || [],
         retailers: data.retailers || data.formats || [],
         coverImage:
