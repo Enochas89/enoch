@@ -1,12 +1,5 @@
-import Parser from "rss-parser";
+import { XMLParser } from "fast-xml-parser";
 import { cache } from "react";
-
-type RSSItem = {
-  title?: string;
-  link?: string;
-  isoDate?: string;
-  contentSnippet?: string;
-};
 
 export type SubstackPost = {
   slug: string;
@@ -16,22 +9,30 @@ export type SubstackPost = {
   externalUrl: string;
 };
 
-const parser = new Parser<RSSItem, unknown>();
 const FEED_URL =
   process.env.NEXT_PUBLIC_SUBSTACK_FEED ||
   "https://publicunderstanding.substack.com/feed";
 
+const parser = new XMLParser({
+  ignoreAttributes: false,
+  attributeNamePrefix: "",
+});
+
 export const getSubstackPosts = cache(async (): Promise<SubstackPost[]> => {
   try {
-    const feed = await parser.parseURL(FEED_URL);
-    return (feed.items || []).map((item) => {
-      const url = item.link || "";
-      const slug = url.split("/").filter(Boolean).pop() || url;
+    const res = await fetch(FEED_URL, { next: { revalidate: 60 * 15 } });
+    const xml = await res.text();
+    const json = parser.parse(xml);
+    const items: Array<Record<string, unknown>> =
+      (json?.rss?.channel?.item as Array<Record<string, unknown>>) || [];
+    return items.map((item) => {
+      const url = item.link as string;
+      const slug = url?.split("/").filter(Boolean).pop() || url;
       return {
         slug,
-        title: item.title || slug,
-        summary: item.contentSnippet || "",
-        publishedAt: item.isoDate || new Date().toISOString(),
+        title: (item.title as string) || slug,
+        summary: (item.description as string) || "",
+        publishedAt: (item.pubDate as string) || new Date().toISOString(),
         externalUrl: url,
       };
     });
