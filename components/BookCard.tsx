@@ -1,9 +1,11 @@
 import Image from "next/image";
-import Link from "next/link";
 import { Book } from "@/lib/content/books";
 import { formatDate } from "@/lib/utils";
+import Link from "next/link";
 
 export default function BookCard({ book }: { book: Book }) {
+  const buttons = mergeButtons(book.formats, book.retailers || []);
+
   return (
     <article className="card flex flex-col gap-4 overflow-hidden">
       <div className="flex flex-col gap-4 p-5 sm:flex-row sm:items-start">
@@ -42,32 +44,17 @@ export default function BookCard({ book }: { book: Book }) {
               {book.releaseNote}
             </p>
           )}
-          {book.formats.length > 0 && (
+          {buttons.length > 0 && (
             <div className="flex flex-wrap gap-2">
-              {book.formats.map((format) => (
+              {buttons.map((btn) => (
                 <a
-                  key={format.label}
-                  href={format.url || "#"}
+                  key={btn.label}
+                  href={btn.url || "#"}
                   target="_blank"
                   rel="noreferrer"
                   className="rounded-full bg-[var(--accent)] px-3 py-2 text-sm font-semibold text-white shadow-sm transition hover:-translate-y-0.5 hover:shadow-md"
                 >
-                  {format.label}
-                </a>
-              ))}
-            </div>
-          )}
-          {book.retailers && book.retailers.length > 0 && (
-            <div className="mt-2 flex flex-wrap gap-2">
-              {book.retailers.map((retailer) => (
-                <a
-                  key={retailer.label}
-                  href={retailer.url || "#"}
-                  target="_blank"
-                  rel="noreferrer"
-                  className="rounded-full bg-[var(--accent-soft)] px-3 py-2 text-sm font-semibold text-[var(--accent)] transition hover:bg-[var(--accent)] hover:text-white"
-                >
-                  {retailer.label}
+                  {btn.label}
                 </a>
               ))}
             </div>
@@ -82,4 +69,18 @@ export default function BookCard({ book }: { book: Book }) {
       </div>
     </article>
   );
+}
+
+function mergeButtons(
+  formats: { label: string; url?: string }[],
+  retailers: { label: string; url?: string }[],
+) {
+  const seen = new Set<string>();
+  const merged = [...formats, ...retailers].filter((item) => {
+    const key = item.label.toLowerCase();
+    if (seen.has(key)) return false;
+    seen.add(key);
+    return true;
+  });
+  return merged;
 }
