@@ -11,12 +11,31 @@ export type SubstackPost = {
 
 const FEED_URL =
   process.env.NEXT_PUBLIC_SUBSTACK_FEED ||
-  "https://publicunderstanding.substack.com/feed";
+  "https://enochschmaltz89.substack.com/feed";
 
 const parser = new XMLParser({
   ignoreAttributes: false,
   attributeNamePrefix: "",
 });
+
+const fallbackPosts: SubstackPost[] = [
+  {
+    slug: "why-the-u-2-created-half-of-americas-ufo-sightings",
+    title: "Why the U-2 Created Half of America’s UFO Sightings",
+    summary: "How secrecy around a spy plane turned into the first modern wave of UFO reports.",
+    publishedAt: "2026-02-04",
+    externalUrl:
+      "https://enochschmaltz89.substack.com/p/why-the-u-2-created-half-of-americas",
+  },
+  {
+    slug: "the-a-12-and-the-ufo-mirage",
+    title: "The A-12 and the UFO Mirage",
+    summary: "How a faster, higher spy plane repeated the U-2 playbook — and why secrecy kept turning stealth into sightings.",
+    publishedAt: "2026-02-04",
+    externalUrl:
+      "https://enochschmaltz89.substack.com/p/the-a-12-and-the-ufo-mirage",
+  },
+];
 
 export const getSubstackPosts = cache(async (): Promise<SubstackPost[]> => {
   try {
@@ -42,8 +61,10 @@ export const getSubstackPosts = cache(async (): Promise<SubstackPost[]> => {
         externalUrl: url,
       };
     });
+    if (items.length === 0) return fallbackPosts;
+    return items;
   } catch (err) {
     console.error("Failed to load Substack feed", err);
-    return [];
+    return fallbackPosts;
   }
 });
