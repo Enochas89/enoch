@@ -23,8 +23,14 @@ export const getSubstackPosts = cache(async (): Promise<SubstackPost[]> => {
     const res = await fetch(FEED_URL, { next: { revalidate: 60 * 15 } });
     const xml = await res.text();
     const json = parser.parse(xml);
-    const items: Array<Record<string, unknown>> =
-      (json?.rss?.channel?.item as Array<Record<string, unknown>>) || [];
+    const rawItems = (json?.rss?.channel?.item ?? []) as
+      | Array<Record<string, unknown>>
+      | Record<string, unknown>;
+    const items: Array<Record<string, unknown>> = Array.isArray(rawItems)
+      ? rawItems
+      : rawItems
+        ? [rawItems]
+        : [];
     return items.map((item) => {
       const url = item.link as string;
       const slug = url?.split("/").filter(Boolean).pop() || url;
