@@ -87,10 +87,7 @@ const listWriting = cache((): WritingMeta[] => {
 });
 
 export const getAllWriting = async () => {
-  const [local, substack] = await Promise.all([
-    Promise.resolve(listWriting()),
-    getSubstackPosts(),
-  ]);
+  const substack = await getSubstackPosts();
 
   const substackMapped: WritingMeta[] = substack.map((item) => ({
     slug: item.slug,
@@ -106,7 +103,7 @@ export const getAllWriting = async () => {
     externalUrl: item.externalUrl,
   }));
 
-  return [...substackMapped, ...local].sort(
+  return substackMapped.sort(
     (a, b) => new Date(b.publishedAt).getTime() - new Date(a.publishedAt).getTime(),
   );
 };

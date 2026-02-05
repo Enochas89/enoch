@@ -16,16 +16,18 @@ export default function ArticleCard({ article }: { article: WritingMeta }) {
       </div>
       <h3 className="text-xl font-semibold text-[var(--ink)]">{article.title}</h3>
       <p className="text-[var(--muted)]">{article.summary}</p>
-      <div className="flex flex-wrap gap-2">
-        {article.topics.map((topic) => (
-          <span
-            key={topic}
-            className="rounded-full border border-[var(--border)] px-3 py-1 text-xs uppercase tracking-wide text-[var(--muted)]"
-          >
-            {topic}
-          </span>
-        ))}
-      </div>
+      {article.topics.length > 0 && (
+        <div className="flex flex-wrap gap-2">
+          {article.topics.map((topic) => (
+            <span
+              key={topic}
+              className="rounded-full border border-[var(--border)] px-3 py-1 text-xs uppercase tracking-wide text-[var(--muted)]"
+            >
+              {topic}
+            </span>
+          ))}
+        </div>
+      )}
     </>
   );
 
