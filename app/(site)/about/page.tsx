@@ -18,7 +18,16 @@ export default function AboutPage() {
               </h1>
               <div className="prose prose-slate prose-lg max-w-none text-slate-600 space-y-6 leading-relaxed">
                 <p>
-                  Enoch Schmaltz writes about technology, perception, and public understanding. His work explores how advanced sensing, AI, and national security shape trust and policy. He also writes science-fiction and fantasy. His latest book, <em>Puppet Skies</em>, examines how invisible sensing systems reshape what we see and what we believe.
+                  Enoch Schmaltz writes about technology, perception, and public understanding. His work explores how advanced sensing, artificial intelligence, and national security shape trust, policy, and the public imagination.
+                </p>
+                <p>
+                  Alongside his nonfiction, he writes science-fiction and fantasy that explore many of the same themes through story—blending mystery, speculative technology, and imaginative worlds to examine how people confront the unknown.
+                </p>
+                <p>
+                  He is a husband and the father of three fantastic kids, and credits his wife as his constant source of support, perspective, and encouragement behind everything he creates.
+                </p>
+                <p>
+                  His latest book, <em>Puppet Skies</em>, examines how invisible sensing systems reshape what we see, what we know, and what we believe.
                 </p>
               </div>
             </div>
