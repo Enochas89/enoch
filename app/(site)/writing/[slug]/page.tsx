@@ -6,14 +6,10 @@ import { formatDate } from "@/lib/utils";
 
 type Props = { params: { slug: string } };
 
-export const dynamicParams = false;
+export const dynamic = "force-dynamic";
 
-export function generateStaticParams() {
-  return getAllWriting().map((article) => ({ slug: article.slug }));
-}
-
-export function generateMetadata({ params }: Props): Metadata {
-  const article = getAllWriting().find((item) => item.slug === params.slug);
+export async function generateMetadata({ params }: Props): Promise<Metadata> {
+  const article = (await getAllWriting()).find((item) => item.slug === params.slug);
   if (!article) return {};
 
   return {

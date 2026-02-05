@@ -6,10 +6,10 @@ import { getAllWriting } from "@/lib/content/writing";
 import { getAllBooks } from "@/lib/content/books";
 import BookCard from "@/components/BookCard";
 
-export default function HomePage() {
-  const writing = getAllWriting();
-  const [book] = getAllBooks();
+export default async function HomePage() {
+  const writing = await getAllWriting();
   const books = getAllBooks();
+  const [book] = books;
 
   return (
     <div className="bg-white">

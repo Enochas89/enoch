@@ -2,7 +2,7 @@ import { getAllWriting } from "@/lib/content/writing";
 import { absoluteUrl, siteMetadata } from "@/lib/seo";
 
 export async function GET() {
-  const posts = getAllWriting();
+  const posts = await getAllWriting();
 
   const items = posts
     .map(

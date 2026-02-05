@@ -13,7 +13,7 @@ const staticPaths = [
 ];
 
 export async function GET() {
-  const writing = getAllWriting().map((item) => `/writing/${item.slug}`);
+  const writing = (await getAllWriting()).map((item) => `/writing/${item.slug}`);
   const books = getAllBooks().map((book) => `/books/${book.slug}`);
 
   const urls = [...staticPaths, ...writing, ...books]

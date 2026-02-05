@@ -4,6 +4,7 @@ import matter from "gray-matter";
 import readingTime from "reading-time";
 import { cache } from "react";
 import { renderMdx } from "./mdx";
+import { getSubstackPosts } from "./substack";
 
 export type WritingType = "essay" | "explainer" | "commentary" | "newsletter";
 
@@ -23,7 +24,7 @@ export type WritingMeta = {
 };
 
 export type WritingWithContent = WritingMeta & {
-  mdx: React.ReactElement;
+  mdx: React.ReactElement | null;
 };
 
 const writingDir = path.join(process.cwd(), "content", "writing");
@@ -85,13 +86,38 @@ const listWriting = cache((): WritingMeta[] => {
   });
 });
 
-export const getAllWriting = () => listWriting();
+export const getAllWriting = async () => {
+  const [local, substack] = await Promise.all([
+    Promise.resolve(listWriting()),
+    getSubstackPosts(),
+  ]);
+
+  const substackMapped: WritingMeta[] = substack.map((item) => ({
+    slug: item.slug,
+    title: item.title,
+    summary: item.summary,
+    topics: [],
+    type: "essay",
+    publishedAt: item.publishedAt,
+    readingMinutes: 4,
+    excerpt: item.summary,
+    body: "",
+    year: new Date(item.publishedAt).getFullYear(),
+    externalUrl: item.externalUrl,
+  }));
+
+  return [...substackMapped, ...local].sort(
+    (a, b) => new Date(b.publishedAt).getTime() - new Date(a.publishedAt).getTime(),
+  );
+};
 
 export const getWritingBySlug = async (
   slug: string,
 ): Promise<WritingWithContent | null> => {
-  const entry = listWriting().find((item) => item.slug === slug);
+  const all = await getAllWriting();
+  const entry = all.find((item) => item.slug === slug);
   if (!entry) return null;
+  if (entry.externalUrl) return { ...entry, mdx: null };
   const mdx = await renderMdx(entry.body);
   return { ...entry, mdx };
 };

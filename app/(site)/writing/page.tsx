@@ -9,8 +9,8 @@ export const metadata = {
   description: "Essays, explainers, and commentary from E.A. Schmaltz.",
 };
 
-export default function WritingPage() {
-  const writing = getAllWriting();
+export default async function WritingPage() {
+  const writing = await getAllWriting();
   const topics = unique(writing.flatMap((item) => item.topics));
   const years = unique(writing.map((item) => item.year)).sort((a, b) => b - a);
 
