@@ -6,8 +6,8 @@ export default function Hero() {
     <section className="pt-28 pb-20 md:pt-40 md:pb-28 border-b border-slate-100">
       <div className="max-w-6xl mx-auto px-6">
         <div className="max-w-4xl">
-          <h1 className="text-[18pt] md:text-[18pt] font-serif text-slate-900 leading-snug mb-6">
-            Enoch Schmaltz writes about technology, perception, and public understanding. His work explores how advanced sensing, artificial intelligence, and national security shape trust, policy, and the public imagination.
+          <h1 className="text-[18pt] md:text-[18pt] font-serif text-slate-900 leading-snug mb-4">
+            <span className="text-[26pt] font-bold">Enoch Schmaltz</span> writes about technology, perception, and public understanding. His work explores how advanced sensing, artificial intelligence, and national security shape trust, policy, and the public imagination.
           </h1>
           <p className="text-xl md:text-2xl text-slate-600 font-sans leading-relaxed mb-10 border-l-2 border-teal-600 pl-6">
             Nonfiction writing on sensing, perception, AI, and the mechanics of technological disclosure.
