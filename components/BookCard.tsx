@@ -15,6 +15,11 @@ export default function BookCard({ book }: { book: Book }) {
             className="object-cover"
             sizes="(max-width: 640px) 9rem, 12rem"
           />
+          {book.releaseNote && (
+            <div className="absolute bottom-0 left-0 right-0 bg-black/70 text-white text-[11px] font-semibold text-center py-1">
+              {book.releaseNote}
+            </div>
+          )}
         </div>
         <div className="flex flex-1 flex-col gap-2">
           <div className="flex flex-wrap items-center gap-2 text-xs uppercase tracking-[0.14em] text-[var(--muted)]">
