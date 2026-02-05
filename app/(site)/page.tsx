@@ -4,6 +4,7 @@ import BookCard from "@/components/BookCard";
 import NewsletterSection from "@/components/NewsletterSection";
 import { getAllWriting } from "@/lib/content/writing";
 import { getAllBooks } from "@/lib/content/books";
+import Image from "next/image";
 
 export default async function HomePage() {
   const writing = await getAllWriting();
@@ -30,7 +31,16 @@ export default async function HomePage() {
       <section className="py-16">
         <div className="max-w-6xl mx-auto px-6 space-y-6">
           <div className="flex items-center justify-between">
-            <h2 className="text-2xl font-semibold text-slate-900">Latest from Substack</h2>
+            <div className="flex items-center gap-3">
+              <Image
+                src="/Substack.webp"
+                alt="Substack logo"
+                width={120}
+                height={28}
+                className="h-7 w-auto"
+              />
+              <h2 className="text-2xl font-semibold text-slate-900">Latest from Substack</h2>
+            </div>
           </div>
           <div className="grid gap-4">
             {feed.map((article) => (
