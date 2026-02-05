@@ -39,17 +39,15 @@ export default function Footer() {
           </div>
 
           <div>
-            <h4 className="font-sans font-bold text-xs uppercase tracking-widest text-slate-400 mb-4">
-              Navigation
-            </h4>
-            <ul className="space-y-2 text-sm">
-              <li><Link href="/" className="text-slate-600 hover:text-slate-900">Home</Link></li>
-              <li><Link href="/about" className="text-slate-600 hover:text-slate-900">About</Link></li>
-              <li><Link href="/books" className="text-slate-600 hover:text-slate-900">Puppet Skies</Link></li>
-              <li><Link href="/writing" className="text-slate-600 hover:text-slate-900">Writing</Link></li>
-              <li><Link href="/media" className="text-slate-600 hover:text-slate-900">Media</Link></li>
-            </ul>
-          </div>
+          <h4 className="font-sans font-bold text-xs uppercase tracking-widest text-slate-400 mb-4">
+            Navigation
+          </h4>
+          <ul className="space-y-2 text-sm">
+            <li><Link href="/" className="text-slate-600 hover:text-slate-900">Home</Link></li>
+            <li><Link href="/about" className="text-slate-600 hover:text-slate-900">About</Link></li>
+            <li><Link href="/contact" className="text-slate-600 hover:text-slate-900">Contact</Link></li>
+          </ul>
+        </div>
 
           <div>
             <h4 className="font-sans font-bold text-xs uppercase tracking-widest text-slate-400 mb-4">

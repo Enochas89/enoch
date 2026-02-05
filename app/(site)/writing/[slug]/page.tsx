@@ -1,5 +1,6 @@
 import { notFound, redirect } from "next/navigation";
 import type { Metadata } from "next";
+import { redirect } from "next/navigation";
 import { getAllWriting, getWritingBySlug } from "@/lib/content/writing";
 import { articleJsonLd, absoluteUrl } from "@/lib/seo";
 import { formatDate } from "@/lib/utils";
@@ -35,6 +36,9 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 export default async function WritingArticlePage({ params }: Props) {
   const article = await getWritingBySlug(params.slug);
   if (!article) return notFound();
+  if (article.externalUrl) {
+    redirect(article.externalUrl);
+  }
 
   if (article.externalUrl) {
     redirect(article.externalUrl);

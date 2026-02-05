@@ -15,6 +15,12 @@ const nextConfig: NextConfig = {
           "https://enochschmaltz89.substack.com/p/the-a-12-and-the-ufo-mirage",
         permanent: false,
       },
+      { source: "/writing", destination: "/", permanent: true },
+      { source: "/writing/:path*", destination: "/", permanent: true },
+      { source: "/books", destination: "/", permanent: true },
+      { source: "/books/:path*", destination: "/", permanent: true },
+      { source: "/media", destination: "/", permanent: true },
+      { source: "/media/:path*", destination: "/", permanent: true },
     ];
   },
 };
