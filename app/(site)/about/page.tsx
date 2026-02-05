@@ -14,11 +14,11 @@ export default function AboutPage() {
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-16">
             <div className="lg:col-span-7">
               <h1 className="text-5xl font-serif text-slate-900 mb-8">
-                E. A. Schmaltz
+                E. S. Schmaltz
               </h1>
               <div className="prose prose-slate prose-lg max-w-none text-slate-600 space-y-6 leading-relaxed">
                 <p>
-                  E. A. Schmaltz writes about technology, perception, and public understanding. His work explores how advanced sensing, artificial intelligence, and national security shape trust, policy, and the public imagination.
+                  E. S. Schmaltz writes about technology, perception, and public understanding. His work explores how advanced sensing, artificial intelligence, and national security shape trust, policy, and the public imagination.
                 </p>
                 <p>
                   Alongside his nonfiction, he writes science-fiction and fantasy that explore many of the same themes through story—blending mystery, speculative technology, and imaginative worlds to examine how people confront the unknown.
