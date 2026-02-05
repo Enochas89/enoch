@@ -1,4 +1,5 @@
 import NewsletterSection from "@/components/NewsletterSection";
+import Image from "next/image";
 
 export const metadata = {
   title: "About",
@@ -17,19 +18,20 @@ export default function AboutPage() {
               </h1>
               <div className="prose prose-slate prose-lg max-w-none text-slate-600 space-y-6 leading-relaxed">
                 <p>
-                  Enoch Schmaltz (writing as E.A. Schmaltz) is an author and analyst focused on technology, perception, and the systems that shape how the public encounters new capabilities.
-                </p>
-                <p>
-                  His work investigates the widening gap between technical innovation and social understanding—specifically where advanced sensing, artificial intelligence, and national security meet public trust and policy.
-                </p>
-                <p>
-                  His forthcoming book, <em>Puppet Skies</em>, explores how invisible sensing stacks redraw what we see, what we know, and what we allow.
+                  Enoch Schmaltz writes about technology, perception, and public understanding. His work explores how advanced sensing, AI, and national security shape trust and policy. He also writes science-fiction and fantasy. His latest book, <em>Puppet Skies</em>, examines how invisible sensing systems reshape what we see and what we believe.
                 </p>
               </div>
             </div>
             <div className="lg:col-span-5">
-              <div className="bg-slate-100 aspect-[4/5] flex items-center justify-center text-slate-300 border border-slate-200">
-                <span className="font-serif italic text-lg">Author Portrait</span>
+              <div className="relative aspect-[4/5] overflow-hidden rounded-lg border border-slate-200 shadow">
+                <Image
+                  src="/EnochSchmaltz.jpg"
+                  alt="Enoch Schmaltz portrait"
+                  fill
+                  className="object-cover"
+                  sizes="(max-width: 768px) 100vw, 480px"
+                  priority
+                />
               </div>
             </div>
           </div>
