@@ -35,9 +35,9 @@ export default async function HomePage() {
               <Image
                 src="/Substack.webp"
                 alt="Substack logo"
-                width={160}
-                height={40}
-                className="h-10 w-auto"
+                width={220}
+                height={60}
+                className="h-14 w-auto"
               />
               <div>
                 <h2 className="text-2xl font-semibold text-slate-900">
