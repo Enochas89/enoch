@@ -19,7 +19,11 @@ export default function BookCard({ book }: { book: Book }) {
         <div className="flex flex-1 flex-col gap-2">
           <div className="flex flex-wrap items-center gap-2 text-xs uppercase tracking-[0.14em] text-[var(--muted)]">
             <span className="pill">{book.status.replace("-", " ")}</span>
-            {book.releaseDate && <span>{formatDate(book.releaseDate)}</span>}
+            {book.releaseNote ? (
+              <span>{book.releaseNote}</span>
+            ) : (
+              book.releaseDate && <span>{formatDate(book.releaseDate)}</span>
+            )}
           </div>
           <h3 className="text-2xl font-semibold text-[var(--ink)]">{book.title}</h3>
           {book.subtitle && (
