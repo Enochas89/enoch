@@ -50,7 +50,7 @@ Create `content/books/book-slug.json`:
   "releaseDate": "2026-11-12",
   "status": "available" | "coming-soon",
   "formats": [{ "label": "Hardcover", "url": "#" }],
-  "retailers": [{ "label": "Bookshop", "url": "https://bookshop.org" }],
+  "retailers": [{ "label": "Bookshop", "url": "https://draft2digital.com/book/4109629" }],
   "coverImage": "/images/books/book-slug/cover.jpg"
 }
 ```
