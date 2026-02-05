@@ -9,6 +9,12 @@ const nextConfig: NextConfig = {
           "https://enochschmaltz89.substack.com/p/why-the-u-2-created-half-of-americas",
         permanent: false,
       },
+      {
+        source: "/writing/the-a-12-and-the-ufo-mirage",
+        destination:
+          "https://enochschmaltz89.substack.com/p/the-a-12-and-the-ufo-mirage",
+        permanent: false,
+      },
     ];
   },
 };
