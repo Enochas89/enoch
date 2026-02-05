@@ -41,7 +41,7 @@ export default async function HomePage() {
               />
               <div>
                 <h2 className="text-2xl font-semibold text-slate-900">
-                  Latest from Substack
+                  Latest from Puppet Skies on Substack
                 </h2>
                 <p className="text-sm text-slate-500">By: Enoch Schmaltz</p>
               </div>
