@@ -1,6 +1,5 @@
 import { notFound, redirect } from "next/navigation";
 import type { Metadata } from "next";
-import { redirect } from "next/navigation";
 import { getAllWriting, getWritingBySlug } from "@/lib/content/writing";
 import { articleJsonLd, absoluteUrl } from "@/lib/seo";
 import { formatDate } from "@/lib/utils";
