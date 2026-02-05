@@ -17,8 +17,6 @@ const nextConfig: NextConfig = {
       },
       { source: "/writing", destination: "/", permanent: true },
       { source: "/writing/:path*", destination: "/", permanent: true },
-      { source: "/books", destination: "/", permanent: true },
-      { source: "/books/:path*", destination: "/", permanent: true },
       { source: "/media", destination: "/", permanent: true },
       { source: "/media/:path*", destination: "/", permanent: true },
     ];
