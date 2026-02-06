@@ -5,6 +5,7 @@ const staticPaths = [
   "/about",
   "/contact",
   "/rss.xml",
+  "/press",
 ];
 
 export async function GET() {
