@@ -23,6 +23,14 @@ export default function Hero() {
             <Link
               href="/writing"
               className="border border-slate-200 text-slate-900 px-8 py-4 rounded-sm font-sans font-bold hover:bg-slate-50 transition-all"
+              scroll={false}
+              onClick={(e) => {
+                const target = document.getElementById("substack-feed");
+                if (target) {
+                  e.preventDefault();
+                  target.scrollIntoView({ behavior: "smooth" });
+                }
+              }}
             >
               Read Latest Writing
             </Link>
