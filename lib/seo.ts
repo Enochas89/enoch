@@ -1,9 +1,9 @@
 export const siteMetadata = {
-  name: "Enoch Schmaltz",
-  penName: "E.A. Schmaltz",
-  title: "E.A. Schmaltz",
+  name: "E. A. Schmaltz",
+  penName: "E. A. Schmaltz",
+  title: "E. A. Schmaltz",
   description:
-    "Author and analyst examining power, technology, and the cultural weather. Essays, books, and media by E.A. Schmaltz.",
+    "Author and analyst examining power, technology, and the cultural weather. Essays, books, and media by E. A. Schmaltz.",
   siteUrl: process.env.NEXT_PUBLIC_SITE_URL || "https://easchmaltz.com",
   locale: "en_US",
   twitterHandle: "@easchmaltz",

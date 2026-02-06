@@ -29,7 +29,7 @@ export default function PressPage() {
             Press & Media Kit
           </h1>
           <p className="text-lg text-slate-600">
-            Author interviews, book information, and media resources.
+Author interviews, book information, and media resources.
           </p>
         </div>
       </section>
@@ -38,7 +38,7 @@ export default function PressPage() {
         <div className="max-w-5xl mx-auto px-6 space-y-4">
           <h2 className="text-xl font-semibold text-slate-900">Short Bio</h2>
           <p className="text-slate-700 leading-relaxed">
-            Enoch Schmaltz is an author and analyst who writes about emerging technology, public perception, and policy. His work explores how artificial intelligence, advanced sensing systems, and national-security innovation shape public understanding and institutional trust. He writes both nonfiction and speculative fiction.
+            E. A. Schmaltz is an author and analyst who writes about emerging technology, public perception, and policy. His work explores how artificial intelligence, advanced sensing systems, and national-security innovation shape public understanding and institutional trust. He writes both nonfiction and speculative fiction.
           </p>
         </div>
       </section>
@@ -48,7 +48,7 @@ export default function PressPage() {
           <h2 className="text-xl font-semibold text-slate-900">Full Bio</h2>
           <div className="space-y-4 text-slate-700 leading-relaxed">
             <p>
-              Enoch Schmaltz is an author and analyst focused on the intersection of emerging technology, public perception, and public policy. His work examines how new technological capabilities move from research and classified environments into public awareness, and how institutions manage disclosure, risk, and trust during that transition.
+            E. A. Schmaltz is an author and analyst focused on the intersection of emerging technology, public perception, and public policy. His work examines how new technological capabilities move from research and classified environments into public awareness, and how institutions manage disclosure, risk, and trust during that transition.
             </p>
             <p>
               He writes nonfiction exploring artificial intelligence, advanced sensing systems, and the policy challenges created by rapid technological change. Alongside his nonfiction, he writes science-fiction and fantasy that explore many of the same themes through storytelling.
