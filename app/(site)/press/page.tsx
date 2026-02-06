@@ -130,12 +130,10 @@ Author interviews, book information, and media resources.
 function BookCard({
   title,
   description,
-  amazon,
   learnMore,
 }: {
   title: string;
   description: string;
-  amazon: string;
   learnMore: string;
 }) {
   return (
@@ -143,14 +141,6 @@ function BookCard({
       <h3 className="text-lg font-semibold text-slate-900">{title}</h3>
       <p className="text-slate-700 leading-relaxed">{description}</p>
       <div className="flex flex-wrap gap-3">
-        <a
-          href={amazon}
-          target="_blank"
-          rel="noreferrer"
-          className="rounded-full bg-[var(--accent)] px-4 py-2 text-sm font-semibold text-white shadow-sm transition hover:-translate-y-0.5 hover:shadow-md"
-        >
-          Buy on Amazon
-        </a>
         <Link
           href={learnMore}
           className="rounded-full border border-slate-200 px-4 py-2 text-sm font-semibold text-slate-800 hover:border-[var(--accent)] transition"

@@ -4,8 +4,6 @@ import { formatDate } from "@/lib/utils";
 import Link from "next/link";
 
 export default function BookCard({ book }: { book: Book }) {
-  const buttons = mergeButtons(book.formats, book.retailers || []);
-
   return (
     <article className="card flex flex-col gap-4 overflow-hidden">
       <div className="flex flex-col gap-4 p-5 sm:flex-row sm:items-start">
@@ -69,18 +67,4 @@ export default function BookCard({ book }: { book: Book }) {
       </div>
     </article>
   );
-}
-
-function mergeButtons(
-  formats: { label: string; url?: string }[],
-  retailers: { label: string; url?: string }[],
-) {
-  const seen = new Set<string>();
-  const merged = [...formats, ...retailers].filter((item) => {
-    const key = item.label.toLowerCase();
-    if (seen.has(key)) return false;
-    seen.add(key);
-    return true;
-  });
-  return merged;
 }
