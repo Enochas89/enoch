@@ -9,6 +9,7 @@ export const metadata: Metadata = {
 };
 
 const AMAZON_LINK = "https://www.amazon.com/dp/B0GKS9WVWL";
+const AMAZON_CONTROLLED = "https://www.amazon.com/dp/B0GL9GVGFW";
 
 export default function PressPage() {
   const books = getAllBooks();
@@ -70,7 +71,7 @@ export default function PressPage() {
               <BookCard
                 title="The Controlled Release: Policy Design With World-Changing Technologies (2026)"
                 description="A nonfiction book exploring how governments and institutions introduce disruptive technologies to the public and why disclosure has become a major policy challenge in the age of artificial intelligence."
-                amazon={AMAZON_LINK}
+                amazon={AMAZON_CONTROLLED}
                 learnMore={`/books/${controlledRelease.slug}`}
               />
             )}

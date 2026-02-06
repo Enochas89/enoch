@@ -3,9 +3,13 @@
   "subtitle": "Dispatches on surveillance, speed, and disclosure",
   "description": "A rapid-release follow-up on how fast platforms, intelligence programs, and civic narratives fall out of sync — and what that lag does to public trust.",
   "releaseDate": "2026-02-25",
-  "releaseNote": "Late February 2026",
-  "status": "coming-soon",
-  "formats": [],
-  "retailers": [],
+  "releaseNote": "Available now",
+  "status": "available",
+  "formats": [
+    { "label": "Amazon", "url": "https://www.amazon.com/dp/B0GL9GVGFW" }
+  ],
+  "retailers": [
+    { "label": "Amazon", "url": "https://www.amazon.com/dp/B0GL9GVGFW" }
+  ],
   "coverImage": "/images/books/the-controlled-release/cover.png"
 }
