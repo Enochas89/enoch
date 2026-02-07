@@ -8,9 +8,6 @@ export const metadata: Metadata = {
     "Press kit and media resources for author Enoch Schmaltz, including bio, books, interview topics, and contact information.",
 };
 
-const AMAZON_LINK = "https://www.amazon.com/dp/B0GKS9WVWL";
-const AMAZON_CONTROLLED = "https://www.amazon.com/dp/B0GL9GVGFW";
-
 export default function PressPage() {
   const books = getAllBooks();
 
@@ -71,7 +68,6 @@ Author interviews, book information, and media resources.
               <BookCard
                 title="The Controlled Release: Policy Design With World-Changing Technologies (2026)"
                 description="A nonfiction book exploring how governments and institutions introduce disruptive technologies to the public and why disclosure has become a major policy challenge in the age of artificial intelligence."
-                amazon={AMAZON_CONTROLLED}
                 learnMore={`/books/${controlledRelease.slug}`}
               />
             )}
@@ -79,7 +75,6 @@ Author interviews, book information, and media resources.
               <BookCard
                 title="Puppet Skies (2026)"
                 description="A nonfiction exploration of advanced sensing systems and how invisible technologies reshape public perception, trust, and understanding."
-                amazon={AMAZON_LINK}
                 learnMore={`/books/${puppetSkies.slug}`}
               />
             )}
