@@ -42,21 +42,6 @@ export default function BookCard({ book }: { book: Book }) {
               {book.releaseNote}
             </p>
           )}
-          {buttons.length > 0 && (
-            <div className="flex flex-wrap gap-2">
-              {buttons.map((btn) => (
-                <a
-                  key={btn.label}
-                  href={btn.url || "#"}
-                  target="_blank"
-                  rel="noreferrer"
-                  className="rounded-full bg-[var(--accent)] px-3 py-2 text-sm font-semibold text-white shadow-sm transition hover:-translate-y-0.5 hover:shadow-md"
-                >
-                  {btn.label}
-                </a>
-              ))}
-            </div>
-          )}
           <Link
             href={`/books/${book.slug}`}
             className="mt-auto text-sm font-semibold text-[var(--accent)] underline underline-offset-4"
