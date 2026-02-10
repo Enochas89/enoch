@@ -49,18 +49,6 @@ export default function Footer() {
             <ul className="space-y-3 text-sm text-slate-200">
               <li className="flex items-center gap-2">
                 <Mail className="w-4 h-4 text-teal-300" />
-                <a className="hover:text-teal-200 transition-colors" href="mailto:press@enochschmaltz.com">
-                  press@enochschmaltz.com
-                </a>
-              </li>
-              <li className="flex items-center gap-2">
-                <Mail className="w-4 h-4 text-teal-300" />
-                <a className="hover:text-teal-200 transition-colors" href="mailto:bookings@enochschmaltz.com">
-                  bookings@enochschmaltz.com
-                </a>
-              </li>
-              <li className="flex items-center gap-2">
-                <Mail className="w-4 h-4 text-teal-300" />
                 <a
                   className="hover:text-teal-200 transition-colors font-semibold"
                   href="mailto:contactus@enochschmaltz.com"
