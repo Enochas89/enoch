@@ -25,6 +25,30 @@ export default async function HomePage() {
                 <BookCard key={book.slug} book={book} />
               ))}
             </div>
+            <div className="flex flex-wrap gap-3 pt-2">
+              {books
+                .map((book) => {
+                  const retailers = book.retailers?.length
+                    ? book.retailers
+                    : book.formats;
+                  return {
+                    slug: book.slug,
+                    url: retailers.find((r) => r.label.toLowerCase() === "amazon")?.url,
+                  };
+                })
+                .filter((item) => item.url)
+                .map((item) => (
+                  <a
+                    key={item.slug}
+                    href={item.url}
+                    className="text-xs font-bold uppercase tracking-wider py-3 px-4 border border-slate-200 bg-white hover:border-teal-600 hover:text-teal-700 transition-all"
+                    target="_blank"
+                    rel="noreferrer"
+                  >
+                    Buy on Amazon ({item.slug.replace(/-/g, " ")})
+                  </a>
+                ))}
+            </div>
           </div>
         </section>
       )}
