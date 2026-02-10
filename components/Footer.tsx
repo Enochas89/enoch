@@ -55,9 +55,16 @@ export default function Footer() {
               Inquiries
             </h4>
             <ul className="space-y-2 text-sm text-slate-600">
-              <li>Media: <a className="hover:text-slate-900" href="mailto:press@easchmaltz.com">press@easchmaltz.com</a></li>
-              <li>Speaking: <a className="hover:text-slate-900" href="mailto:bookings@easchmaltz.com">bookings@easchmaltz.com</a></li>
-              <li><Link href="/contact" className="text-slate-900 font-medium underline underline-offset-4">Get in touch</Link></li>
+              <li>Media: <a className="hover:text-slate-900" href="mailto:press@enochschmaltz.com">press@enochschmaltz.com</a></li>
+              <li>Speaking: <a className="hover:text-slate-900" href="mailto:bookings@enochschmaltz.com">bookings@enochschmaltz.com</a></li>
+              <li>
+                <a
+                  className="text-slate-900 font-medium underline underline-offset-4 hover:text-teal-700"
+                  href="mailto:contactus@enochschmaltz.com"
+                >
+                  Get in touch
+                </a>
+              </li>
             </ul>
           </div>
         </div>
