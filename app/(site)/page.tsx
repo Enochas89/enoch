@@ -1,14 +1,13 @@
 import Hero from "@/components/Hero";
-import ArticleCard from "@/components/ArticleCard";
 import BookCard from "@/components/BookCard";
 import NewsletterSection from "@/components/NewsletterSection";
 import { getAllWriting } from "@/lib/content/writing";
 import { getAllBooks } from "@/lib/content/books";
-import Image from "next/image";
+import SubstackFeed from "@/components/SubstackFeed";
 
 export default async function HomePage() {
   const writing = await getAllWriting();
-  const feed = writing.slice(0, 10);
+  const feed = writing.slice(0, 12);
   const books = getAllBooks();
 
   return (
@@ -28,32 +27,7 @@ export default async function HomePage() {
           </div>
         </section>
       )}
-      <section className="py-16">
-        <div className="max-w-6xl mx-auto px-6 space-y-6">
-          <div className="flex items-center justify-between">
-            <div className="flex items-center gap-3">
-              <Image
-                src="/Substack.webp"
-                alt="Substack logo"
-                width={220}
-                height={60}
-                className="h-14 w-auto"
-              />
-              <div>
-                <h2 className="text-2xl font-semibold text-slate-900">
-                  Latest from Puppet Skies on Substack
-                </h2>
-                <p className="text-sm text-slate-500">By: E. A. Schmaltz</p>
-              </div>
-            </div>
-          </div>
-          <div className="grid gap-4">
-            {feed.map((article) => (
-              <ArticleCard key={article.slug} article={article} />
-            ))}
-          </div>
-        </div>
-      </section>
+      <SubstackFeed posts={feed} />
       <NewsletterSection />
     </div>
   );
