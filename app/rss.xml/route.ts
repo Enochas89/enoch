@@ -3,6 +3,7 @@ import { absoluteUrl, siteMetadata } from "@/lib/seo";
 
 export async function GET() {
   const posts = await getAllWriting();
+  const imageUrl = absoluteUrl("/puppetskieslogo.webp");
 
   const items = posts
     .map(
@@ -24,6 +25,11 @@ export async function GET() {
       <title>${siteMetadata.penName}</title>
       <link>${siteMetadata.siteUrl}</link>
       <description>${siteMetadata.description}</description>
+      <image>
+        <url>${imageUrl}</url>
+        <title>${siteMetadata.penName}</title>
+        <link>${siteMetadata.siteUrl}</link>
+      </image>
       ${items}
     </channel>
   </rss>`;
