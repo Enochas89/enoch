@@ -36,8 +36,8 @@ export async function GET(request: Request) {
         <url>${imageUrl}</url>
         <title>${siteMetadata.penName}</title>
         <link>${siteMetadata.siteUrl}</link>
-        <width>1200</width>
-        <height>300</height>
+        <width>1600</width>
+        <height>400</height>
       </image>
       <webfeeds:logo>${imageUrl}</webfeeds:logo>
       <webfeeds:cover image="${imageUrl}" />
