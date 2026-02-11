@@ -29,7 +29,7 @@ export default function SubstackFeed({ posts }: Props) {
             </div>
             <a
               href="https://enochschmaltz89.substack.com"
-              className="inline-flex items-center gap-2 rounded-full bg-slate-900 px-5 py-3 text-sm font-semibold text-white shadow-sm hover:-translate-y-0.5 hover:shadow-md transition"
+              className="inline-flex items-center gap-2 rounded-full bg-gradient-to-r from-teal-600 to-emerald-500 px-5 py-3 text-sm font-semibold text-white shadow-sm hover:-translate-y-0.5 hover:shadow-md transition"
               target="_blank"
               rel="noreferrer"
             >
