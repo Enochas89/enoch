@@ -22,7 +22,7 @@ export async function GET(request: Request) {
     .join("");
 
   const xml = `<?xml version="1.0" encoding="UTF-8"?>
-  <rss version="2.0">
+  <rss version="2.0" xmlns:webfeeds="http://webfeeds.org/rss/1.0">
     <channel>
       <title>${siteMetadata.penName}</title>
       <link>${siteMetadata.siteUrl}</link>
@@ -31,9 +31,11 @@ export async function GET(request: Request) {
         <url>${imageUrl}</url>
         <title>${siteMetadata.penName}</title>
         <link>${siteMetadata.siteUrl}</link>
-        <width>600</width>
-        <height>120</height>
+        <width>800</width>
+        <height>200</height>
       </image>
+      <webfeeds:logo>${imageUrl}</webfeeds:logo>
+      <webfeeds:cover image="${imageUrl}" />
       ${items}
     </channel>
   </rss>`;
