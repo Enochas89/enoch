@@ -1,4 +1,5 @@
 import { ArrowRight } from "lucide-react";
+import Image from "next/image";
 import Link from "next/link";
 
 export default function Hero() {
@@ -6,6 +7,16 @@ export default function Hero() {
     <section className="pt-28 pb-20 md:pt-40 md:pb-28 border-b border-slate-100">
       <div className="max-w-6xl mx-auto px-6">
         <div className="max-w-4xl">
+          <div className="mb-6">
+            <Image
+              src="/puppetskieslogo.webp"
+              alt="Puppet Skies banner"
+              width={420}
+              height={96}
+              className="h-20 w-auto rounded-md shadow-sm"
+              priority
+            />
+          </div>
           <h1 className="text-[18pt] md:text-[18pt] font-serif text-slate-900 leading-snug mb-4">
             <span className="text-[26pt] font-bold">E. A. Schmaltz</span> writes about technology, perception, and public understanding. His work explores how advanced sensing, artificial intelligence, and national security shape trust, policy, and the public imagination.
           </h1>
