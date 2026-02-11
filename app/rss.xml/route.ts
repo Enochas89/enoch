@@ -3,7 +3,8 @@ import { absoluteUrl, siteMetadata } from "@/lib/seo";
 
 export async function GET(request: Request) {
   const posts = await getAllWriting();
-  const origin = new URL(request.url).origin;
+  // Prefer configured site URL for absolute references; fall back to request origin.
+  const origin = siteMetadata.siteUrl || new URL(request.url).origin;
   const imageUrl = `${origin}/puppetskieslogo.webp`;
 
   const items = posts
@@ -30,6 +31,8 @@ export async function GET(request: Request) {
         <url>${imageUrl}</url>
         <title>${siteMetadata.penName}</title>
         <link>${siteMetadata.siteUrl}</link>
+        <width>600</width>
+        <height>120</height>
       </image>
       ${items}
     </channel>
