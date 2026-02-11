@@ -11,7 +11,7 @@ export default function BookCard({ book }: { book: Book }) {
   return (
     <article className="card flex flex-col gap-5 overflow-hidden">
       <div className="flex flex-col gap-5 p-5 sm:flex-row sm:items-start">
-        <div className="relative h-48 w-36 flex-shrink-0 overflow-hidden rounded-lg border border-[var(--border)] bg-[var(--accent-soft)] shadow-sm">
+        <div className="relative h-48 w-36 flex-shrink-0 overflow-hidden rounded-lg border border-[var(--border)] bg-[var(--accent-soft)] shadow-md">
           <Image
             src={book.coverImage}
             alt={`${book.title} cover`}
@@ -19,18 +19,6 @@ export default function BookCard({ book }: { book: Book }) {
             className="object-cover"
             sizes="(max-width: 640px) 9rem, 12rem"
           />
-          {(book.status || book.releaseNote) && (
-            <div className="absolute -top-3 left-3 flex items-center gap-2">
-              <span className="rounded-full bg-black/80 text-white text-[10px] font-semibold px-3 py-1 uppercase tracking-[0.18em]">
-                {book.status.replace("-", " ")}
-              </span>
-              {book.releaseNote && (
-                <span className="rounded-full bg-teal-600 text-white text-[10px] font-semibold px-3 py-1 uppercase tracking-[0.18em] shadow-md">
-                  {book.releaseNote}
-                </span>
-              )}
-            </div>
-          )}
         </div>
         <div className="flex flex-1 flex-col gap-3">
           <div className="flex flex-wrap items-center gap-2 text-xs uppercase tracking-[0.14em] text-[var(--muted)] font-semibold">
