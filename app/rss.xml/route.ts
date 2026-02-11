@@ -1,9 +1,10 @@
 import { getAllWriting } from "@/lib/content/writing";
 import { absoluteUrl, siteMetadata } from "@/lib/seo";
 
-export async function GET() {
+export async function GET(request: Request) {
   const posts = await getAllWriting();
-  const imageUrl = absoluteUrl("/puppetskieslogo.webp");
+  const origin = new URL(request.url).origin;
+  const imageUrl = `${origin}/puppetskieslogo.webp`;
 
   const items = posts
     .map(
@@ -38,6 +39,7 @@ export async function GET() {
     status: 200,
     headers: {
       "Content-Type": "application/xml",
+      "Cache-Control": "s-maxage=0, stale-while-revalidate=0",
     },
   });
 }
