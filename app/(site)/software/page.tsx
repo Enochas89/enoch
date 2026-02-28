@@ -1,6 +1,7 @@
 import Image from "next/image";
 import type { ReactNode } from "react";
 import {
+  AlertTriangle,
   ArrowRight,
   CheckCircle2,
   Download,
@@ -219,6 +220,39 @@ export default function SoftwarePage() {
               <Download className="w-4 h-4" />
               Download Now
             </a>
+          </div>
+        </div>
+      </section>
+
+      <section className="pb-24">
+        <div className="max-w-6xl mx-auto px-6">
+          <div className="border border-amber-200 bg-amber-50 p-8 space-y-6">
+            <div className="flex items-start gap-3">
+              <AlertTriangle className="w-5 h-5 text-amber-700 mt-0.5 shrink-0" />
+              <div>
+                <h2 className="text-2xl font-serif text-slate-900">Download Instructions</h2>
+                <p className="text-slate-700 mt-1">
+                  Follow these steps to install NovelCraft Pro on Windows.
+                </p>
+              </div>
+            </div>
+
+            <ol className="space-y-3 text-slate-700 list-decimal pl-5">
+              <li>
+                Click <strong>Download for Windows</strong> and save
+                <code className="ml-1 bg-white border border-slate-300 px-1.5 py-0.5 rounded text-[12px]">NovelCraft-Pro-Setup-1.0.1.exe</code>.
+              </li>
+              <li>Open the downloaded installer file.</li>
+              <li>
+                If Windows SmartScreen appears, click <strong>More info</strong> and then <strong>Run anyway</strong>.
+              </li>
+              <li>Choose install directory and complete setup.</li>
+              <li>Launch NovelCraft Pro from your desktop shortcut.</li>
+            </ol>
+
+            <div className="text-sm text-slate-600">
+              Need help? Contact support from the <a href="/contact" className="underline font-semibold text-slate-800">Contact page</a>.
+            </div>
           </div>
         </div>
       </section>
