@@ -2,6 +2,7 @@ import { absoluteUrl } from "@/lib/seo";
 
 const staticPaths = [
   "/",
+  "/software",
   "/about",
   "/contact",
   "/rss.xml",
