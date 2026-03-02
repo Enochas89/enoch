@@ -70,6 +70,7 @@ const visualWorkflows = [
 
 const featureList = [
   "Interactive scene timeline with collapsible storyboard cards",
+  "Project Content menu and tree view included in the current Windows x64 installer",
   "DOCX import with app-format normalization for reliable styling",
   "Movable and collapsible toolbars with a dockable tool nest",
   "Scene metadata, outliner filtering, and review utilities",
@@ -106,14 +107,14 @@ export default function SoftwarePage() {
               </a>
               <a
                 href={DOWNLOADS.macArm64}
-                className="inline-flex items-center gap-2 bg-slate-100 text-slate-900 px-6 py-3 text-sm font-bold uppercase tracking-[0.14em] hover:bg-white transition-colors"
+                className="inline-flex items-center gap-2 !bg-white !text-slate-950 border border-slate-300 px-6 py-3 text-sm font-bold uppercase tracking-[0.14em] hover:!bg-slate-50 transition-colors"
               >
                 <Download className="w-4 h-4" />
                 macOS (Apple Silicon) Beta
               </a>
               <a
                 href={DOWNLOADS.macX64}
-                className="inline-flex items-center gap-2 bg-slate-100 text-slate-900 px-6 py-3 text-sm font-bold uppercase tracking-[0.14em] hover:bg-white transition-colors"
+                className="inline-flex items-center gap-2 !bg-white !text-slate-950 border border-slate-300 px-6 py-3 text-sm font-bold uppercase tracking-[0.14em] hover:!bg-slate-50 transition-colors"
               >
                 <Download className="w-4 h-4" />
                 macOS (Intel) Beta
@@ -233,6 +234,7 @@ export default function SoftwarePage() {
               <p className="text-xs font-bold uppercase tracking-[0.2em] text-teal-300">Ready to Install</p>
               <h2 className="text-3xl font-serif">Download NovelCraft Pro</h2>
               <p className="text-slate-300">Windows stable + macOS beta (unsigned), version 1.0.1, creator: CerebFastThinkTank.</p>
+              <p className="text-slate-300 text-sm">Windows x64 installer has the latest Project Content menu update.</p>
             </div>
             <div className="flex flex-wrap gap-3">
               <a
