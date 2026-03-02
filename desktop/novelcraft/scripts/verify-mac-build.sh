@@ -39,17 +39,17 @@ if [[ -z "${APP_VERSION}" ]]; then
   exit 1
 fi
 
-codesign --verify --deep --strict --verbose=2 "${APP_PATH}"
-
 if [[ -n "${CSC_LINK:-}" && -n "${CSC_KEY_PASSWORD:-}" ]]; then
+  echo "Checking code signature..."
+  codesign --verify --deep --strict --verbose=2 "${APP_PATH}"
+
   echo "Checking Gatekeeper assessment..."
   spctl --assess --type execute --verbose=4 "${APP_PATH}"
 
   echo "Validating notarization staple..."
   xcrun stapler validate "${APP_PATH}"
 else
-  echo "Skipping Gatekeeper/notarization checks (unsigned build)."
+  echo "Unsigned build detected. Skipping code-signing/notarization checks."
 fi
 
 echo "macOS verification passed for ${ARCH}."
-
