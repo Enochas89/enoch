@@ -48,21 +48,33 @@ jobs:
           APPLE_APP_SPECIFIC_PASSWORD: ${{ secrets.APPLE_APP_SPECIFIC_PASSWORD }}
           APPLE_TEAM_ID: ${{ secrets.APPLE_TEAM_ID }}
         run: |
+          set -eo pipefail
+          LOG_PATH="${GITHUB_WORKSPACE}/novelcraft-build-${{ matrix.arch }}.log"
           if [[ -n "${CSC_LINK:-}" && -n "${CSC_KEY_PASSWORD:-}" ]]; then
             echo "Signed build enabled."
             export REQUIRE_MAC_NOTARIZATION=1
+            npm run build:mac:${{ matrix.arch }} 2>&1 | tee "${LOG_PATH}"
           else
             echo "No signing certificate provided. Building unsigned artifacts."
             export CSC_IDENTITY_AUTO_DISCOVERY=false
             export REQUIRE_MAC_NOTARIZATION=0
+            npx electron-builder --mac dmg zip --${{ matrix.arch }} --config.mac.identity=null --config.mac.hardenedRuntime=false 2>&1 | tee "${LOG_PATH}"
           fi
-          npm run build:mac:${{ matrix.arch }}
 
       - name: Verify mac build
         env:
           CSC_LINK: ${{ secrets.CSC_LINK }}
           CSC_KEY_PASSWORD: ${{ secrets.CSC_KEY_PASSWORD }}
         run: bash ./scripts/verify-mac-build.sh ${{ matrix.arch }}
+
+      - name: Upload build logs
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: NovelCraft-build-logs-${{ matrix.arch }}
+          path: novelcraft-build-${{ matrix.arch }}.log
+          if-no-files-found: warn
+          retention-days: 14
 
       - name: Upload artifacts
         uses: actions/upload-artifact@v4
@@ -75,4 +87,3 @@ jobs:
             desktop/novelcraft/dist/*-mac-${{ matrix.arch }}.zip.blockmap
           if-no-files-found: error
           retention-days: 14
-
