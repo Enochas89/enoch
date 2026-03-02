@@ -15,7 +15,7 @@ import {
 
 export const metadata = {
   title: "Software",
-  description: "NovelCraft Pro storyboarding and writing software for Windows.",
+  description: "NovelCraft Pro storyboarding and writing software for Windows and macOS beta.",
 };
 
 const appCards = [
@@ -73,8 +73,14 @@ const featureList = [
   "DOCX import with app-format normalization for reliable styling",
   "Movable and collapsible toolbars with a dockable tool nest",
   "Scene metadata, outliner filtering, and review utilities",
-  "Windows installer distribution with project save and export workflow",
+  "Windows stable installer and macOS beta builds (Intel + Apple Silicon)",
 ];
+
+const DOWNLOADS = {
+  windows: "/downloads/NovelCraft-Pro-Setup-1.0.1.exe",
+  macArm64: "https://github.com/Enochas89/enoch/releases/download/novelcraft-v1.0.1-beta/NovelCraft-Pro-macOS-arm64-1.0.1.dmg",
+  macX64: "https://github.com/Enochas89/enoch/releases/download/novelcraft-v1.0.1-beta/NovelCraft-Pro-macOS-x64-1.0.1.dmg",
+};
 
 export default function SoftwarePage() {
   return (
@@ -92,11 +98,25 @@ export default function SoftwarePage() {
             </p>
             <div className="flex flex-wrap gap-3">
               <a
-                href="/downloads/NovelCraft-Pro-Setup-1.0.1.exe"
+                href={DOWNLOADS.windows}
                 className="inline-flex items-center gap-2 bg-teal-400 text-slate-950 px-6 py-3 text-sm font-bold uppercase tracking-[0.14em] hover:bg-teal-300 transition-colors"
               >
                 <Download className="w-4 h-4" />
                 Download for Windows
+              </a>
+              <a
+                href={DOWNLOADS.macArm64}
+                className="inline-flex items-center gap-2 bg-slate-100 text-slate-900 px-6 py-3 text-sm font-bold uppercase tracking-[0.14em] hover:bg-white transition-colors"
+              >
+                <Download className="w-4 h-4" />
+                macOS (Apple Silicon) Beta
+              </a>
+              <a
+                href={DOWNLOADS.macX64}
+                className="inline-flex items-center gap-2 bg-slate-100 text-slate-900 px-6 py-3 text-sm font-bold uppercase tracking-[0.14em] hover:bg-white transition-colors"
+              >
+                <Download className="w-4 h-4" />
+                macOS (Intel) Beta
               </a>
               <a
                 href="/contact"
@@ -107,6 +127,7 @@ export default function SoftwarePage() {
             </div>
             <div className="flex flex-wrap gap-5 text-xs uppercase tracking-[0.13em] text-slate-300">
               <span className="inline-flex items-center gap-2"><MonitorSmartphone className="w-4 h-4 text-teal-300" /> Windows x64</span>
+              <span className="inline-flex items-center gap-2"><MonitorSmartphone className="w-4 h-4 text-teal-300" /> macOS beta (Intel + Apple Silicon)</span>
               <span className="inline-flex items-center gap-2"><Sparkles className="w-4 h-4 text-teal-300" /> Version 1.0.1</span>
             </div>
           </div>
@@ -143,10 +164,10 @@ export default function SoftwarePage() {
               <h2 className="text-3xl md:text-4xl font-serif text-slate-900">See the Core Workflows</h2>
             </div>
             <a
-              href="/downloads/NovelCraft-Pro-Setup-1.0.1.exe"
+              href={DOWNLOADS.windows}
               className="inline-flex items-center gap-2 text-sm font-bold uppercase tracking-[0.12em] text-slate-700 hover:text-slate-950"
             >
-              Download Installer
+              Download Windows Installer
               <ArrowRight className="w-4 h-4" />
             </a>
           </div>
@@ -184,7 +205,7 @@ export default function SoftwarePage() {
                 so writers can stay focused without switching tools.
               </p>
               <a
-                href="/downloads/NovelCraft-Pro-Setup-1.0.1.exe"
+                href={DOWNLOADS.windows}
                 className="inline-flex items-center gap-2 bg-slate-900 text-white px-5 py-3 text-xs font-bold uppercase tracking-[0.14em] hover:bg-slate-800 transition-colors"
               >
                 <Download className="w-4 h-4" />
@@ -211,15 +232,31 @@ export default function SoftwarePage() {
             <div className="space-y-2">
               <p className="text-xs font-bold uppercase tracking-[0.2em] text-teal-300">Ready to Install</p>
               <h2 className="text-3xl font-serif">Download NovelCraft Pro</h2>
-              <p className="text-slate-300">Windows x64 installer, version 1.0.1, creator: CerebFastThinkTank.</p>
+              <p className="text-slate-300">Windows stable + macOS beta (unsigned), version 1.0.1, creator: CerebFastThinkTank.</p>
             </div>
-            <a
-              href="/downloads/NovelCraft-Pro-Setup-1.0.1.exe"
-              className="inline-flex items-center justify-center gap-2 bg-teal-400 text-slate-950 px-6 py-3 text-sm font-bold uppercase tracking-[0.14em] hover:bg-teal-300 transition-colors whitespace-nowrap"
-            >
-              <Download className="w-4 h-4" />
-              Download Now
-            </a>
+            <div className="flex flex-wrap gap-3">
+              <a
+                href={DOWNLOADS.windows}
+                className="inline-flex items-center justify-center gap-2 bg-teal-400 text-slate-950 px-6 py-3 text-sm font-bold uppercase tracking-[0.14em] hover:bg-teal-300 transition-colors whitespace-nowrap"
+              >
+                <Download className="w-4 h-4" />
+                Windows x64
+              </a>
+              <a
+                href={DOWNLOADS.macArm64}
+                className="inline-flex items-center justify-center gap-2 border border-slate-400 text-slate-100 px-6 py-3 text-sm font-bold uppercase tracking-[0.14em] hover:border-slate-100 transition-colors whitespace-nowrap"
+              >
+                <Download className="w-4 h-4" />
+                macOS Apple Silicon Beta
+              </a>
+              <a
+                href={DOWNLOADS.macX64}
+                className="inline-flex items-center justify-center gap-2 border border-slate-400 text-slate-100 px-6 py-3 text-sm font-bold uppercase tracking-[0.14em] hover:border-slate-100 transition-colors whitespace-nowrap"
+              >
+                <Download className="w-4 h-4" />
+                macOS Intel Beta
+              </a>
+            </div>
           </div>
         </div>
       </section>
@@ -230,25 +267,37 @@ export default function SoftwarePage() {
             <div className="flex items-start gap-3">
               <AlertTriangle className="w-5 h-5 text-amber-700 mt-0.5 shrink-0" />
               <div>
-                <h2 className="text-2xl font-serif text-slate-900">Download Instructions</h2>
+                <h2 className="text-2xl font-serif text-slate-900">Download and Install Instructions</h2>
                 <p className="text-slate-700 mt-1">
-                  Follow these steps to install NovelCraft Pro on Windows.
+                  Follow these steps for Windows stable or macOS beta.
                 </p>
               </div>
             </div>
 
-            <ol className="space-y-3 text-slate-700 list-decimal pl-5">
-              <li>
-                Click <strong>Download for Windows</strong> and save
-                <code className="ml-1 bg-white border border-slate-300 px-1.5 py-0.5 rounded text-[12px]">NovelCraft-Pro-Setup-1.0.1.exe</code>.
-              </li>
-              <li>Open the downloaded installer file.</li>
-              <li>
-                If Windows SmartScreen appears, click <strong>More info</strong> and then <strong>Run anyway</strong>.
-              </li>
-              <li>Choose install directory and complete setup.</li>
-              <li>Launch NovelCraft Pro from your desktop shortcut.</li>
-            </ol>
+            <div className="grid gap-6 md:grid-cols-2">
+              <div className="space-y-3">
+                <h3 className="text-lg font-semibold text-slate-900">Windows x64 (Stable)</h3>
+                <ol className="space-y-2 text-slate-700 list-decimal pl-5">
+                  <li>
+                    Click <strong>Download for Windows</strong> and save
+                    <code className="ml-1 bg-white border border-slate-300 px-1.5 py-0.5 rounded text-[12px]">NovelCraft-Pro-Setup-1.0.1.exe</code>.
+                  </li>
+                  <li>Open the downloaded installer file.</li>
+                  <li>If Windows SmartScreen appears, click <strong>More info</strong> then <strong>Run anyway</strong>.</li>
+                  <li>Choose install directory and complete setup.</li>
+                  <li>Launch NovelCraft Pro from your desktop shortcut.</li>
+                </ol>
+              </div>
+              <div className="space-y-3">
+                <h3 className="text-lg font-semibold text-slate-900">macOS Beta (Unsigned)</h3>
+                <ol className="space-y-2 text-slate-700 list-decimal pl-5">
+                  <li>Download the correct build: Apple Silicon or Intel.</li>
+                  <li>Open the `.dmg` and drag <strong>NovelCraft Pro</strong> to <strong>Applications</strong>.</li>
+                  <li>On first launch, right-click the app and choose <strong>Open</strong>, then choose <strong>Open</strong> again.</li>
+                  <li>If blocked, go to <strong>System Settings → Privacy &amp; Security</strong> and click <strong>Open Anyway</strong>.</li>
+                </ol>
+              </div>
+            </div>
 
             <div className="text-sm text-slate-600">
               Need help? Contact support from the <a href="/contact" className="underline font-semibold text-slate-800">Contact page</a>.
