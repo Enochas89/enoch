@@ -87,8 +87,8 @@ export default function SoftwarePage() {
   return (
     <div className="bg-white">
       <section className="pt-24 pb-20 md:pt-36 bg-gradient-to-b from-slate-950 via-slate-900 to-slate-800 text-white">
-        <div className="max-w-6xl mx-auto px-6 grid gap-10 lg:grid-cols-12 lg:items-center">
-          <div className="lg:col-span-6 space-y-6">
+        <div className="max-w-6xl mx-auto px-6 space-y-8">
+          <div className="space-y-6">
             <p className="text-xs font-bold uppercase tracking-[0.24em] text-teal-300">What&apos;s New</p>
             <h1 className="text-4xl md:text-6xl font-serif leading-tight">
               NovelCraft Pro
@@ -132,14 +132,15 @@ export default function SoftwarePage() {
               <span className="inline-flex items-center gap-2"><Sparkles className="w-4 h-4 text-teal-300" /> Version 1.0.1</span>
             </div>
           </div>
-          <div className="lg:col-span-6">
-            <div className="relative aspect-[19/10] overflow-hidden rounded-xl border border-slate-700 bg-slate-950 shadow-2xl">
+          <div>
+            <div className="overflow-hidden rounded-xl border border-slate-700 bg-slate-950 shadow-2xl">
               <Image
-                src="/images/software/novelcraft-overview.png"
-                alt="NovelCraft Pro application overview"
-                fill
-                className="object-contain object-top"
-                sizes="(max-width: 1024px) 100vw, 48vw"
+                src="/images/software/novelcraft-main-hero.png"
+                alt="NovelCraft Pro full workspace with project content and storyboard timeline"
+                width={2554}
+                height={1347}
+                className="w-full h-auto object-contain"
+                sizes="100vw"
                 priority
               />
             </div>
