@@ -1,0 +1,61 @@
+NovelCraft Pro - Third Party Notices
+Generated: 2026-02-28
+
+This product includes third-party software components.
+The NovelCraft Pro application source and branding are proprietary and licensed under the
+terms in the root LICENSE file.
+
+1) Direct runtime dependencies (bundled with the desktop app)
+
+- electron@32.3.3
+  License: MIT
+  Repository: https://github.com/electron/electron
+  License text: licenses/LICENSE-electron-MIT.txt
+
+- electron-builder@25.1.8
+  License: MIT
+  Repository: https://github.com/electron-userland/electron-builder
+
+- docx@9.6.0
+  License: MIT
+  Repository: https://github.com/dolanmiu/docx
+  License text: licenses/LICENSE-docx-MIT.txt
+
+2) CDN/browser components referenced by index.html
+
+- Tailwind CSS (loaded from https://cdn.tailwindcss.com)
+  License: MIT
+  License text: licenses/LICENSE-tailwindcss-MIT.txt
+
+- Font Awesome Free 6.4.0 (loaded from cdnjs)
+  Licenses: Code MIT, Fonts SIL OFL 1.1, Icons CC BY 4.0
+  License text: licenses/LICENSE-font-awesome-free.txt
+  Attribution: "Font Awesome Free 6.4.0 by @fontawesome - https://fontawesome.com"
+
+- Mammoth.js 1.6.0 (loaded from cdnjs)
+  License: BSD-2-Clause
+  License text: licenses/LICENSE-mammoth-BSD-2-Clause.txt
+
+3) Dual-license election
+
+The following dependencies provide license choices. This project elects the MIT option:
+
+- jszip@3.10.1 (MIT OR GPL-3.0-or-later), transitive via docx -> MIT
+  License file copy: licenses/LICENSE-jszip-MIT-or-GPL3.txt
+
+4) Additional non-MIT licenses present in transitive dependencies
+
+- pako@1.0.11 (MIT AND Zlib), transitive via jszip
+
+- sax@1.4.4 (BlueOak-1.0.0), transitive via docx
+  License file copy: licenses/LICENSE-sax-BlueOak-1.0.0.txt
+
+5) Full transitive inventory
+
+For the full production dependency list and declared licenses, see:
+
+- THIRD_PARTY_DEPENDENCIES.csv
+
+To regenerate:
+
+- npm run licenses:inventory

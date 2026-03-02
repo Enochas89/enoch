@@ -1,0 +1,92 @@
+{
+  "name": "novelcraft-pro-desktop",
+  "version": "1.0.1",
+  "description": "NovelCraft Pro desktop app for Windows and macOS",
+  "main": "main.js",
+  "author": "CerebFastThinkTank",
+  "license": "UNLICENSED",
+  "scripts": {
+    "start": "electron .",
+    "build:win": "electron-builder --win --x64",
+    "build:win:signed": "powershell -ExecutionPolicy Bypass -File .\\scripts\\build-signed.ps1",
+    "build:portable": "electron-builder --win portable --x64",
+    "build:mac": "electron-builder --mac dmg zip --x64 --arm64",
+    "build:mac:x64": "electron-builder --mac dmg zip --x64",
+    "build:mac:arm64": "electron-builder --mac dmg zip --arm64",
+    "signing:check": "powershell -ExecutionPolicy Bypass -File .\\scripts\\check-signing.ps1",
+    "licenses:inventory": "npx --yes license-checker --production --csv --out THIRD_PARTY_DEPENDENCIES.csv"
+  },
+  "dependencies": {
+    "docx": "^9.5.1"
+  },
+  "devDependencies": {
+    "@electron/notarize": "^2.5.0",
+    "electron": "^32.2.1",
+    "electron-builder": "^25.1.8",
+    "png-to-ico": "^3.0.1"
+  },
+  "build": {
+    "appId": "com.storyarc.novelcraftpro",
+    "productName": "NovelCraft Pro",
+    "icon": "icon.png",
+    "directories": {
+      "output": "dist",
+      "buildResources": "build"
+    },
+    "files": [
+      "main.js",
+      "preload.js",
+      "index.html",
+      "package.json",
+      "LICENSE",
+      "THIRD_PARTY_NOTICES.txt",
+      "THIRD_PARTY_DEPENDENCIES.csv",
+      "licenses/**"
+    ],
+    "afterSign": "scripts/notarize.js",
+    "win": {
+      "icon": "build/icon.ico",
+      "signAndEditExecutable": false,
+      "target": [
+        {
+          "target": "nsis",
+          "arch": [
+            "x64"
+          ]
+        }
+      ],
+      "artifactName": "${productName}-Setup-${version}.${ext}"
+    },
+    "mac": {
+      "icon": "build/icon.icns",
+      "category": "public.app-category.productivity",
+      "hardenedRuntime": true,
+      "gatekeeperAssess": false,
+      "entitlements": "build/entitlements.mac.plist",
+      "entitlementsInherit": "build/entitlements.mac.plist",
+      "target": [
+        {
+          "target": "dmg",
+          "arch": [
+            "x64",
+            "arm64"
+          ]
+        },
+        {
+          "target": "zip",
+          "arch": [
+            "x64",
+            "arm64"
+          ]
+        }
+      ],
+      "artifactName": "${productName}-${version}-mac-${arch}.${ext}"
+    },
+    "nsis": {
+      "oneClick": false,
+      "allowToChangeInstallationDirectory": true,
+      "createDesktopShortcut": true,
+      "shortcutName": "NovelCraft Pro"
+    }
+  }
+}
