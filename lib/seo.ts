@@ -22,6 +22,9 @@ export const defaultMetadata = {
   },
   description: siteMetadata.description,
   metadataBase: new URL(siteMetadata.siteUrl),
+  verification: {
+    google: "-KOCdeBAmOjSAghAjAACG-TYU_C3cm1oLpiDY7wO_kU",
+  },
   openGraph: {
     type: "website",
     locale: siteMetadata.locale,
