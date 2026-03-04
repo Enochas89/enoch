@@ -4,6 +4,8 @@ const staticPaths = [
   "/",
   "/about",
   "/enoch-schmaltz",
+  "/enoch-schmaltz-author",
+  "/enoch-schmaltz-developer",
   "/who-is-enoch-schmaltz",
   "/enoch-schmaltz-biography",
   "/enoch-schmaltz-writing",
