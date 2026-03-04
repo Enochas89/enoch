@@ -6,6 +6,16 @@ export const metadata: Metadata = {
   title: "Enoch Schmaltz | Writer, Developer, and Project Systems Builder",
   description:
     "Professional profile for Enoch Schmaltz: writer, developer, and project systems builder focused on execution, visibility, and accountability in complex environments.",
+  alternates: {
+    canonical: "https://enochschmaltz.com/enoch-schmaltz",
+  },
+  openGraph: {
+    type: "profile",
+    url: "https://enochschmaltz.com/enoch-schmaltz",
+    title: "Enoch Schmaltz | Writer, Developer, and Project Systems Builder",
+    description:
+      "Professional profile for Enoch Schmaltz: writer, developer, and project systems builder focused on execution, visibility, and accountability in complex environments.",
+  },
 };
 
 export default function EnochSchmaltzPage() {
@@ -148,6 +158,40 @@ export default function EnochSchmaltzPage() {
               https://enochschmaltz.com
             </a>
           </p>
+        </div>
+      </section>
+
+      <section className="py-12 border-t border-slate-100">
+        <div className="max-w-5xl mx-auto px-6 space-y-3">
+          <h2 className="text-2xl font-serif font-semibold text-slate-900">
+            More Enoch Schmaltz Pages
+          </h2>
+          <ul className="space-y-2 text-slate-700">
+            <li>
+              <Link
+                href="/enoch-schmaltz-writing"
+                className="text-teal-700 hover:text-teal-800 underline underline-offset-4"
+              >
+                /enoch-schmaltz-writing
+              </Link>
+            </li>
+            <li>
+              <Link
+                href="/enoch-schmaltz-projects"
+                className="text-teal-700 hover:text-teal-800 underline underline-offset-4"
+              >
+                /enoch-schmaltz-projects
+              </Link>
+            </li>
+            <li>
+              <Link
+                href="/enoch-schmaltz-links"
+                className="text-teal-700 hover:text-teal-800 underline underline-offset-4"
+              >
+                /enoch-schmaltz-links
+              </Link>
+            </li>
+          </ul>
         </div>
       </section>
 

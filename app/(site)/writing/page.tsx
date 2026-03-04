@@ -3,10 +3,20 @@ import { FileText, Lightbulb, MessageSquare } from "lucide-react";
 import Filters from "@/components/Filters";
 import { getAllWriting } from "@/lib/content/writing";
 import { unique } from "@/lib/utils";
+import type { Metadata } from "next";
 
-export const metadata = {
-  title: "Writing",
+export const metadata: Metadata = {
+  title: "Writing \u2014 Enoch Schmaltz",
   description: "Essays, explainers, and commentary from E.A. Schmaltz.",
+  alternates: {
+    canonical: "https://enochschmaltz.com/writing",
+  },
+  openGraph: {
+    type: "website",
+    url: "https://enochschmaltz.com/writing",
+    title: "Writing \u2014 Enoch Schmaltz",
+    description: "Essays, explainers, and commentary from E.A. Schmaltz.",
+  },
 };
 
 export default async function WritingPage() {

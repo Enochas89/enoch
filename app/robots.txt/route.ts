@@ -3,6 +3,10 @@ import { siteMetadata } from "@/lib/seo";
 export function GET() {
   const body = `User-agent: *
 Allow: /
+Allow: /about
+Allow: /enoch-schmaltz
+Allow: /writing
+Allow: /projects
 
 Sitemap: ${siteMetadata.siteUrl}/sitemap.xml
 `;

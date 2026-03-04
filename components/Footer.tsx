@@ -35,8 +35,11 @@ export default function Footer() {
             </h4>
             <ul className="space-y-2 text-sm text-slate-200">
               <li><Link href="/" className="hover:text-teal-200 transition-colors">Home</Link></li>
+              <li><Link href="/writing" className="hover:text-teal-200 transition-colors">Writing</Link></li>
+              <li><Link href="/projects" className="hover:text-teal-200 transition-colors">Projects</Link></li>
               <li><Link href="/software" className="hover:text-teal-200 transition-colors">Software</Link></li>
               <li><Link href="/about" className="hover:text-teal-200 transition-colors">About</Link></li>
+              <li><Link href="/enoch-schmaltz" className="hover:text-teal-200 transition-colors">Enoch Schmaltz</Link></li>
               <li><Link href="/books" className="hover:text-teal-200 transition-colors">Books</Link></li>
               <li><Link href="/press" className="hover:text-teal-200 transition-colors">Press</Link></li>
               <li><Link href="/contact" className="hover:text-teal-200 transition-colors">Contact</Link></li>
