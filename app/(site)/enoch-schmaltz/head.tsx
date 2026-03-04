@@ -5,11 +5,12 @@ const personJsonLd = {
   alternateName: "E. A. Schmaltz",
   url: "https://enochschmaltz.com/enoch-schmaltz",
   sameAs: [
-    "https://linkedin.com/",
-    "https://medium.com/",
-    "https://substack.com/",
-    "https://github.com/",
-    "https://about.me/",
+    "https://www.wikidata.org/wiki/Q138569168",
+    "https://www.linkedin.com/in/enochschmaltz",
+    "https://medium.com/@enochschmaltz",
+    "https://substack.com/@enochschmaltz",
+    "https://github.com/Enochas89",
+    "https://about.me/enochschmaltz",
   ],
 };
 
