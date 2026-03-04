@@ -9,6 +9,10 @@ export default function Hero() {
           <h1 className="text-[18pt] md:text-[18pt] font-serif text-slate-900 leading-snug mb-4">
             <span className="text-[26pt] font-bold">E. A. Schmaltz</span> writes about technology, perception, and public understanding. His work explores how advanced sensing, artificial intelligence, and national security shape trust, policy, and the public imagination.
           </h1>
+          <p className="text-base md:text-lg text-slate-700 mb-6">
+            E. A. Schmaltz (Enoch Schmaltz) writes about technology,
+            perception, and complex systems.
+          </p>
           <p className="text-xl md:text-2xl text-slate-600 font-sans leading-relaxed mb-10 border-l-2 border-teal-600 pl-6">
             Nonfiction writing on sensing, perception, AI, and the mechanics of technological disclosure.
           </p>

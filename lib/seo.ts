@@ -4,7 +4,7 @@ export const siteMetadata = {
   title: "E. A. Schmaltz",
   description:
     "Author and analyst examining power, technology, and the cultural weather. Essays, books, and media by E. A. Schmaltz.",
-  siteUrl: process.env.NEXT_PUBLIC_SITE_URL || "https://easchmaltz.com",
+  siteUrl: process.env.NEXT_PUBLIC_SITE_URL || "https://enochschmaltz.com",
   locale: "en_US",
   twitterHandle: "@easchmaltz",
 };
