@@ -2,8 +2,8 @@ import { absoluteUrl } from "@/lib/seo";
 
 const staticPaths = [
   "/",
-  "/about",
   "/enoch-schmaltz",
+  "/about",
   "/enoch-schmaltz-author",
   "/enoch-schmaltz-developer",
   "/who-is-enoch-schmaltz",

@@ -1,5 +1,6 @@
 import Image from "next/image";
 import type { ReactNode } from "react";
+import Link from "next/link";
 import {
   AlertTriangle,
   ArrowRight,
@@ -12,6 +13,7 @@ import {
   Sparkles,
   Workflow,
 } from "lucide-react";
+import AuthorIdentityLink from "@/components/AuthorIdentityLink";
 
 export const metadata = {
   title: "Software",
@@ -306,6 +308,18 @@ export default function SoftwarePage() {
               Need help? Contact support from the <a href="/contact" className="underline font-semibold text-slate-800">Contact page</a>.
             </div>
           </div>
+        </div>
+      </section>
+
+      <section className="pb-16">
+        <div className="max-w-6xl mx-auto px-6 space-y-2">
+          <AuthorIdentityLink className="text-sm text-slate-700" />
+          <Link
+            href="/enoch-schmaltz"
+            className="text-sm text-teal-700 hover:text-teal-800 underline underline-offset-4"
+          >
+            Learn more about Enoch Schmaltz
+          </Link>
         </div>
       </section>
     </div>

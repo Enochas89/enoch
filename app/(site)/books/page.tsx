@@ -1,6 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { getAllBooks } from "@/lib/content/books";
+import AuthorIdentityLink from "@/components/AuthorIdentityLink";
 
 export const metadata = {
   title: "Books",
@@ -58,6 +59,15 @@ export default function BooksPage() {
                 </div>
               </div>
             ))}
+          </div>
+          <div className="mt-10 space-y-2">
+            <AuthorIdentityLink className="text-sm text-slate-700" />
+            <Link
+              href="/enoch-schmaltz"
+              className="text-sm text-teal-700 hover:text-teal-800 underline underline-offset-4"
+            >
+              Learn more about Enoch Schmaltz
+            </Link>
           </div>
         </div>
       </section>

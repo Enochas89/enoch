@@ -4,6 +4,8 @@ import NewsletterSection from "@/components/NewsletterSection";
 import { getAllWriting } from "@/lib/content/writing";
 import { getAllBooks } from "@/lib/content/books";
 import SubstackFeed from "@/components/SubstackFeed";
+import AuthorIdentityLink from "@/components/AuthorIdentityLink";
+import Link from "next/link";
 
 export default async function HomePage() {
   const writing = await getAllWriting();
@@ -13,6 +15,17 @@ export default async function HomePage() {
   return (
     <div className="bg-white">
       <Hero />
+      <section className="py-6 border-b border-slate-100">
+        <div className="max-w-6xl mx-auto px-6 flex flex-wrap items-center justify-between gap-3">
+          <AuthorIdentityLink className="text-sm text-slate-700" />
+          <Link
+            href="/enoch-schmaltz"
+            className="text-sm text-teal-700 hover:text-teal-800 underline underline-offset-4"
+          >
+            Learn more about Enoch Schmaltz
+          </Link>
+        </div>
+      </section>
       {books.length > 0 && (
         <section className="py-16">
           <div className="max-w-6xl mx-auto px-6 space-y-6">

@@ -1,6 +1,7 @@
 import Link from "next/link";
 import type { Metadata } from "next";
 import { getAllBooks } from "@/lib/content/books";
+import AuthorIdentityLink from "@/components/AuthorIdentityLink";
 
 export const metadata: Metadata = {
   title: "Press & Media Kit",
@@ -103,6 +104,18 @@ Author interviews, book information, and media resources.
           <p className="text-slate-700">
             High-resolution images, author photos, and book covers available upon request.
           </p>
+        </div>
+      </section>
+
+      <section className="py-8 border-b border-slate-100">
+        <div className="max-w-5xl mx-auto px-6 space-y-2">
+          <AuthorIdentityLink className="text-sm text-slate-700" />
+          <Link
+            href="/enoch-schmaltz"
+            className="text-sm text-teal-700 hover:text-teal-800 underline underline-offset-4"
+          >
+            About Enoch Schmaltz
+          </Link>
         </div>
       </section>
 

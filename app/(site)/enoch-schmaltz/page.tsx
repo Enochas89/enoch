@@ -195,6 +195,53 @@ export default function EnochSchmaltzPage() {
         </div>
       </section>
 
+      <section className="py-10 border-t border-slate-100">
+        <div className="max-w-5xl mx-auto px-6">
+          <ul className="flex flex-wrap gap-4 text-sm">
+            <li>
+              <Link
+                href="/"
+                className="text-teal-700 hover:text-teal-800 underline underline-offset-4"
+              >
+                Home
+              </Link>
+            </li>
+            <li>
+              <Link
+                href="/books"
+                className="text-teal-700 hover:text-teal-800 underline underline-offset-4"
+              >
+                Books
+              </Link>
+            </li>
+            <li>
+              <Link
+                href="/software"
+                className="text-teal-700 hover:text-teal-800 underline underline-offset-4"
+              >
+                Software
+              </Link>
+            </li>
+            <li>
+              <Link
+                href="/writing"
+                className="text-teal-700 hover:text-teal-800 underline underline-offset-4"
+              >
+                Writing
+              </Link>
+            </li>
+            <li>
+              <Link
+                href="/projects"
+                className="text-teal-700 hover:text-teal-800 underline underline-offset-4"
+              >
+                Projects
+              </Link>
+            </li>
+          </ul>
+        </div>
+      </section>
+
       <NewsletterSection />
     </div>
   );

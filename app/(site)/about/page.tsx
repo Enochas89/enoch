@@ -1,4 +1,5 @@
 import NewsletterSection from "@/components/NewsletterSection";
+import AuthorIdentityLink from "@/components/AuthorIdentityLink";
 import Image from "next/image";
 import Link from "next/link";
 import type { Metadata } from "next";
@@ -61,6 +62,17 @@ export default function AboutPage() {
               </div>
             </div>
           </div>
+        </div>
+      </section>
+      <section className="pb-10">
+        <div className="max-w-6xl mx-auto px-6 space-y-2">
+          <AuthorIdentityLink className="text-sm text-slate-700" />
+          <Link
+            href="/enoch-schmaltz"
+            className="text-sm text-teal-700 hover:text-teal-800 underline underline-offset-4"
+          >
+            About Enoch Schmaltz
+          </Link>
         </div>
       </section>
       <NewsletterSection />
