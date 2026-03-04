@@ -5,6 +5,11 @@ export function GET() {
 Allow: /
 Allow: /about
 Allow: /enoch-schmaltz
+Allow: /enoch-schmaltz-writing
+Allow: /enoch-schmaltz-projects
+Allow: /enoch-schmaltz-links
+Allow: /who-is-enoch-schmaltz
+Allow: /enoch-schmaltz-biography
 Allow: /writing
 Allow: /projects
 

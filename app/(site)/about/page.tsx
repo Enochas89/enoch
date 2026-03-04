@@ -4,9 +4,12 @@ import Link from "next/link";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "About the Author — E. A. Schmaltz",
+  title: "About the Author \u2014 E. A. Schmaltz",
   description:
     "About the author E. A. Schmaltz: books, writing, and technology commentary on perception and policy themes, including Puppet Skies and Controlled Release.",
+  alternates: {
+    canonical: "https://enochschmaltz.com/about",
+  },
 };
 
 export default function AboutPage() {
@@ -64,3 +67,4 @@ export default function AboutPage() {
     </div>
   );
 }
+
