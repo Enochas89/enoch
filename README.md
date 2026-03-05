@@ -92,3 +92,8 @@ Page: `/media` with filter pills.
 - Keep file names slugged (`YYYY-MM-DD-title.mdx`) to preserve URLs.
 - Use `topics` consistently to make filters useful.
 - Replace the placeholder social image at `public/images/social-card.png` if you add one.
+
+## SEO endpoint check
+- Run `npm run dev`.
+- Open `http://localhost:3000/sitemap.xml` and confirm pages are listed.
+- Open `http://localhost:3000/robots.txt` and confirm it references `https://enochschmaltz.com/sitemap.xml`.
