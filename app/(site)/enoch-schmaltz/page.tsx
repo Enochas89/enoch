@@ -1,4 +1,5 @@
 import NewsletterSection from "@/components/NewsletterSection";
+import JsonLd from "@/components/JsonLd";
 import Link from "next/link";
 import type { Metadata } from "next";
 
@@ -7,7 +8,7 @@ export const metadata: Metadata = {
   description:
     "Professional profile for Enoch Schmaltz: writer, developer, and project systems builder focused on execution, visibility, and accountability in complex environments.",
   alternates: {
-    canonical: "https://enochschmaltz.com/enoch-schmaltz",
+    canonical: "/enoch-schmaltz",
   },
   openGraph: {
     type: "profile",
@@ -18,9 +19,26 @@ export const metadata: Metadata = {
   },
 };
 
+const enochArticleJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "Article",
+  headline: "Enoch Schmaltz | Writer, Developer, and Project Systems Builder",
+  author: {
+    "@id": "https://enochschmaltz.com/#enoch-schmaltz",
+  },
+  publisher: {
+    "@type": "Organization",
+    name: "E. A. Schmaltz",
+    url: "https://enochschmaltz.com",
+  },
+  mainEntityOfPage: "https://enochschmaltz.com/enoch-schmaltz",
+  inLanguage: "en-US",
+};
+
 export default function EnochSchmaltzPage() {
   return (
     <div className="bg-white">
+      <JsonLd data={enochArticleJsonLd} />
       <section className="pt-24 pb-12 md:pt-32 border-b border-slate-100">
         <div className="max-w-5xl mx-auto px-6 space-y-6">
           <h1 className="text-4xl md:text-5xl font-serif font-semibold text-slate-900">

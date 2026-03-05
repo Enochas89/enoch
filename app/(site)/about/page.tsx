@@ -1,5 +1,6 @@
 import NewsletterSection from "@/components/NewsletterSection";
 import AuthorIdentityLink from "@/components/AuthorIdentityLink";
+import JsonLd from "@/components/JsonLd";
 import Image from "next/image";
 import Link from "next/link";
 import type { Metadata } from "next";
@@ -9,13 +10,30 @@ export const metadata: Metadata = {
   description:
     "About the author E. A. Schmaltz: books, writing, and technology commentary on perception and policy themes, including Puppet Skies and Controlled Release.",
   alternates: {
-    canonical: "https://enochschmaltz.com/about",
+    canonical: "/about",
   },
+};
+
+const aboutArticleJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "Article",
+  headline: "About the Author — E. A. Schmaltz",
+  author: {
+    "@id": "https://enochschmaltz.com/#enoch-schmaltz",
+  },
+  publisher: {
+    "@type": "Organization",
+    name: "E. A. Schmaltz",
+    url: "https://enochschmaltz.com",
+  },
+  mainEntityOfPage: "https://enochschmaltz.com/about",
+  inLanguage: "en-US",
 };
 
 export default function AboutPage() {
   return (
     <div className="bg-white">
+      <JsonLd data={aboutArticleJsonLd} />
       <section className="pt-32 pb-20 md:pt-48">
         <div className="max-w-6xl mx-auto px-6">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-16">

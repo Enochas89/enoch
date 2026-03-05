@@ -1,6 +1,7 @@
 import React from "react";
 import { FileText, Lightbulb, MessageSquare } from "lucide-react";
 import Filters from "@/components/Filters";
+import JsonLd from "@/components/JsonLd";
 import { getAllWriting } from "@/lib/content/writing";
 import { unique } from "@/lib/utils";
 import type { Metadata } from "next";
@@ -9,7 +10,7 @@ export const metadata: Metadata = {
   title: "Writing \u2014 Enoch Schmaltz",
   description: "Essays, explainers, and commentary from E.A. Schmaltz.",
   alternates: {
-    canonical: "https://enochschmaltz.com/writing",
+    canonical: "/writing",
   },
   openGraph: {
     type: "website",
@@ -19,6 +20,22 @@ export const metadata: Metadata = {
   },
 };
 
+const writingArticleJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "Article",
+  headline: "Writing — Enoch Schmaltz",
+  author: {
+    "@id": "https://enochschmaltz.com/#enoch-schmaltz",
+  },
+  publisher: {
+    "@type": "Organization",
+    name: "E. A. Schmaltz",
+    url: "https://enochschmaltz.com",
+  },
+  mainEntityOfPage: "https://enochschmaltz.com/writing",
+  inLanguage: "en-US",
+};
+
 export default async function WritingPage() {
   const writing = await getAllWriting();
   const topics = unique(writing.flatMap((item) => item.topics));
@@ -26,6 +43,7 @@ export default async function WritingPage() {
 
   return (
     <div className="bg-white">
+      <JsonLd data={writingArticleJsonLd} />
       <section className="pt-32 pb-12 md:pt-48">
         <div className="max-w-6xl mx-auto px-6">
           <div className="max-w-3xl mb-16">

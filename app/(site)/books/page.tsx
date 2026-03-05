@@ -2,10 +2,31 @@ import Image from "next/image";
 import Link from "next/link";
 import { getAllBooks } from "@/lib/content/books";
 import AuthorIdentityLink from "@/components/AuthorIdentityLink";
+import JsonLd from "@/components/JsonLd";
+import type { Metadata } from "next";
 
-export const metadata = {
+export const metadata: Metadata = {
   title: "Books",
   description: "Books by E.A. Schmaltz",
+  alternates: {
+    canonical: "/books",
+  },
+};
+
+const booksArticleJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "Article",
+  headline: "Books — E. A. Schmaltz",
+  author: {
+    "@id": "https://enochschmaltz.com/#enoch-schmaltz",
+  },
+  publisher: {
+    "@type": "Organization",
+    name: "E. A. Schmaltz",
+    url: "https://enochschmaltz.com",
+  },
+  mainEntityOfPage: "https://enochschmaltz.com/books",
+  inLanguage: "en-US",
 };
 
 export default function BooksPage() {
@@ -13,6 +34,7 @@ export default function BooksPage() {
 
   return (
     <div className="bg-white">
+      <JsonLd data={booksArticleJsonLd} />
       <section className="pt-32 pb-20 md:pt-48">
         <div className="max-w-6xl mx-auto px-6">
           <div className="max-w-3xl mb-12">

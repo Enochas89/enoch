@@ -1,5 +1,6 @@
 import Link from "next/link";
 import type { Metadata } from "next";
+import JsonLd from "@/components/JsonLd";
 
 export const metadata: Metadata = {
   title: "Writing by Enoch Schmaltz",
@@ -10,9 +11,26 @@ export const metadata: Metadata = {
   },
 };
 
+const enochWritingArticleJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "Article",
+  headline: "Writing — Enoch Schmaltz",
+  author: {
+    "@id": "https://enochschmaltz.com/#enoch-schmaltz",
+  },
+  publisher: {
+    "@type": "Organization",
+    name: "E. A. Schmaltz",
+    url: "https://enochschmaltz.com",
+  },
+  mainEntityOfPage: "https://enochschmaltz.com/enoch-schmaltz-writing",
+  inLanguage: "en-US",
+};
+
 export default function EnochSchmaltzWritingPage() {
   return (
     <div className="bg-white">
+      <JsonLd data={enochWritingArticleJsonLd} />
       <section className="pt-24 pb-16 md:pt-32">
         <div className="max-w-5xl mx-auto px-6 space-y-5">
           <h1 className="text-4xl md:text-5xl font-serif font-semibold text-slate-900">
