@@ -19,8 +19,12 @@ const geistMono = Geist_Mono({
 const webSiteJsonLd = {
   "@context": "https://schema.org",
   "@type": "WebSite",
+  "@id": "https://enochschmaltz.com/#website",
   name: "E. A. Schmaltz",
   url: "https://enochschmaltz.com",
+  publisher: {
+    "@id": "https://enochschmaltz.com/#author",
+  },
   inLanguage: "en-US",
 };
 
@@ -35,14 +39,21 @@ const organizationJsonLd = {
 const personJsonLd = {
   "@context": "https://schema.org",
   "@type": "Person",
-  "@id": "https://enochschmaltz.com/#enoch-schmaltz",
-  name: "Enoch Schmaltz",
-  alternateName: "E. A. Schmaltz",
+  "@id": "https://enochschmaltz.com/#author",
+  name: "E. A. Schmaltz",
+  alternateName: ["Enoch Schmaltz"],
   url: "https://enochschmaltz.com/enoch-schmaltz",
+  sameAs: [
+    "https://github.com/Enochas89",
+    "https://www.wikidata.org/wiki/Q138569168",
+    "https://www.linkedin.com/in/enochschmaltz",
+    "https://medium.com/@enochschmaltz",
+    "https://substack.com/@enochschmaltz",
+    "https://about.me/enochschmaltz",
+  ],
   jobTitle: ["Author", "Developer", "Project Manager"],
   description:
-    "Author and developer writing about technology, perception, policy, and complex systems.",
-  sameAs: ["https://github.com/Enochas89"],
+    "E. A. Schmaltz is an author, developer, and project systems builder writing about technology, perception, AI, and complex systems.",
 };
 
 export const metadata: Metadata = {
@@ -72,7 +83,7 @@ export default function RootLayout({
   return (
     <html lang="en" className="scroll-smooth">
       <head>
-        <meta name="author" content="Enoch Schmaltz" />
+        <meta name="author" content="E. A. Schmaltz" />
         <JsonLd data={webSiteJsonLd} />
         <JsonLd data={organizationJsonLd} />
         <JsonLd data={personJsonLd} />
