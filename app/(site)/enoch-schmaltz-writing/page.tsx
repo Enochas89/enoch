@@ -1,38 +1,38 @@
-import Link from "next/link";
+﻿import Link from "next/link";
 import type { Metadata } from "next";
 import JsonLd from "@/components/JsonLd";
+import { breadcrumbListSchema, collectionPageSchema, SITE_URL } from "@/lib/schema";
 
 export const metadata: Metadata = {
   title: "Writing by Enoch Schmaltz",
   description:
     "Writing by Enoch Schmaltz on project systems, leadership, technology, and complex execution environments.",
   alternates: {
-    canonical: "https://enochschmaltz.com/enoch-schmaltz-writing",
+    canonical: `${SITE_URL}/enoch-schmaltz-writing`,
   },
 };
 
-const enochWritingArticleJsonLd = {
-  "@context": "https://schema.org",
-  "@type": "Article",
-  headline: "Writing — Enoch Schmaltz",
-  author: {
-    "@type": "Person",
-    name: "E. A. Schmaltz",
-    "@id": "https://enochschmaltz.com/#author",
-  },
-  publisher: {
-    "@type": "Organization",
-    name: "E. A. Schmaltz",
-    url: "https://enochschmaltz.com",
-  },
-  mainEntityOfPage: "https://enochschmaltz.com/enoch-schmaltz-writing",
-  inLanguage: "en-US",
-};
+const enochWritingCollectionJsonLd = collectionPageSchema({
+  url: `${SITE_URL}/enoch-schmaltz-writing`,
+  name: "Writing by Enoch Schmaltz",
+  description:
+    "Writing by Enoch Schmaltz on project systems, leadership, technology, and complex execution environments.",
+});
+
+const enochWritingBreadcrumbJsonLd = breadcrumbListSchema(
+  [
+    { name: "Home", item: `${SITE_URL}/` },
+    { name: "Enoch Schmaltz", item: `${SITE_URL}/enoch-schmaltz` },
+    { name: "Writing", item: `${SITE_URL}/enoch-schmaltz-writing` },
+  ],
+  `${SITE_URL}/enoch-schmaltz-writing#breadcrumb`,
+);
 
 export default function EnochSchmaltzWritingPage() {
   return (
     <div className="bg-white">
-      <JsonLd data={enochWritingArticleJsonLd} />
+      <JsonLd data={enochWritingCollectionJsonLd} />
+      <JsonLd data={enochWritingBreadcrumbJsonLd} />
       <section className="pt-24 pb-16 md:pt-32">
         <div className="max-w-5xl mx-auto px-6 space-y-5">
           <h1 className="text-4xl md:text-5xl font-serif font-semibold text-slate-900">
@@ -77,3 +77,4 @@ export default function EnochSchmaltzWritingPage() {
     </div>
   );
 }
+

@@ -4,31 +4,35 @@ import JsonLd from "@/components/JsonLd";
 import Image from "next/image";
 import Link from "next/link";
 import type { Metadata } from "next";
+import { SITE_URL } from "@/lib/schema";
 
 export const metadata: Metadata = {
   title: "About the Author \u2014 E. A. Schmaltz",
   description:
     "About the author E. A. Schmaltz: books, writing, and technology commentary on perception and policy themes, including Puppet Skies and Controlled Release.",
   alternates: {
-    canonical: "/about",
+    canonical: `${SITE_URL}/about`,
   },
 };
 
 const aboutArticleJsonLd = {
   "@context": "https://schema.org",
-  "@type": "Article",
+  "@type": "AboutPage",
+  "@id": "https://enochschmaltz.com/about#webpage",
+  name: "About the Author - E. A. Schmaltz",
+  url: "https://enochschmaltz.com/about",
   headline: "About the Author — E. A. Schmaltz",
-  author: {
-    "@type": "Person",
-    name: "E. A. Schmaltz",
+  about: {
     "@id": "https://enochschmaltz.com/#author",
   },
   publisher: {
-    "@type": "Organization",
-    name: "E. A. Schmaltz",
-    url: "https://enochschmaltz.com",
+    "@id": "https://enochschmaltz.com/#publisher",
   },
-  mainEntityOfPage: "https://enochschmaltz.com/about",
+  isPartOf: {
+    "@id": "https://enochschmaltz.com/#website",
+  },
+  description:
+    "About the author E. A. Schmaltz: books, writing, and technology commentary on perception and policy themes, including Puppet Skies and Controlled Release.",
   inLanguage: "en-US",
 };
 

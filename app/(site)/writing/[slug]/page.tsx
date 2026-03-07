@@ -1,8 +1,10 @@
-import { notFound, redirect } from "next/navigation";
+﻿import { notFound, redirect } from "next/navigation";
 import type { Metadata } from "next";
+import JsonLd from "@/components/JsonLd";
 import { getAllWriting, getWritingBySlug } from "@/lib/content/writing";
 import { articleJsonLd, absoluteUrl } from "@/lib/seo";
 import { formatDate } from "@/lib/utils";
+import { breadcrumbListSchema, SITE_URL } from "@/lib/schema";
 
 type Props = { params: { slug: string } };
 
@@ -16,7 +18,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     title: article.title,
     description: article.summary,
     alternates: {
-      canonical: `/writing/${article.slug}`,
+      canonical: `${SITE_URL}/writing/${article.slug}`,
     },
     openGraph: {
       title: article.title,
@@ -39,28 +41,31 @@ export default async function WritingArticlePage({ params }: Props) {
     redirect(article.externalUrl);
   }
 
-  if (article.externalUrl) {
-    redirect(article.externalUrl);
-  }
+  const articleUrl = `${SITE_URL}/writing/${article.slug}`;
+
+  const articleSchemaJsonLd = articleJsonLd({
+    title: article.title,
+    summary: article.summary,
+    publishedAt: article.publishedAt,
+    updatedAt: article.updatedAt,
+    slug: article.slug,
+  });
+
+  const articleBreadcrumbJsonLd = breadcrumbListSchema(
+    [
+      { name: "Home", item: `${SITE_URL}/` },
+      { name: "Writing", item: `${SITE_URL}/writing` },
+      { name: article.title, item: articleUrl },
+    ],
+    `${articleUrl}#breadcrumb`,
+  );
 
   return (
     <div className="bg-white">
+      <JsonLd data={articleSchemaJsonLd} />
+      <JsonLd data={articleBreadcrumbJsonLd} />
       <div className="max-w-4xl mx-auto px-6 py-16">
         <article className="card space-y-6 p-8">
-          <script
-            type="application/ld+json"
-            dangerouslySetInnerHTML={{
-              __html: JSON.stringify(
-                articleJsonLd({
-                  title: article.title,
-                  summary: article.summary,
-                  publishedAt: article.publishedAt,
-                  updatedAt: article.updatedAt,
-                  slug: article.slug,
-                }),
-              ),
-            }}
-          />
           <div className="space-y-3">
             <div className="flex flex-wrap items-center gap-3 text-sm text-[var(--muted)]">
               <span className="pill capitalize">{article.type}</span>
@@ -100,3 +105,4 @@ export default async function WritingArticlePage({ params }: Props) {
     </div>
   );
 }
+

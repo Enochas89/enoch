@@ -1,42 +1,40 @@
-import Image from "next/image";
+﻿import Image from "next/image";
 import Link from "next/link";
 import { getAllBooks } from "@/lib/content/books";
 import AuthorIdentityLink from "@/components/AuthorIdentityLink";
 import JsonLd from "@/components/JsonLd";
 import type { Metadata } from "next";
+import { breadcrumbListSchema, collectionPageSchema, SITE_URL } from "@/lib/schema";
 
 export const metadata: Metadata = {
   title: "Books",
   description: "Books by E.A. Schmaltz",
   alternates: {
-    canonical: "/books",
+    canonical: `${SITE_URL}/books`,
   },
 };
 
-const booksArticleJsonLd = {
-  "@context": "https://schema.org",
-  "@type": "Article",
-  headline: "Books — E. A. Schmaltz",
-  author: {
-    "@type": "Person",
-    name: "E. A. Schmaltz",
-    "@id": "https://enochschmaltz.com/#author",
-  },
-  publisher: {
-    "@type": "Organization",
-    name: "E. A. Schmaltz",
-    url: "https://enochschmaltz.com",
-  },
-  mainEntityOfPage: "https://enochschmaltz.com/books",
-  inLanguage: "en-US",
-};
+const booksCollectionJsonLd = collectionPageSchema({
+  url: `${SITE_URL}/books`,
+  name: "Books | E. A. Schmaltz",
+  description: "Books by E.A. Schmaltz",
+});
+
+const booksBreadcrumbJsonLd = breadcrumbListSchema(
+  [
+    { name: "Home", item: `${SITE_URL}/` },
+    { name: "Books", item: `${SITE_URL}/books` },
+  ],
+  `${SITE_URL}/books#breadcrumb`,
+);
 
 export default function BooksPage() {
   const books = getAllBooks();
 
   return (
     <div className="bg-white">
-      <JsonLd data={booksArticleJsonLd} />
+      <JsonLd data={booksCollectionJsonLd} />
+      <JsonLd data={booksBreadcrumbJsonLd} />
       <section className="pt-32 pb-20 md:pt-48">
         <div className="max-w-6xl mx-auto px-6">
           <div className="max-w-3xl mb-12">
@@ -98,3 +96,4 @@ export default function BooksPage() {
     </div>
   );
 }
+

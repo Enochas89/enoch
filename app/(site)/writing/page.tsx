@@ -1,16 +1,17 @@
-import React from "react";
+﻿import React from "react";
 import { FileText, Lightbulb, MessageSquare } from "lucide-react";
 import Filters from "@/components/Filters";
 import JsonLd from "@/components/JsonLd";
 import { getAllWriting } from "@/lib/content/writing";
 import { unique } from "@/lib/utils";
 import type { Metadata } from "next";
+import { breadcrumbListSchema, collectionPageSchema, SITE_URL } from "@/lib/schema";
 
 export const metadata: Metadata = {
   title: "Writing \u2014 Enoch Schmaltz",
   description: "Essays, explainers, and commentary from E.A. Schmaltz.",
   alternates: {
-    canonical: "/writing",
+    canonical: `${SITE_URL}/writing`,
   },
   openGraph: {
     type: "website",
@@ -20,23 +21,19 @@ export const metadata: Metadata = {
   },
 };
 
-const writingArticleJsonLd = {
-  "@context": "https://schema.org",
-  "@type": "Article",
-  headline: "Writing — Enoch Schmaltz",
-  author: {
-    "@type": "Person",
-    name: "E. A. Schmaltz",
-    "@id": "https://enochschmaltz.com/#author",
-  },
-  publisher: {
-    "@type": "Organization",
-    name: "E. A. Schmaltz",
-    url: "https://enochschmaltz.com",
-  },
-  mainEntityOfPage: "https://enochschmaltz.com/writing",
-  inLanguage: "en-US",
-};
+const writingCollectionJsonLd = collectionPageSchema({
+  url: `${SITE_URL}/writing`,
+  name: "Writing | E. A. Schmaltz",
+  description: "Essays, explainers, and commentary from E.A. Schmaltz.",
+});
+
+const writingBreadcrumbJsonLd = breadcrumbListSchema(
+  [
+    { name: "Home", item: `${SITE_URL}/` },
+    { name: "Writing", item: `${SITE_URL}/writing` },
+  ],
+  `${SITE_URL}/writing#breadcrumb`,
+);
 
 export default async function WritingPage() {
   const writing = await getAllWriting();
@@ -45,7 +42,8 @@ export default async function WritingPage() {
 
   return (
     <div className="bg-white">
-      <JsonLd data={writingArticleJsonLd} />
+      <JsonLd data={writingCollectionJsonLd} />
+      <JsonLd data={writingBreadcrumbJsonLd} />
       <section className="pt-32 pb-12 md:pt-48">
         <div className="max-w-6xl mx-auto px-6">
           <div className="max-w-3xl mb-16">
@@ -68,7 +66,7 @@ export default async function WritingPage() {
                     </h3>
                     <p className="text-slate-500 mb-3">{essay.summary}</p>
                     <span className="text-xs font-bold uppercase tracking-widest text-slate-400 group-hover:text-slate-900 transition-colors">
-                      Read Essay →
+                      Read Essay ?
                     </span>
                   </div>
                 ))}
@@ -130,3 +128,4 @@ function SectionHeader({
     </div>
   );
 }
+

@@ -1,14 +1,23 @@
 import Link from "next/link";
 import type { Metadata } from "next";
+import JsonLd from "@/components/JsonLd";
+import { pageSchema, SITE_URL } from "@/lib/schema";
 
 export const metadata: Metadata = {
   title: "Press",
   description:
     "Mentions, platforms, appearances, and project references for Enoch Schmaltz.",
   alternates: {
-    canonical: "https://enochschmaltz.com/press",
+    canonical: `${SITE_URL}/press`,
   },
 };
+
+const pressPageJsonLd = pageSchema({
+  url: `${SITE_URL}/press`,
+  name: "Press | E. A. Schmaltz",
+  description:
+    "Mentions, platforms, appearances, and project references for Enoch Schmaltz.",
+});
 
 const internalLinks = [
   { href: "/about", label: "About" },
@@ -25,6 +34,7 @@ const externalLinks = [
 export default function PressPage() {
   return (
     <main className="mx-auto max-w-3xl px-6 py-20 md:py-28">
+      <JsonLd data={pressPageJsonLd} />
       <h1 className="text-4xl font-serif font-semibold text-slate-900">Press</h1>
       <p className="mt-4 text-slate-700">
         A concise hub for mentions, platforms, appearances, and project references.

@@ -1,3 +1,5 @@
+import { articleSchema, bookSchema } from "./schema";
+
 export const siteMetadata = {
   name: "E. A. Schmaltz",
   penName: "E. A. Schmaltz",
@@ -51,22 +53,13 @@ export type BookJsonLd = {
 };
 
 export const bookJsonLd = (book: BookJsonLd) => ({
-  "@context": "https://schema.org",
-  "@type": "Book",
-  name: book.title,
-  description: book.description,
-  image: book.image,
-  datePublished: book.releaseDate,
-  author: {
-    "@type": "Person",
-    name: siteMetadata.name,
-    "@id": "https://enochschmaltz.com/#author",
-  },
-  publisher: {
-    "@type": "Organization",
-    name: siteMetadata.name,
-  },
-  url: absoluteUrl(`/books/${book.slug}`),
+  ...bookSchema({
+    url: absoluteUrl(`/books/${book.slug}`),
+    name: book.title,
+    description: book.description,
+    image: book.image,
+    datePublished: book.releaseDate,
+  }),
 });
 
 export type ArticleJsonLd = {
@@ -78,21 +71,11 @@ export type ArticleJsonLd = {
 };
 
 export const articleJsonLd = (article: ArticleJsonLd) => ({
-  "@context": "https://schema.org",
-  "@type": "Article",
-  headline: article.title,
-  description: article.summary,
-  datePublished: article.publishedAt,
-  dateModified: article.updatedAt || article.publishedAt,
-  author: {
-    "@type": "Person",
-    name: siteMetadata.name,
-    "@id": "https://enochschmaltz.com/#author",
-  },
-  publisher: {
-    "@type": "Organization",
-    name: siteMetadata.name,
-  },
-  url: absoluteUrl(`/writing/${article.slug}`),
-  mainEntityOfPage: absoluteUrl(`/writing/${article.slug}`),
+  ...articleSchema({
+    url: absoluteUrl(`/writing/${article.slug}`),
+    headline: article.title,
+    description: article.summary,
+    datePublished: article.publishedAt,
+    dateModified: article.updatedAt || article.publishedAt,
+  }),
 });

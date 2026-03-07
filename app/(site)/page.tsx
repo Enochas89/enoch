@@ -7,6 +7,8 @@ import { getAllBooks } from "@/lib/content/books";
 import SubstackFeed from "@/components/SubstackFeed";
 import AuthorIdentityLink from "@/components/AuthorIdentityLink";
 import Link from "next/link";
+import JsonLd from "@/components/JsonLd";
+import { pageSchema, SITE_URL } from "@/lib/schema";
 
 export const metadata: Metadata = {
   title: {
@@ -15,7 +17,17 @@ export const metadata: Metadata = {
   },
   description:
     "E. A. Schmaltz writes about technology, perception, AI, sensing systems, and complex public policy.",
+  alternates: {
+    canonical: `${SITE_URL}/`,
+  },
 };
+
+const homePageJsonLd = pageSchema({
+  url: SITE_URL,
+  name: "E. A. Schmaltz",
+  description:
+    "E. A. Schmaltz writes about technology, perception, AI, sensing systems, and complex public policy.",
+});
 
 export default async function HomePage() {
   const writing = await getAllWriting();
@@ -24,6 +36,7 @@ export default async function HomePage() {
 
   return (
     <div className="bg-white">
+      <JsonLd data={homePageJsonLd} />
       <Hero />
       <section className="py-6 border-b border-slate-100">
         <div className="max-w-6xl mx-auto px-6 flex flex-wrap items-center justify-between gap-3">

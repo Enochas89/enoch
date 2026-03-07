@@ -2,13 +2,14 @@ import NewsletterSection from "@/components/NewsletterSection";
 import JsonLd from "@/components/JsonLd";
 import Link from "next/link";
 import type { Metadata } from "next";
+import { SITE_URL } from "@/lib/schema";
 
 export const metadata: Metadata = {
   title: "Enoch Schmaltz | Writer, Developer, and Project Systems Builder",
   description:
     "Professional profile for Enoch Schmaltz: writer, developer, and project systems builder focused on execution, visibility, and accountability in complex environments.",
   alternates: {
-    canonical: "/enoch-schmaltz",
+    canonical: `${SITE_URL}/enoch-schmaltz`,
   },
   openGraph: {
     type: "profile",
@@ -21,19 +22,19 @@ export const metadata: Metadata = {
 
 const enochArticleJsonLd = {
   "@context": "https://schema.org",
-  "@type": "Article",
-  headline: "Enoch Schmaltz | Writer, Developer, and Project Systems Builder",
-  author: {
-    "@type": "Person",
-    name: "E. A. Schmaltz",
+  "@type": "ProfilePage",
+  "@id": "https://enochschmaltz.com/enoch-schmaltz#webpage",
+  name: "Enoch Schmaltz | Writer, Developer, and Project Systems Builder",
+  url: "https://enochschmaltz.com/enoch-schmaltz",
+  about: {
     "@id": "https://enochschmaltz.com/#author",
   },
   publisher: {
-    "@type": "Organization",
-    name: "E. A. Schmaltz",
-    url: "https://enochschmaltz.com",
+    "@id": "https://enochschmaltz.com/#publisher",
   },
-  mainEntityOfPage: "https://enochschmaltz.com/enoch-schmaltz",
+  isPartOf: {
+    "@id": "https://enochschmaltz.com/#website",
+  },
   inLanguage: "en-US",
 };
 

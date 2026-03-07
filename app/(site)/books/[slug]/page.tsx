@@ -1,9 +1,11 @@
-import Image from "next/image";
+﻿import Image from "next/image";
 import { notFound } from "next/navigation";
 import type { Metadata } from "next";
 import { getAllBooks, getBookBySlug } from "@/lib/content/books";
-import { bookJsonLd, absoluteUrl, siteMetadata } from "@/lib/seo";
+import { absoluteUrl, siteMetadata } from "@/lib/seo";
 import { formatDate } from "@/lib/utils";
+import JsonLd from "@/components/JsonLd";
+import { breadcrumbListSchema, bookSchema, SITE_URL } from "@/lib/schema";
 
 type Props = { params: { slug: string } };
 
@@ -20,10 +22,14 @@ export function generateMetadata({ params }: Props): Metadata {
   return {
     title: book.title,
     description: book.description,
+    alternates: {
+      canonical: `${SITE_URL}/books/${book.slug}`,
+    },
     openGraph: {
       title: book.title,
       description: book.description,
       images: [absoluteUrl(book.coverImage)],
+      url: `${SITE_URL}/books/${book.slug}`,
     },
     twitter: {
       title: book.title,
@@ -38,20 +44,30 @@ export default function BookDetailPage({ params }: Props) {
   const book = getBookBySlug(params.slug);
   if (!book) return notFound();
 
-  const jsonLd = bookJsonLd({
-    title: book.title,
+  const bookUrl = `${SITE_URL}/books/${book.slug}`;
+
+  const jsonLd = bookSchema({
+    url: bookUrl,
+    name: book.title,
     description: book.description,
     image: absoluteUrl(book.coverImage),
-    releaseDate: book.releaseDate,
-    slug: book.slug,
+    datePublished: book.releaseDate || undefined,
+    bookFormat: book.formats.length > 0 ? book.formats.map((format) => format.label) : undefined,
   });
+
+  const breadcrumbJsonLd = breadcrumbListSchema(
+    [
+      { name: "Home", item: `${SITE_URL}/` },
+      { name: "Books", item: `${SITE_URL}/books` },
+      { name: book.title, item: bookUrl },
+    ],
+    `${bookUrl}#breadcrumb`,
+  );
 
   return (
     <div className="bg-white">
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
-      />
+      <JsonLd data={jsonLd} />
+      <JsonLd data={breadcrumbJsonLd} />
       <section className="pt-32 pb-20 md:pt-48">
         <div className="max-w-6xl mx-auto px-6">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-20 items-start">
@@ -117,3 +133,4 @@ export default function BookDetailPage({ params }: Props) {
     </div>
   );
 }
+
