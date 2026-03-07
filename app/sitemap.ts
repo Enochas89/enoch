@@ -8,6 +8,7 @@ const REQUIRED_ROUTES = [
   "/about",
   "/books",
   "/enoch-schmaltz",
+  "/enoch-schmaltz-online",
   "/press",
   "/enoch-schmaltz-profile",
   "/who-is-enoch-schmaltz",

@@ -243,6 +243,14 @@ export default function EnochSchmaltzPage() {
           <ul className="space-y-2 text-slate-700">
             <li>
               <Link
+                href="/enoch-schmaltz-online"
+                className="text-teal-700 hover:text-teal-800 underline underline-offset-4"
+              >
+                /enoch-schmaltz-online
+              </Link>
+            </li>
+            <li>
+              <Link
                 href="/enoch-schmaltz-writing"
                 className="text-teal-700 hover:text-teal-800 underline underline-offset-4"
               >
