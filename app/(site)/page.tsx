@@ -1,3 +1,4 @@
+import type { Metadata } from "next";
 import Hero from "@/components/Hero";
 import BookCard from "@/components/BookCard";
 import NewsletterSection from "@/components/NewsletterSection";
@@ -6,6 +7,15 @@ import { getAllBooks } from "@/lib/content/books";
 import SubstackFeed from "@/components/SubstackFeed";
 import AuthorIdentityLink from "@/components/AuthorIdentityLink";
 import Link from "next/link";
+
+export const metadata: Metadata = {
+  title: {
+    absolute:
+      "E. A. Schmaltz — Author, Systems Thinker, and Technology Writer",
+  },
+  description:
+    "E. A. Schmaltz writes about technology, perception, AI, sensing systems, and complex public policy.",
+};
 
 export default async function HomePage() {
   const writing = await getAllWriting();
