@@ -60,6 +60,11 @@ export const bookJsonLd = (book: BookJsonLd) => ({
   author: {
     "@type": "Person",
     name: siteMetadata.name,
+    "@id": "https://enochschmaltz.com/#author",
+  },
+  publisher: {
+    "@type": "Organization",
+    name: siteMetadata.name,
   },
   url: absoluteUrl(`/books/${book.slug}`),
 });
@@ -81,6 +86,11 @@ export const articleJsonLd = (article: ArticleJsonLd) => ({
   dateModified: article.updatedAt || article.publishedAt,
   author: {
     "@type": "Person",
+    name: siteMetadata.name,
+    "@id": "https://enochschmaltz.com/#author",
+  },
+  publisher: {
+    "@type": "Organization",
     name: siteMetadata.name,
   },
   url: absoluteUrl(`/writing/${article.slug}`),

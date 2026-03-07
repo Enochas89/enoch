@@ -24,7 +24,9 @@ const enochArticleJsonLd = {
   "@type": "Article",
   headline: "Enoch Schmaltz | Writer, Developer, and Project Systems Builder",
   author: {
-    "@id": "https://enochschmaltz.com/#enoch-schmaltz",
+    "@type": "Person",
+    name: "E. A. Schmaltz",
+    "@id": "https://enochschmaltz.com/#author",
   },
   publisher: {
     "@type": "Organization",
@@ -45,6 +47,9 @@ export default function EnochSchmaltzPage() {
             About Enoch Schmaltz
           </h1>
           <div className="space-y-4 text-slate-700 leading-relaxed text-lg">
+            <h2 className="text-2xl font-serif font-semibold text-slate-900">
+              Biography
+            </h2>
             <p>
               Enoch Schmaltz is a writer, developer, and project management
               professional focused on the systems that allow complex work to
@@ -73,7 +78,7 @@ export default function EnochSchmaltzPage() {
       <section className="py-12 border-b border-slate-100">
         <div className="max-w-5xl mx-auto px-6 space-y-4">
           <h2 className="text-2xl font-serif font-semibold text-slate-900">
-            Writing
+            Writing / Essays
           </h2>
           <p className="text-slate-700 leading-relaxed">
             Enoch Schmaltz writes about leadership, project delivery, systems
@@ -92,7 +97,29 @@ export default function EnochSchmaltzPage() {
       <section className="py-12 border-b border-slate-100">
         <div className="max-w-5xl mx-auto px-6 space-y-4">
           <h2 className="text-2xl font-serif font-semibold text-slate-900">
-            Development Work
+            Books
+          </h2>
+          <p className="text-slate-700 leading-relaxed">
+            Books by E. A. Schmaltz examine technology, perception, and complex
+            systems in both nonfiction and narrative forms.
+          </p>
+          <p className="text-slate-700 leading-relaxed">
+            Browse current titles at{" "}
+            <Link
+              href="/books"
+              className="text-teal-700 hover:text-teal-800 underline underline-offset-4"
+            >
+              /books
+            </Link>
+            .
+          </p>
+        </div>
+      </section>
+
+      <section className="py-12 border-b border-slate-100">
+        <div className="max-w-5xl mx-auto px-6 space-y-4">
+          <h2 className="text-2xl font-serif font-semibold text-slate-900">
+            Projects / Software
           </h2>
           <p className="text-slate-700 leading-relaxed">
             In addition to writing, Schmaltz develops project management and
@@ -104,13 +131,31 @@ export default function EnochSchmaltzPage() {
             friction, and helping teams understand the real state of project
             environments.
           </p>
+          <ul className="space-y-2 text-slate-700">
+            <li>
+              <Link
+                href="/projects"
+                className="text-teal-700 hover:text-teal-800 underline underline-offset-4"
+              >
+                Projects
+              </Link>
+            </li>
+            <li>
+              <Link
+                href="/software"
+                className="text-teal-700 hover:text-teal-800 underline underline-offset-4"
+              >
+                Software
+              </Link>
+            </li>
+          </ul>
         </div>
       </section>
 
       <section className="py-12">
         <div className="max-w-5xl mx-auto px-6 space-y-4">
           <h2 className="text-2xl font-serif font-semibold text-slate-900">
-            Online Profiles
+            External Profiles
           </h2>
           <p className="text-slate-700 leading-relaxed">
             You can find Enoch Schmaltz online at:
@@ -154,6 +199,16 @@ export default function EnochSchmaltzPage() {
                 className="text-teal-700 hover:text-teal-800 underline underline-offset-4"
               >
                 GitHub
+              </a>
+            </li>
+            <li>
+              <a
+                href="https://www.wikidata.org/wiki/Q138569168"
+                target="_blank"
+                rel="noreferrer"
+                className="text-teal-700 hover:text-teal-800 underline underline-offset-4"
+              >
+                Wikidata
               </a>
             </li>
             <li>

@@ -25,7 +25,9 @@ const writingArticleJsonLd = {
   "@type": "Article",
   headline: "Writing — Enoch Schmaltz",
   author: {
-    "@id": "https://enochschmaltz.com/#enoch-schmaltz",
+    "@type": "Person",
+    name: "E. A. Schmaltz",
+    "@id": "https://enochschmaltz.com/#author",
   },
   publisher: {
     "@type": "Organization",

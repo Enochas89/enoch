@@ -19,7 +19,9 @@ const aboutArticleJsonLd = {
   "@type": "Article",
   headline: "About the Author — E. A. Schmaltz",
   author: {
-    "@id": "https://enochschmaltz.com/#enoch-schmaltz",
+    "@type": "Person",
+    name: "E. A. Schmaltz",
+    "@id": "https://enochschmaltz.com/#author",
   },
   publisher: {
     "@type": "Organization",

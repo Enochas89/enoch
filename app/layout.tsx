@@ -41,19 +41,15 @@ const personJsonLd = {
   "@type": "Person",
   "@id": "https://enochschmaltz.com/#author",
   name: "E. A. Schmaltz",
-  alternateName: ["Enoch Schmaltz"],
+  alternateName: "Enoch Schmaltz",
   url: "https://enochschmaltz.com/enoch-schmaltz",
+  jobTitle: ["Author", "Technology Writer", "Developer"],
+  description:
+    "E. A. Schmaltz writes about technology, perception, sensing systems, artificial intelligence, and complex systems.",
   sameAs: [
     "https://github.com/Enochas89",
     "https://www.wikidata.org/wiki/Q138569168",
-    "https://www.linkedin.com/in/enochschmaltz",
-    "https://medium.com/@enochschmaltz",
-    "https://substack.com/@enochschmaltz",
-    "https://about.me/enochschmaltz",
   ],
-  jobTitle: ["Author", "Developer", "Project Manager"],
-  description:
-    "E. A. Schmaltz is an author, developer, and project systems builder writing about technology, perception, AI, and complex systems.",
 };
 
 export const metadata: Metadata = {
