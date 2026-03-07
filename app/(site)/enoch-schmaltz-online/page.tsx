@@ -31,6 +31,15 @@ export default function EnochSchmaltzOnlinePage() {
             This page centralizes the official online profiles for Enoch
             Schmaltz and supports identity consistency across platforms.
           </p>
+          <p className="text-slate-700 leading-relaxed">
+            Full profile page:{" "}
+            <a
+              href="https://enochschmaltz.com/enoch-schmaltz"
+              className="text-teal-700 hover:text-teal-800 underline underline-offset-4"
+            >
+              https://enochschmaltz.com/enoch-schmaltz
+            </a>
+          </p>
           <ul className="space-y-2 text-slate-700">
             <li>
               <a
@@ -81,6 +90,23 @@ export default function EnochSchmaltzOnlinePage() {
               </a>
             </li>
           </ul>
+          <div className="space-y-2 pt-2">
+            <h2 className="text-2xl font-serif font-semibold text-slate-900">
+              Knowledge Graph Profiles
+            </h2>
+            <ul className="space-y-2 text-slate-700">
+              <li>
+                <a
+                  href="https://www.wikidata.org/wiki/Q138569168"
+                  target="_blank"
+                  rel="noreferrer"
+                  className="text-teal-700 hover:text-teal-800 underline underline-offset-4"
+                >
+                  Wikidata
+                </a>
+              </li>
+            </ul>
+          </div>
         </div>
       </section>
     </div>

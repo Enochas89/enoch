@@ -1,7 +1,7 @@
 export const SITE_URL = "https://enochschmaltz.com";
 
 export const SCHEMA_IDS = {
-  author: `${SITE_URL}/#author`,
+  author: `${SITE_URL}/#person`,
   website: `${SITE_URL}/#website`,
   publisher: `${SITE_URL}/#publisher`,
 } as const;
