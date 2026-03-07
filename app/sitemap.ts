@@ -3,7 +3,7 @@ import { discoverPublicAppRoutes } from "@/lib/routeDiscovery";
 
 const SITE_URL = "https://enochschmaltz.com";
 
-const REQUIRED_ROUTES = ["/", "/about", "/books", "/enoch-schmaltz"];
+const REQUIRED_ROUTES = ["/", "/about", "/books", "/enoch-schmaltz", "/press"];
 const PRIMARY_ROUTES = new Set(["/about", "/books", "/enoch-schmaltz"]);
 const INTERNAL_PREFIXES = ["/api", "/_next", "/admin", "/drafts", "/private"];
 const YEARLY_PREFIXES = ["/privacy", "/terms", "/legal"];

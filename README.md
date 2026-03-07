@@ -78,7 +78,8 @@ Page: `/media` with filter pills.
 
 ## Deployment (Vercel)
 - Push to GitHub; connect the repo in Vercel. Defaults work (Next.js + npm).
-- Set `NEXT_PUBLIC_SITE_URL` to your production domain for accurate metadata/RSS/sitemap.
+- Production domain: `https://enochschmaltz.com`.
+- Set `NEXT_PUBLIC_SITE_URL` to `https://enochschmaltz.com` for accurate metadata/RSS/sitemap.
 
 ## Project structure (high level)
 - `app/(site)/*` — pages
@@ -86,12 +87,17 @@ Page: `/media` with filter pills.
 - `content/*` — author-provided content
 - `lib/content/*` — loaders for writing/books/media + MDX rendering
 - `public/images/books/*` — book covers
-- `.github/workflows/ci.yml` — lint + typecheck CI
+- `.github/workflows/ci.yml` — lint + typecheck + build CI
 
 ## Maintenance tips
 - Keep file names slugged (`YYYY-MM-DD-title.mdx`) to preserve URLs.
 - Use `topics` consistently to make filters useful.
 - Replace the placeholder social image at `public/images/social-card.png` if you add one.
+- Keep `NEXT_PUBLIC_SITE_URL` aligned with `https://enochschmaltz.com`.
+- CI should run `npm run lint`, `npm run typecheck`, and `npm run build`.
+
+## Repo scope
+- This repository includes the public author site and auxiliary project work under `desktop/`.
 
 ## SEO endpoint check
 - Run `npm run dev`.
