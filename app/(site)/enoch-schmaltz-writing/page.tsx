@@ -17,6 +17,11 @@ const enochWritingCollectionJsonLd = collectionPageSchema({
   name: "Writing by Enoch Schmaltz",
   description:
     "Writing by Enoch Schmaltz on project systems, leadership, technology, and complex execution environments.",
+  author: {
+    "@type": "Person",
+    name: "Enoch Schmaltz",
+    url: SITE_URL,
+  },
 });
 
 const enochWritingBreadcrumbJsonLd = breadcrumbListSchema(

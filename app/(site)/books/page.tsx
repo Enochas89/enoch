@@ -18,6 +18,11 @@ const booksCollectionJsonLd = collectionPageSchema({
   url: `${SITE_URL}/books`,
   name: "Books | E. A. Schmaltz",
   description: "Books by E.A. Schmaltz",
+  author: {
+    "@type": "Person",
+    name: "Enoch Schmaltz",
+    url: SITE_URL,
+  },
 });
 
 const booksBreadcrumbJsonLd = breadcrumbListSchema(

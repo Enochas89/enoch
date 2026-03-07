@@ -38,10 +38,46 @@ const enochArticleJsonLd = {
   inLanguage: "en-US",
 };
 
+const enochFaqJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "@id": `${SITE_URL}/enoch-schmaltz#faq`,
+  mainEntity: [
+    {
+      "@type": "Question",
+      name: "Who is Enoch Schmaltz?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text:
+          "Enoch Schmaltz is a writer, developer, and project management professional focused on systems that move complex work from concept to completion.",
+      },
+    },
+    {
+      "@type": "Question",
+      name: "What does Enoch Schmaltz write about?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text:
+          "Enoch Schmaltz writes about leadership, project delivery, systems thinking, technology, and decision-making in complex environments.",
+      },
+    },
+    {
+      "@type": "Question",
+      name: "Where can I read Enoch Schmaltz?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text:
+          "Writing by Enoch Schmaltz appears on this website and on platforms including Medium and Substack.",
+      },
+    },
+  ],
+};
+
 export default function EnochSchmaltzPage() {
   return (
     <div className="bg-white">
       <JsonLd data={enochArticleJsonLd} />
+      <JsonLd data={enochFaqJsonLd} />
       <section className="pt-24 pb-12 md:pt-32 border-b border-slate-100">
         <div className="max-w-5xl mx-auto px-6 space-y-6">
           <h1 className="text-4xl md:text-5xl font-serif font-semibold text-slate-900">
@@ -241,6 +277,14 @@ export default function EnochSchmaltzPage() {
             More Enoch Schmaltz Pages
           </h2>
           <ul className="space-y-2 text-slate-700">
+            <li>
+              <Link
+                href="/enoch-schmaltz-facts"
+                className="text-teal-700 hover:text-teal-800 underline underline-offset-4"
+              >
+                /enoch-schmaltz-facts
+              </Link>
+            </li>
             <li>
               <Link
                 href="/enoch-schmaltz-online"

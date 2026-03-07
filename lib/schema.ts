@@ -26,6 +26,18 @@ function withOptional<T extends Record<string, unknown>>(
 }
 
 export function authorPersonSchema() {
+  const sameAs = [
+    "https://www.linkedin.com/in/enoch-schmaltz",
+    "https://medium.com/@enochschmaltz",
+    "https://enochschmaltz89.substack.com",
+    "https://github.com/Enochas89",
+    "https://about.me/enochschmaltz",
+    "https://www.goodreads.com/author/show/enoch-schmaltz",
+    "https://www.amazon.com/author/enochschmaltz",
+    "https://orcid.org/0000-0000-0000-0000",
+    "https://www.wikidata.org/wiki/Q138569168",
+  ];
+
   return {
     "@context": "https://schema.org",
     "@type": "Person",
@@ -33,19 +45,26 @@ export function authorPersonSchema() {
     name: "Enoch Schmaltz",
     alternateName: "E. A. Schmaltz",
     url: SITE_URL,
-    sameAs: [
-      "https://www.linkedin.com/in/enoch-schmaltz",
-      "https://medium.com/@enochschmaltz",
-      "https://substack.com/@enochschmaltz",
-      "https://github.com/Enochas89",
-      "https://about.me/enochschmaltz",
-      "https://www.goodreads.com/author/show/enoch-schmaltz",
-      "https://orcid.org/0000-0000-0000-0000",
-      "https://www.wikidata.org/wiki/Q138569168"
+    image: `${SITE_URL}/profile.jpg`,
+    mainEntityOfPage: `${SITE_URL}/enoch-schmaltz`,
+    sameAs,
+    jobTitle: [
+      "Author",
+      "Writer",
+      "Developer",
+      "Project Systems Thinker",
+      "Project Management Systems Builder",
     ],
-    jobTitle: ["Writer", "Developer", "Project Management Systems Builder"],
     description:
-      "Writer and developer exploring project execution, systems thinking, leadership, and technology.",
+      "Enoch Schmaltz is a writer and developer exploring systems thinking, project execution, and the structures that allow complex work to move from concept to completion.",
+    knowsAbout: [
+      "Project Management",
+      "Systems Thinking",
+      "Technology",
+      "Artificial Intelligence",
+      "Complex Systems",
+      "Leadership",
+    ],
   };
 }
 
@@ -112,11 +131,17 @@ export function collectionPageSchema({
   url,
   name,
   description,
+  author,
   inLanguage = "en-US",
 }: {
   url: string;
   name: string;
   description?: string;
+  author?: {
+    "@type": "Person";
+    name: string;
+    url: string;
+  };
   inLanguage?: string;
 }) {
   return withOptional(
@@ -137,7 +162,7 @@ export function collectionPageSchema({
       },
       inLanguage,
     },
-    { description },
+    { description, author },
   );
 }
 
