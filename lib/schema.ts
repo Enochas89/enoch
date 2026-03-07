@@ -30,16 +30,22 @@ export function authorPersonSchema() {
     "@context": "https://schema.org",
     "@type": "Person",
     "@id": SCHEMA_IDS.author,
-    name: "E. A. Schmaltz",
-    alternateName: ["Enoch Schmaltz"],
-    url: `${SITE_URL}/enoch-schmaltz`,
+    name: "Enoch Schmaltz",
+    alternateName: "E. A. Schmaltz",
+    url: SITE_URL,
     sameAs: [
+      "https://www.linkedin.com/in/enoch-schmaltz",
+      "https://medium.com/@enochschmaltz",
+      "https://substack.com/@enochschmaltz",
       "https://github.com/Enochas89",
-      "https://www.wikidata.org/wiki/Q138569168",
+      "https://about.me/enochschmaltz",
+      "https://www.goodreads.com/author/show/enoch-schmaltz",
+      "https://orcid.org/0000-0000-0000-0000",
+      "https://www.wikidata.org/wiki/Q138569168"
     ],
-    jobTitle: ["Author", "Technology Writer", "Developer"],
+    jobTitle: ["Writer", "Developer", "Project Management Systems Builder"],
     description:
-      "E. A. Schmaltz writes about technology, perception, sensing systems, artificial intelligence, and complex systems.",
+      "Writer and developer exploring project execution, systems thinking, leadership, and technology.",
   };
 }
 
