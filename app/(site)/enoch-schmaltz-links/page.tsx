@@ -24,7 +24,7 @@ export default function EnochSchmaltzLinksPage() {
           <ul className="space-y-2 text-slate-700">
             <li>
               <a
-                href="https://www.linkedin.com"
+                href="https://www.linkedin.com/in/enochschmaltz"
                 target="_blank"
                 rel="noreferrer"
                 className="text-teal-700 hover:text-teal-800 underline underline-offset-4"
@@ -34,7 +34,7 @@ export default function EnochSchmaltzLinksPage() {
             </li>
             <li>
               <a
-                href="https://medium.com"
+                href="https://medium.com/@enochschmaltz"
                 target="_blank"
                 rel="noreferrer"
                 className="text-teal-700 hover:text-teal-800 underline underline-offset-4"
@@ -64,7 +64,7 @@ export default function EnochSchmaltzLinksPage() {
             </li>
             <li>
               <a
-                href="https://about.me"
+                href="https://about.me/enochschmaltz"
                 target="_blank"
                 rel="noreferrer"
                 className="text-teal-700 hover:text-teal-800 underline underline-offset-4"

@@ -41,12 +41,32 @@ export default async function HomePage() {
       <section className="py-6 border-b border-slate-100">
         <div className="max-w-6xl mx-auto px-6 flex flex-wrap items-center justify-between gap-3">
           <AuthorIdentityLink className="text-sm text-slate-700" />
-          <Link
-            href="/enoch-schmaltz"
-            className="text-sm text-teal-700 hover:text-teal-800 underline underline-offset-4"
-          >
-            Learn more about Enoch Schmaltz
-          </Link>
+          <div className="flex flex-wrap gap-4 text-sm">
+            <Link
+              href="/enoch-schmaltz"
+              className="text-teal-700 hover:text-teal-800 underline underline-offset-4"
+            >
+              Learn more about Enoch Schmaltz
+            </Link>
+            <Link
+              href="/enoch-schmaltz-credentials"
+              className="text-teal-700 hover:text-teal-800 underline underline-offset-4"
+            >
+              Credentials
+            </Link>
+            <Link
+              href="/enoch-schmaltz-software-projects"
+              className="text-teal-700 hover:text-teal-800 underline underline-offset-4"
+            >
+              Software Projects
+            </Link>
+            <Link
+              href="/enoch-schmaltz-books-and-research"
+              className="text-teal-700 hover:text-teal-800 underline underline-offset-4"
+            >
+              Books and Research
+            </Link>
+          </div>
         </div>
       </section>
       {books.length > 0 && (

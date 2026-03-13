@@ -1,6 +1,7 @@
 import Image from "next/image";
 import type { ReactNode } from "react";
 import Link from "next/link";
+import type { Metadata } from "next";
 import {
   AlertTriangle,
   ArrowRight,
@@ -14,10 +15,20 @@ import {
   Workflow,
 } from "lucide-react";
 import AuthorIdentityLink from "@/components/AuthorIdentityLink";
+import { SITE_URL } from "@/lib/schema";
 
-export const metadata = {
+export const metadata: Metadata = {
   title: "Software",
   description: "NovelCraft Pro storyboarding and writing software for Windows and macOS beta.",
+  alternates: {
+    canonical: `${SITE_URL}/software`,
+  },
+  openGraph: {
+    type: "website",
+    url: `${SITE_URL}/software`,
+    title: "Software",
+    description: "NovelCraft Pro storyboarding and writing software for Windows and macOS beta.",
+  },
 };
 
 const appCards = [
@@ -299,7 +310,7 @@ export default function SoftwarePage() {
                   <li>Download the correct build: Apple Silicon or Intel.</li>
                   <li>Open the `.dmg` and drag <strong>NovelCraft Pro</strong> to <strong>Applications</strong>.</li>
                   <li>On first launch, right-click the app and choose <strong>Open</strong>, then choose <strong>Open</strong> again.</li>
-                  <li>If blocked, go to <strong>System Settings → Privacy &amp; Security</strong> and click <strong>Open Anyway</strong>.</li>
+                  <li>If blocked, go to <strong>System Settings - Privacy &amp; Security</strong> and click <strong>Open Anyway</strong>.</li>
                 </ol>
               </div>
             </div>

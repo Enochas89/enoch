@@ -27,7 +27,7 @@ function withOptional<T extends Record<string, unknown>>(
 
 export function authorPersonSchema() {
   const sameAs = [
-    "https://www.linkedin.com/in/enoch-schmaltz",
+    "https://www.linkedin.com/in/enochschmaltz",
     "https://medium.com/@enochschmaltz",
     "https://enochschmaltz89.substack.com",
     "https://github.com/Enochas89",

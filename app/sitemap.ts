@@ -1,5 +1,7 @@
 import type { MetadataRoute } from "next";
 import { discoverPublicAppRoutes } from "@/lib/routeDiscovery";
+import { getAllBooks } from "@/lib/content/books";
+import { getAllWriting } from "@/lib/content/writing";
 
 const SITE_URL = "https://enochschmaltz.com";
 
@@ -76,11 +78,21 @@ function sortRoutes(a: string, b: string) {
   return a.localeCompare(b);
 }
 
-export default function sitemap(): MetadataRoute.Sitemap {
+export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const routeSet = new Set(discoverPublicAppRoutes());
+  const books = getAllBooks();
+  const writing = await getAllWriting();
 
   for (const route of REQUIRED_ROUTES) {
     routeSet.add(route);
+  }
+
+  for (const book of books) {
+    routeSet.add(`/books/${book.slug}`);
+  }
+
+  for (const article of writing) {
+    routeSet.add(`/writing/${article.slug}`);
   }
 
   const now = new Date();

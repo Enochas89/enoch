@@ -1,4 +1,4 @@
-﻿import { notFound, redirect } from "next/navigation";
+import { notFound } from "next/navigation";
 import type { Metadata } from "next";
 import JsonLd from "@/components/JsonLd";
 import { getAllWriting, getWritingBySlug } from "@/lib/content/writing";
@@ -8,7 +8,10 @@ import { breadcrumbListSchema, SITE_URL } from "@/lib/schema";
 
 type Props = { params: { slug: string } };
 
-export const dynamic = "force-dynamic";
+export async function generateStaticParams() {
+  const writing = await getAllWriting();
+  return writing.map((article) => ({ slug: article.slug }));
+}
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const article = (await getAllWriting()).find((item) => item.slug === params.slug);
@@ -37,9 +40,6 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 export default async function WritingArticlePage({ params }: Props) {
   const article = await getWritingBySlug(params.slug);
   if (!article) return notFound();
-  if (article.externalUrl) {
-    redirect(article.externalUrl);
-  }
 
   const articleUrl = `${SITE_URL}/writing/${article.slug}`;
 
@@ -70,7 +70,7 @@ export default async function WritingArticlePage({ params }: Props) {
             <div className="flex flex-wrap items-center gap-3 text-sm text-[var(--muted)]">
               <span className="pill capitalize">{article.type}</span>
               <span>{formatDate(article.publishedAt)}</span>
-              <span aria-hidden>•</span>
+              <span aria-hidden>*</span>
               <span>{article.readingMinutes} min read</span>
             </div>
             <h1 className="text-3xl font-semibold text-[var(--ink)]">{article.title}</h1>
@@ -82,7 +82,7 @@ export default async function WritingArticlePage({ params }: Props) {
                 rel="noreferrer"
                 className="inline-flex items-center gap-2 text-sm font-semibold text-[var(--accent)] underline underline-offset-4"
               >
-                Read on Substack
+                Also published on Substack
               </a>
             )}
             <div className="flex flex-wrap gap-2">
@@ -105,4 +105,3 @@ export default async function WritingArticlePage({ params }: Props) {
     </div>
   );
 }
-

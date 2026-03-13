@@ -1,22 +1,23 @@
-﻿import React from "react";
+import React from "react";
+import Link from "next/link";
 import { FileText, Lightbulb, MessageSquare } from "lucide-react";
+import type { Metadata } from "next";
 import Filters from "@/components/Filters";
 import JsonLd from "@/components/JsonLd";
 import { getAllWriting } from "@/lib/content/writing";
 import { unique } from "@/lib/utils";
-import type { Metadata } from "next";
 import { breadcrumbListSchema, collectionPageSchema, SITE_URL } from "@/lib/schema";
 
 export const metadata: Metadata = {
-  title: "Writing \u2014 Enoch Schmaltz",
+  title: "Writing - Enoch Schmaltz",
   description: "Essays, explainers, and commentary from E.A. Schmaltz.",
   alternates: {
     canonical: `${SITE_URL}/writing`,
   },
   openGraph: {
     type: "website",
-    url: "https://enochschmaltz.com/writing",
-    title: "Writing \u2014 Enoch Schmaltz",
+    url: `${SITE_URL}/writing`,
+    title: "Writing - Enoch Schmaltz",
     description: "Essays, explainers, and commentary from E.A. Schmaltz.",
   },
 };
@@ -60,15 +61,15 @@ export default async function WritingPage() {
               <SectionHeader icon={<FileText className="w-5 h-5 text-teal-600" />} label="Featured Essays" />
               <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
                 {writing.slice(0, 4).map((essay) => (
-                  <div key={essay.slug} className="group">
+                  <Link key={essay.slug} href={`/writing/${essay.slug}`} className="group block">
                     <h3 className="text-2xl font-serif font-bold text-slate-900 mb-2 group-hover:text-teal-700 transition-colors">
                       {essay.title}
                     </h3>
                     <p className="text-slate-500 mb-3">{essay.summary}</p>
                     <span className="text-xs font-bold uppercase tracking-widest text-slate-400 group-hover:text-slate-900 transition-colors">
-                      Read Essay ?
+                      Read Essay
                     </span>
-                  </div>
+                  </Link>
                 ))}
               </div>
             </div>
@@ -80,14 +81,18 @@ export default async function WritingPage() {
                   .filter((item) => item.type === "explainer")
                   .slice(0, 4)
                   .map((item) => (
-                    <div key={item.slug} className="border-b border-slate-100 pb-4">
+                    <Link
+                      key={item.slug}
+                      href={`/writing/${item.slug}`}
+                      className="block border-b border-slate-100 pb-4"
+                    >
                       <span className="text-[10px] text-slate-400 uppercase tracking-widest block mb-2">
                         {item.year}
                       </span>
                       <h3 className="text-lg font-serif font-bold text-slate-900 leading-tight">
                         {item.title}
                       </h3>
-                    </div>
+                    </Link>
                   ))}
               </div>
 
@@ -97,10 +102,10 @@ export default async function WritingPage() {
                   .filter((item) => item.type === "commentary" || item.type === "newsletter")
                   .slice(0, 3)
                   .map((note) => (
-                    <div key={note.slug}>
+                    <Link key={note.slug} href={`/writing/${note.slug}`} className="block">
                       <h4 className="font-bold text-slate-900 text-sm mb-1">{note.title}</h4>
                       <p className="text-slate-500 text-xs leading-relaxed italic">{note.summary}</p>
-                    </div>
+                    </Link>
                   ))}
               </div>
             </div>
@@ -128,4 +133,3 @@ function SectionHeader({
     </div>
   );
 }
-

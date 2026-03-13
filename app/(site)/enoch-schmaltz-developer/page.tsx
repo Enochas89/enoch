@@ -2,7 +2,7 @@ import Link from "next/link";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Enoch Schmaltz — Developer",
+  title: "Enoch Schmaltz - Developer",
   description:
     "Developer profile for Enoch Schmaltz focused on tools and software experiments for project management systems and coordination.",
   alternates: {

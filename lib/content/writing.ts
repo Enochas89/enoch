@@ -4,7 +4,6 @@ import matter from "gray-matter";
 import readingTime from "reading-time";
 import { cache } from "react";
 import { renderMdx } from "./mdx";
-import { getSubstackPosts } from "./substack";
 
 export type WritingType = "essay" | "explainer" | "commentary" | "newsletter";
 
@@ -65,7 +64,7 @@ const listWriting = cache((): WritingMeta[] => {
     const summary =
       (data.summary as string) ||
       excerpt ||
-      content.substring(0, 220).concat("…");
+      content.substring(0, 220).concat("...");
 
     const readingStats = readingTime(content);
 
@@ -86,27 +85,10 @@ const listWriting = cache((): WritingMeta[] => {
   });
 });
 
-export const getAllWriting = async () => {
-  const substack = await getSubstackPosts();
-
-  const substackMapped: WritingMeta[] = substack.map((item) => ({
-    slug: item.slug,
-    title: item.title,
-    summary: item.summary,
-    topics: [],
-    type: "essay",
-    publishedAt: item.publishedAt,
-    readingMinutes: 4,
-    excerpt: item.summary,
-    body: "",
-    year: new Date(item.publishedAt).getFullYear(),
-    externalUrl: item.externalUrl,
-  }));
-
-  return substackMapped.sort(
+export const getAllWriting = async () =>
+  listWriting().sort(
     (a, b) => new Date(b.publishedAt).getTime() - new Date(a.publishedAt).getTime(),
   );
-};
 
 export const getWritingBySlug = async (
   slug: string,
@@ -114,7 +96,7 @@ export const getWritingBySlug = async (
   const all = await getAllWriting();
   const entry = all.find((item) => item.slug === slug);
   if (!entry) return null;
-  if (entry.externalUrl) return { ...entry, mdx: null };
+
   const mdx = await renderMdx(entry.body);
   return { ...entry, mdx };
 };

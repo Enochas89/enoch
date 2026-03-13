@@ -4,21 +4,11 @@ const nextConfig: NextConfig = {
   async redirects() {
     return [
       {
-        source: "/writing/why-the-u-2-created-half-of-americas-ufo-sightings",
-        destination:
-          "https://enochschmaltz89.substack.com/p/why-the-u-2-created-half-of-americas",
-        permanent: false,
+        source: "/:path*",
+        has: [{ type: "host", value: "www.enochschmaltz.com" }],
+        destination: "https://enochschmaltz.com/:path*",
+        permanent: true,
       },
-      {
-        source: "/writing/the-a-12-and-the-ufo-mirage",
-        destination:
-          "https://enochschmaltz89.substack.com/p/the-a-12-and-the-ufo-mirage",
-        permanent: false,
-      },
-      { source: "/writing", destination: "/", permanent: true },
-      { source: "/writing/:path*", destination: "/", permanent: true },
-      { source: "/media", destination: "/", permanent: true },
-      { source: "/media/:path*", destination: "/", permanent: true },
     ];
   },
 };

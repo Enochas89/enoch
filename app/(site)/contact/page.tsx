@@ -1,6 +1,18 @@
-export const metadata = {
+import type { Metadata } from "next";
+import { SITE_URL } from "@/lib/schema";
+
+export const metadata: Metadata = {
   title: "Contact",
   description: "Contact and speaking requests for E.A. Schmaltz.",
+  alternates: {
+    canonical: `${SITE_URL}/contact`,
+  },
+  openGraph: {
+    type: "website",
+    url: `${SITE_URL}/contact`,
+    title: "Contact",
+    description: "Contact and speaking requests for E.A. Schmaltz.",
+  },
 };
 
 export default function ContactPage() {

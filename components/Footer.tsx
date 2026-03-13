@@ -1,6 +1,6 @@
 import Link from "next/link";
 import { ReactNode } from "react";
-import { Linkedin, Mail, Twitter } from "lucide-react";
+import { Linkedin, Mail } from "lucide-react";
 
 export default function Footer() {
   const year = new Date().getFullYear();
@@ -20,8 +20,8 @@ export default function Footer() {
               Exploring how invisible technologies shape what we know and believe -- and what that means for policy, security, and culture.
             </p>
             <div className="flex gap-4 text-slate-300">
-              <SocialLink href="https://twitter.com" label="Twitter">
-                <Twitter className="w-5 h-5" />
+              <SocialLink href="https://x.com" label="X">
+                <XLogoIcon className="w-5 h-5" />
               </SocialLink>
               <SocialLink href="https://www.linkedin.com" label="LinkedIn">
                 <Linkedin className="w-5 h-5" />
@@ -55,9 +55,9 @@ export default function Footer() {
                 <Mail className="w-4 h-4 text-teal-300" />
                 <a
                   className="hover:text-teal-200 transition-colors font-semibold"
-                  href="mailto:contactus@enochschmaltz.com"
+                  href="mailto:hello@enochschmaltz.com"
                 >
-                  contactus@enochschmaltz.com
+                  hello@enochschmaltz.com
                 </a>
               </li>
             </ul>
@@ -70,6 +70,19 @@ export default function Footer() {
         </div>
       </div>
     </footer>
+  );
+}
+
+function XLogoIcon({ className }: { className?: string }) {
+  return (
+    <svg
+      viewBox="0 0 24 24"
+      aria-hidden="true"
+      fill="currentColor"
+      className={className}
+    >
+      <path d="M18.244 2h3.308l-7.227 8.26L23 22h-6.74l-5.28-6.91L4.94 22H1.63l7.73-8.84L1 2h6.91l4.77 6.31L18.244 2Zm-1.16 18h1.833L6.912 3.9H4.947L17.084 20Z" />
+    </svg>
   );
 }
 

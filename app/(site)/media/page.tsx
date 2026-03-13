@@ -1,10 +1,21 @@
 import { Globe, Mic } from "lucide-react";
+import type { Metadata } from "next";
 import MediaFilter from "@/components/MediaFilter";
 import { getAllMedia } from "@/lib/content/media";
+import { SITE_URL } from "@/lib/schema";
 
-export const metadata = {
+export const metadata: Metadata = {
   title: "Media & Speaking",
   description: "Interviews, podcasts, and speaking with E.A. Schmaltz.",
+  alternates: {
+    canonical: `${SITE_URL}/media`,
+  },
+  openGraph: {
+    type: "website",
+    url: `${SITE_URL}/media`,
+    title: "Media & Speaking",
+    description: "Interviews, podcasts, and speaking with E.A. Schmaltz.",
+  },
 };
 
 export default function MediaPage() {
@@ -17,7 +28,8 @@ export default function MediaPage() {
           <div className="max-w-3xl">
             <h1 className="text-5xl font-serif text-slate-900 mb-6">Media & Speaking</h1>
             <p className="text-lg text-slate-600 leading-relaxed">
-              Conversations about sensing, power, and culture. Filter for podcasts, interviews, talks, and article mentions.
+              Conversations about sensing, power, and culture. Filter for podcasts, interviews,
+              talks, and article mentions.
             </p>
           </div>
 
@@ -41,9 +53,9 @@ export default function MediaPage() {
                 <Globe className="mr-3 w-5 h-5 text-teal-600" /> Speaking Topics
               </h2>
               <ul className="text-slate-600 space-y-3">
-                <li>• The Architecture of Public Trust</li>
-                <li>• Policy Frameworks for Strategic Tech</li>
-                <li>• The Erosion of Visual Proof</li>
+                <li>- The Architecture of Public Trust</li>
+                <li>- Policy Frameworks for Strategic Tech</li>
+                <li>- The Erosion of Visual Proof</li>
               </ul>
             </div>
           </div>

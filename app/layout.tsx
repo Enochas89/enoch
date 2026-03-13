@@ -28,9 +28,6 @@ const personJsonLd = authorPersonSchema();
 export const metadata: Metadata = {
   ...defaultMetadata,
   metadataBase: new URL("https://enochschmaltz.com"),
-  alternates: {
-    canonical: "https://enochschmaltz.com",
-  },
   openGraph: {
     ...defaultMetadata.openGraph,
     title: "E. A. Schmaltz",

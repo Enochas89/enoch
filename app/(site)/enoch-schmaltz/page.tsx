@@ -317,6 +317,30 @@ export default function EnochSchmaltzPage() {
                 /enoch-schmaltz-links
               </Link>
             </li>
+            <li>
+              <Link
+                href="/enoch-schmaltz-credentials"
+                className="text-teal-700 hover:text-teal-800 underline underline-offset-4"
+              >
+                /enoch-schmaltz-credentials
+              </Link>
+            </li>
+            <li>
+              <Link
+                href="/enoch-schmaltz-software-projects"
+                className="text-teal-700 hover:text-teal-800 underline underline-offset-4"
+              >
+                /enoch-schmaltz-software-projects
+              </Link>
+            </li>
+            <li>
+              <Link
+                href="/enoch-schmaltz-books-and-research"
+                className="text-teal-700 hover:text-teal-800 underline underline-offset-4"
+              >
+                /enoch-schmaltz-books-and-research
+              </Link>
+            </li>
           </ul>
         </div>
       </section>
