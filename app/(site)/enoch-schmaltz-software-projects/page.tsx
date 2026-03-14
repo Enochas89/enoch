@@ -42,6 +42,23 @@ const projectCards = [
       "A desktop writing and storyboarding system combining timeline planning, drafting workflows, and production-oriented tooling.",
     link: "/software",
     label: "Software Page",
+    tasks: [
+      {
+        title: "Storyboard Planning",
+        description:
+          "Support timeline-based scene planning so narrative structure stays visible during drafting.",
+      },
+      {
+        title: "Drafting Workflow",
+        description:
+          "Provide writing tools optimized for long-form manuscript production.",
+      },
+      {
+        title: "Execution Stability",
+        description:
+          "Improve reliability, autosave behavior, and production-readiness across releases.",
+      },
+    ],
   },
   {
     name: "ClearView",
@@ -49,6 +66,23 @@ const projectCards = [
       "A project management platform concept focused on communication, coordination, and timeline visibility for teams.",
     link: "/projects",
     label: "Projects Page",
+    tasks: [
+      {
+        title: "Project Coordination",
+        description:
+          "Centralize ownership, task flow, and progress context for distributed teams.",
+      },
+      {
+        title: "Delivery Tracking",
+        description:
+          "Highlight milestone status and schedule risk through clearer timeline reporting.",
+      },
+      {
+        title: "Communication Clarity",
+        description:
+          "Reduce execution friction by linking updates, blockers, and decisions in one place.",
+      },
+    ],
   },
   {
     name: "Independent Tools",
@@ -57,6 +91,23 @@ const projectCards = [
     link: "https://github.com/Enochas89",
     label: "GitHub",
     external: true,
+    tasks: [
+      {
+        title: "Rapid Prototyping",
+        description:
+          "Develop testable proof-of-concept tools for workflow and publishing experiments.",
+      },
+      {
+        title: "Workflow Testing",
+        description:
+          "Evaluate product ideas against real writing and project-management use cases.",
+      },
+      {
+        title: "Iteration and Release",
+        description:
+          "Ship incremental improvements through open repositories and independent deployments.",
+      },
+    ],
   },
 ];
 
@@ -97,6 +148,19 @@ export default function EnochSchmaltzSoftwareProjectsPage() {
             <article key={item.name} className="border border-slate-200 rounded-lg p-5 bg-white">
               <h3 className="text-xl font-semibold text-slate-900">{item.name}</h3>
               <p className="mt-2 text-slate-700 leading-relaxed">{item.summary}</p>
+              <div className="mt-4 space-y-2">
+                <h4 className="text-xs font-bold uppercase tracking-[0.16em] text-slate-500">
+                  Task Descriptions
+                </h4>
+                <ul className="space-y-2">
+                  {item.tasks.map((task) => (
+                    <li key={task.title} className="rounded-md border border-slate-200 bg-slate-50 p-3">
+                      <p className="text-sm font-semibold text-slate-900">{task.title}</p>
+                      <p className="text-sm text-slate-600">{task.description}</p>
+                    </li>
+                  ))}
+                </ul>
+              </div>
               {item.external ? (
                 <a
                   href={item.link}
