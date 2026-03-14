@@ -1,6 +1,71 @@
 import type { Metadata } from "next";
 import { getPublicRepos } from "@/lib/github";
 
+type ProjectFallback = {
+  id: string;
+  name: string;
+  description: string;
+  html_url: string;
+  homepage?: string;
+  language?: string;
+};
+
+const FALLBACK_PROJECTS: ProjectFallback[] = [
+  {
+    id: "clearview",
+    name: "clearview",
+    description:
+      "Web-based project management platform focused on team coordination, project visibility, and execution workflows.",
+    html_url: "https://github.com/Enochas89/clearview",
+    homepage: "https://clearview-xi.vercel.app",
+    language: "TypeScript",
+  },
+  {
+    id: "clearviewteams",
+    name: "clearviewteams",
+    description:
+      "Project collaboration platform concept for managing communication, ownership, and delivery timelines across teams.",
+    html_url: "https://github.com/Enochas89/clearviewteams",
+    homepage: "https://clearviewteams.vercel.app",
+    language: "TypeScript",
+  },
+  {
+    id: "bookpublish",
+    name: "bookpublish",
+    description:
+      "Publishing workflow project for drafting, organizing, and shipping long-form writing projects.",
+    html_url: "https://github.com/Enochas89/bookpublish",
+    language: "HTML",
+  },
+  {
+    id: "timber-testament",
+    name: "Timber-Testament-",
+    description:
+      "Book and project publishing experiment exploring narrative structure and content presentation.",
+    html_url: "https://github.com/Enochas89/Timber-Testament-",
+    homepage: "https://timber-testament.vercel.app",
+    language: "TypeScript",
+  },
+  {
+    id: "ten-out-of-ten",
+    name: "10outoften",
+    description:
+      "Independent web application experiment built with a lightweight, iterative product workflow.",
+    html_url: "https://github.com/Enochas89/10outoften",
+    homepage: "https://10outoften.vercel.app",
+    language: "JavaScript",
+  },
+  {
+    id: "enoch-site",
+    name: "enoch",
+    description:
+      "Primary website repository containing author pages, writing, books, media, and SEO infrastructure.",
+    html_url: "https://github.com/Enochas89/enoch",
+    homepage: "https://enochschmaltz.com",
+    language: "TypeScript",
+  },
+];
+
 export const metadata: Metadata = {
   title: "Projects \u2014 Enoch Schmaltz",
   description:
@@ -26,6 +91,8 @@ export default async function ProjectsPage() {
   } catch {
     hasError = true;
   }
+
+  const showFallback = hasError || repos.length === 0;
 
   return (
     <div className="bg-white">
@@ -124,6 +191,48 @@ export default async function ProjectsPage() {
                   )}
                 </article>
               ))}
+            </div>
+          )}
+
+          {showFallback && (
+            <div className="space-y-4">
+              <h2 className="text-2xl font-serif font-semibold text-slate-900">
+                Featured Projects
+              </h2>
+              <div className="grid gap-6 md:grid-cols-2">
+                {FALLBACK_PROJECTS.map((project) => (
+                  <article
+                    key={project.id}
+                    className="border border-slate-200 rounded-lg p-5 space-y-3"
+                  >
+                    <h3 className="text-xl font-semibold text-slate-900">
+                      <a
+                        href={project.html_url}
+                        target="_blank"
+                        rel="noreferrer"
+                        className="hover:text-teal-700 underline-offset-4 hover:underline"
+                      >
+                        {project.name}
+                      </a>
+                    </h3>
+                    <p className="text-slate-600 leading-relaxed">{project.description}</p>
+                    <div className="flex flex-wrap items-center gap-4 text-xs uppercase tracking-wider text-slate-500">
+                      {project.language && <span>{project.language}</span>}
+                      <span>GitHub</span>
+                    </div>
+                    {project.homepage && (
+                      <a
+                        href={project.homepage}
+                        target="_blank"
+                        rel="noreferrer"
+                        className="inline-block text-sm text-teal-700 hover:text-teal-800 underline underline-offset-4"
+                      >
+                        Project website
+                      </a>
+                    )}
+                  </article>
+                ))}
+              </div>
             </div>
           )}
         </div>
