@@ -6,7 +6,7 @@ export const metadata: Metadata = {
   description:
     "Author profile for Enoch Schmaltz covering writing on technology, systems thinking, leadership, and complex project environments.",
   alternates: {
-    canonical: "https://enochschmaltz.com/enoch-schmaltz-author",
+    canonical: "https://www.enochschmaltz.com/enoch-schmaltz-author",
   },
 };
 

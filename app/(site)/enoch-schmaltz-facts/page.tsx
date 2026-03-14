@@ -52,10 +52,10 @@ export default function EnochSchmaltzFactsPage() {
             <section>
               <h2 className="text-2xl font-serif font-semibold text-slate-900">Website</h2>
               <a
-                href="https://enochschmaltz.com"
+                href="https://www.enochschmaltz.com"
                 className="text-teal-700 hover:text-teal-800 underline underline-offset-4"
               >
-                https://enochschmaltz.com
+                https://www.enochschmaltz.com
               </a>
             </section>
           </div>

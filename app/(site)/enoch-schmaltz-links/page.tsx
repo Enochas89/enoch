@@ -6,7 +6,7 @@ export const metadata: Metadata = {
   description:
     "Verified online profiles for Enoch Schmaltz across LinkedIn, Medium, Substack, GitHub, and About.me.",
   alternates: {
-    canonical: "https://enochschmaltz.com/enoch-schmaltz-links",
+    canonical: "https://www.enochschmaltz.com/enoch-schmaltz-links",
   },
 };
 

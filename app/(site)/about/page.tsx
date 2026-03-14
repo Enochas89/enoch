@@ -18,18 +18,18 @@ export const metadata: Metadata = {
 const aboutArticleJsonLd = {
   "@context": "https://schema.org",
   "@type": "AboutPage",
-  "@id": "https://enochschmaltz.com/about#webpage",
+  "@id": "https://www.enochschmaltz.com/about#webpage",
   name: "About the Author - E. A. Schmaltz",
-  url: "https://enochschmaltz.com/about",
+  url: "https://www.enochschmaltz.com/about",
   headline: "About the Author — E. A. Schmaltz",
   about: {
-    "@id": "https://enochschmaltz.com/#person",
+    "@id": "https://www.enochschmaltz.com/#person",
   },
   publisher: {
-    "@id": "https://enochschmaltz.com/#publisher",
+    "@id": "https://www.enochschmaltz.com/#publisher",
   },
   isPartOf: {
-    "@id": "https://enochschmaltz.com/#website",
+    "@id": "https://www.enochschmaltz.com/#website",
   },
   description:
     "About the author E. A. Schmaltz: books, writing, and technology commentary on perception and policy themes, including Puppet Skies and Controlled Release.",

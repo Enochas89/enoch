@@ -13,7 +13,7 @@ export const metadata: Metadata = {
   },
   openGraph: {
     type: "profile",
-    url: "https://enochschmaltz.com/enoch-schmaltz",
+    url: "https://www.enochschmaltz.com/enoch-schmaltz",
     title: "Enoch Schmaltz \u2014 Professional Profile",
     description:
       "Professional profile for Enoch Schmaltz: writer, developer, and project systems builder focused on execution, visibility, and accountability in complex environments.",
@@ -23,17 +23,17 @@ export const metadata: Metadata = {
 const enochArticleJsonLd = {
   "@context": "https://schema.org",
   "@type": "ProfilePage",
-  "@id": "https://enochschmaltz.com/enoch-schmaltz#webpage",
+  "@id": "https://www.enochschmaltz.com/enoch-schmaltz#webpage",
   name: "Enoch Schmaltz | Writer, Developer, and Project Systems Builder",
-  url: "https://enochschmaltz.com/enoch-schmaltz",
+  url: "https://www.enochschmaltz.com/enoch-schmaltz",
   about: {
-    "@id": "https://enochschmaltz.com/#person",
+    "@id": "https://www.enochschmaltz.com/#person",
   },
   publisher: {
-    "@id": "https://enochschmaltz.com/#publisher",
+    "@id": "https://www.enochschmaltz.com/#publisher",
   },
   isPartOf: {
-    "@id": "https://enochschmaltz.com/#website",
+    "@id": "https://www.enochschmaltz.com/#website",
   },
   inLanguage: "en-US",
 };
@@ -262,10 +262,10 @@ export default function EnochSchmaltzPage() {
           <p className="text-slate-700 leading-relaxed">
             Official website:{" "}
             <a
-              href="https://enochschmaltz.com"
+              href="https://www.enochschmaltz.com"
               className="text-teal-700 hover:text-teal-800 underline underline-offset-4"
             >
-              https://enochschmaltz.com
+              https://www.enochschmaltz.com
             </a>
           </p>
         </div>
@@ -400,10 +400,10 @@ export default function EnochSchmaltzPage() {
           <ul className="space-y-2 text-slate-700">
             <li>
               <a
-                href="https://enochschmaltz.com"
+                href="https://www.enochschmaltz.com"
                 className="text-teal-700 hover:text-teal-800 underline underline-offset-4"
               >
-                https://enochschmaltz.com
+                https://www.enochschmaltz.com
               </a>
             </li>
             <li>

@@ -78,8 +78,8 @@ Page: `/media` with filter pills.
 
 ## Deployment (Vercel)
 - Push to GitHub; connect the repo in Vercel. Defaults work (Next.js + npm).
-- Production domain: `https://enochschmaltz.com`.
-- Set `NEXT_PUBLIC_SITE_URL` to `https://enochschmaltz.com` for accurate metadata/RSS/sitemap.
+- Production domain: `https://www.enochschmaltz.com`.
+- Set `NEXT_PUBLIC_SITE_URL` to `https://www.enochschmaltz.com` for accurate metadata/RSS/sitemap.
 
 ## Project structure (high level)
 - `app/(site)/*` — pages
@@ -93,7 +93,7 @@ Page: `/media` with filter pills.
 - Keep file names slugged (`YYYY-MM-DD-title.mdx`) to preserve URLs.
 - Use `topics` consistently to make filters useful.
 - Replace the placeholder social image at `public/images/social-card.png` if you add one.
-- Keep `NEXT_PUBLIC_SITE_URL` aligned with `https://enochschmaltz.com`.
+- Keep `NEXT_PUBLIC_SITE_URL` aligned with `https://www.enochschmaltz.com`.
 - CI should run `npm run lint`, `npm run typecheck`, and `npm run build`.
 
 ## Repo scope
@@ -102,4 +102,4 @@ Page: `/media` with filter pills.
 ## SEO endpoint check
 - Run `npm run dev`.
 - Open `http://localhost:3000/sitemap.xml` and confirm pages are listed.
-- Open `http://localhost:3000/robots.txt` and confirm it references `https://enochschmaltz.com/sitemap.xml`.
+- Open `http://localhost:3000/robots.txt` and confirm it references `https://www.enochschmaltz.com/sitemap.xml`.

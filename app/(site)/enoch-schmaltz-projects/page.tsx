@@ -6,7 +6,7 @@ export const metadata: Metadata = {
   description:
     "Projects by Enoch Schmaltz, including tools and experiments related to project systems and coordination.",
   alternates: {
-    canonical: "https://enochschmaltz.com/enoch-schmaltz-projects",
+    canonical: "https://www.enochschmaltz.com/enoch-schmaltz-projects",
   },
 };
 

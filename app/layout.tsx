@@ -27,12 +27,12 @@ const personJsonLd = authorPersonSchema();
 
 export const metadata: Metadata = {
   ...defaultMetadata,
-  metadataBase: new URL("https://enochschmaltz.com"),
+  metadataBase: new URL("https://www.enochschmaltz.com"),
   openGraph: {
     ...defaultMetadata.openGraph,
     title: "E. A. Schmaltz",
     siteName: "E. A. Schmaltz",
-    url: "https://enochschmaltz.com",
+    url: "https://www.enochschmaltz.com",
     type: "website",
   },
   twitter: {

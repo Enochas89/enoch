@@ -1,4 +1,4 @@
-export const SITE_URL = "https://enochschmaltz.com";
+export const SITE_URL = "https://www.enochschmaltz.com";
 
 export const SCHEMA_IDS = {
   author: `${SITE_URL}/#person`,

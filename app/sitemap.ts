@@ -3,7 +3,7 @@ import { discoverPublicAppRoutes } from "@/lib/routeDiscovery";
 import { getAllBooks } from "@/lib/content/books";
 import { getAllWriting } from "@/lib/content/writing";
 
-const SITE_URL = "https://enochschmaltz.com";
+const SITE_URL = "https://www.enochschmaltz.com";
 
 const REQUIRED_ROUTES = [
   "/",

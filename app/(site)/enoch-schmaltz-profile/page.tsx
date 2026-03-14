@@ -94,7 +94,7 @@ export default function EnochSchmaltzProfilePage() {
             Writing by Enoch Schmaltz appears on Medium and Substack, with
             complementary publishing on his primary domain,{" "}
             <a
-              href="https://enochschmaltz.com"
+              href="https://www.enochschmaltz.com"
               className="text-teal-700 hover:text-teal-800 underline underline-offset-4"
             >
               enochschmaltz.com
@@ -176,10 +176,10 @@ export default function EnochSchmaltzProfilePage() {
           <ul className="space-y-2 text-slate-700">
             <li>
               <a
-                href="https://enochschmaltz.com"
+                href="https://www.enochschmaltz.com"
                 className="text-teal-700 hover:text-teal-800 underline underline-offset-4"
               >
-                https://enochschmaltz.com
+                https://www.enochschmaltz.com
               </a>
             </li>
             <li>

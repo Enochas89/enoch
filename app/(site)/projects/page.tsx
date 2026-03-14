@@ -61,7 +61,7 @@ const FALLBACK_PROJECTS: ProjectFallback[] = [
     description:
       "Primary website repository containing author pages, writing, books, media, and SEO infrastructure.",
     html_url: "https://github.com/Enochas89/enoch",
-    homepage: "https://enochschmaltz.com",
+    homepage: "https://www.enochschmaltz.com",
     language: "TypeScript",
   },
 ];
@@ -71,11 +71,11 @@ export const metadata: Metadata = {
   description:
     "Projects and tools by Enoch Schmaltz focused on project systems, development work, and execution visibility.",
   alternates: {
-    canonical: "https://enochschmaltz.com/projects",
+    canonical: "https://www.enochschmaltz.com/projects",
   },
   openGraph: {
     type: "website",
-    url: "https://enochschmaltz.com/projects",
+    url: "https://www.enochschmaltz.com/projects",
     title: "Projects \u2014 Enoch Schmaltz",
     description:
       "Projects and tools by Enoch Schmaltz focused on project systems, development work, and execution visibility.",
