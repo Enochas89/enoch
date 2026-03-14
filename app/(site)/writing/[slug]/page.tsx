@@ -6,7 +6,7 @@ import { articleJsonLd, absoluteUrl } from "@/lib/seo";
 import { formatDate } from "@/lib/utils";
 import { breadcrumbListSchema, SITE_URL } from "@/lib/schema";
 
-type Props = { params: { slug: string } };
+type Props = { params: Promise<{ slug: string }> };
 
 export async function generateStaticParams() {
   const writing = await getAllWriting();
@@ -14,7 +14,8 @@ export async function generateStaticParams() {
 }
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
-  const article = (await getAllWriting()).find((item) => item.slug === params.slug);
+  const { slug } = await params;
+  const article = (await getAllWriting()).find((item) => item.slug === slug);
   if (!article) return {};
 
   return {
@@ -38,7 +39,8 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 }
 
 export default async function WritingArticlePage({ params }: Props) {
-  const article = await getWritingBySlug(params.slug);
+  const { slug } = await params;
+  const article = await getWritingBySlug(slug);
   if (!article) return notFound();
 
   const articleUrl = `${SITE_URL}/writing/${article.slug}`;

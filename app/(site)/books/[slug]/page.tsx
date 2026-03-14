@@ -7,7 +7,7 @@ import { formatDate } from "@/lib/utils";
 import JsonLd from "@/components/JsonLd";
 import { breadcrumbListSchema, bookSchema, SITE_URL } from "@/lib/schema";
 
-type Props = { params: { slug: string } };
+type Props = { params: Promise<{ slug: string }> };
 
 export const dynamicParams = false;
 
@@ -15,8 +15,9 @@ export function generateStaticParams() {
   return getAllBooks().map((book) => ({ slug: book.slug }));
 }
 
-export function generateMetadata({ params }: Props): Metadata {
-  const book = getBookBySlug(params.slug);
+export async function generateMetadata({ params }: Props): Promise<Metadata> {
+  const { slug } = await params;
+  const book = getBookBySlug(slug);
   if (!book) return {};
 
   return {
@@ -40,8 +41,9 @@ export function generateMetadata({ params }: Props): Metadata {
   };
 }
 
-export default function BookDetailPage({ params }: Props) {
-  const book = getBookBySlug(params.slug);
+export default async function BookDetailPage({ params }: Props) {
+  const { slug } = await params;
+  const book = getBookBySlug(slug);
   if (!book) return notFound();
 
   const bookUrl = `${SITE_URL}/books/${book.slug}`;

@@ -43,6 +43,7 @@ const listWriting = cache((): WritingMeta[] => {
     const { data, content, excerpt } = matter(raw, {
       excerpt_separator: "<!-- more -->",
     });
+    const contentForMdx = content.replace(/<!--\s*more\s*-->/gi, "").trim();
 
     const slug = fileName
       .replace(/\.mdx$/, "")
@@ -66,7 +67,7 @@ const listWriting = cache((): WritingMeta[] => {
       excerpt ||
       content.substring(0, 220).concat("...");
 
-    const readingStats = readingTime(content);
+    const readingStats = readingTime(contentForMdx);
 
     return {
       slug,
@@ -79,7 +80,7 @@ const listWriting = cache((): WritingMeta[] => {
       externalUrl: data.externalUrl as string | undefined,
       readingMinutes: Math.max(1, Math.round(readingStats.minutes)),
       excerpt: excerpt || summary,
-      body: content,
+      body: contentForMdx,
       year: new Date(publishedAt).getFullYear(),
     };
   });
