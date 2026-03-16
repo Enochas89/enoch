@@ -1,15 +1,18 @@
+import Image from "next/image";
 import Link from "next/link";
 
 const publications = [
   {
     title: "Puppet Skies",
     href: "/books/puppet-skies",
+    coverImage: "/images/books/puppet-skies/cover.jpg",
     description:
       "An investigation into the history of stealth aircraft programs and how secret military aircraft are developed away from public scrutiny. Investigating classified aerospace technology and the mechanisms used to hide advanced government assets.",
   },
   {
     title: "The Controlled Release",
     href: "/books/the-controlled-release",
+    coverImage: "/images/books/the-controlled-release/cover.png",
     description:
       "Exploring modern psychological warfare and the control of public perception. This work analyzes psychological manipulation and the behavioral control theory used by institutional power structures to maintain hidden societal structures.",
   },
@@ -31,8 +34,21 @@ export default function PublicationsSection() {
           {publications.map((publication) => (
             <article
               key={publication.title}
-              className="rounded-lg border border-[#c5a059]/50 bg-white p-6 shadow-sm"
+              className="rounded-lg border border-[#c5a059]/50 bg-white p-6 shadow-sm grid gap-5 md:grid-cols-[10rem,1fr] items-start"
             >
+              <Link
+                href={publication.href}
+                className="relative block h-56 w-40 overflow-hidden rounded border border-[#c5a059]/40 bg-[#f2f2f2]"
+              >
+                <Image
+                  src={publication.coverImage}
+                  alt={`${publication.title} cover`}
+                  fill
+                  className="object-cover"
+                  sizes="160px"
+                />
+              </Link>
+              <div>
               <h3 className="text-2xl font-serif text-[#1a1a1a]">
                 <Link
                   href={publication.href}
@@ -44,6 +60,7 @@ export default function PublicationsSection() {
               <p className="mt-4 leading-relaxed text-[#2a2a2a]">
                 {publication.description}
               </p>
+              </div>
             </article>
           ))}
         </div>
