@@ -125,7 +125,14 @@ export default function PressPage() {
         <div className="grid gap-4">
           {projects.map((project) => (
             <article key={project.title} className="border border-slate-200 rounded-lg p-5 bg-white">
-              <h3 className="text-xl font-semibold text-slate-900">{project.title}</h3>
+              <h3 className="text-xl font-semibold text-slate-900">
+                <Link
+                  href={project.href}
+                  className="underline underline-offset-4 hover:text-teal-700"
+                >
+                  {project.title}
+                </Link>
+              </h3>
               <p className="mt-2 text-slate-700 leading-relaxed">{project.description}</p>
               <Link
                 href={project.href}

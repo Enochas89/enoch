@@ -69,8 +69,14 @@ export default function EnochSchmaltzBooksResearchPage() {
           technology development timelines, and institutional interpretation of emerging systems.
         </p>
         <p className="text-slate-700 leading-relaxed">
-          <em>Puppet Skies</em> is a central project in this research direction, with related
-          writing and analysis published through the site.
+          <Link
+            href="/books/puppet-skies"
+            className="text-teal-700 underline underline-offset-4 hover:text-teal-800"
+          >
+            <em>Puppet Skies</em>
+          </Link>{" "}
+          is a central project in this research direction, with related writing
+          and analysis published through the site.
         </p>
         <Link
           href="/books"

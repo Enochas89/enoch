@@ -28,13 +28,12 @@ function withOptional<T extends Record<string, unknown>>(
 export function authorPersonSchema() {
   const sameAs = [
     "https://www.linkedin.com/in/enochschmaltz",
-    "https://medium.com/@enochschmaltz",
-    "https://enochschmaltz89.substack.com",
     "https://github.com/Enochas89",
     "https://about.me/enochschmaltz",
+    "https://medium.com/@enochschmaltz",
+    "https://enochschmaltz89.substack.com",
     "https://www.goodreads.com/author/show/enoch-schmaltz",
     "https://www.amazon.com/author/enochschmaltz",
-    "https://orcid.org/0000-0000-0000-0000",
     "https://www.wikidata.org/wiki/Q138569168",
   ];
 
@@ -45,25 +44,21 @@ export function authorPersonSchema() {
     name: "Enoch Schmaltz",
     alternateName: "E. A. Schmaltz",
     url: SITE_URL,
-    image: `${SITE_URL}/profile.jpg`,
+    image: `${SITE_URL}/EnochSchmaltz.jpg`,
     mainEntityOfPage: `${SITE_URL}/enoch-schmaltz`,
     sameAs,
-    jobTitle: [
-      "Author",
-      "Writer",
-      "Developer",
-      "Project Systems Thinker",
-      "Project Management Systems Builder",
-    ],
+    jobTitle: "Construction Project Manager",
+    alumniOf: {
+      "@type": "EducationalOrganization",
+      name: "Business Degree",
+    },
     description:
-      "Enoch Schmaltz is a writer and developer exploring systems thinking, project execution, and the structures that allow complex work to move from concept to completion.",
+      "PMP Certified professional with 14+ Years Experience as a Construction Project Manager, Senior Estimator, Developer, and SaaS Founder.",
     knowsAbout: [
+      "PMP",
       "Project Management",
-      "Systems Thinking",
-      "Technology",
-      "Artificial Intelligence",
-      "Complex Systems",
-      "Leadership",
+      "React",
+      "TypeScript",
     ],
   };
 }
@@ -73,7 +68,7 @@ export function websiteSchema() {
     "@context": "https://schema.org",
     "@type": "WebSite",
     "@id": SCHEMA_IDS.website,
-    name: "E. A. Schmaltz",
+    name: "Enoch Schmaltz",
     url: SITE_URL,
     publisher: {
       "@id": SCHEMA_IDS.author,
@@ -87,7 +82,7 @@ export function organizationSchema() {
     "@context": "https://schema.org",
     "@type": "Organization",
     "@id": SCHEMA_IDS.publisher,
-    name: "E. A. Schmaltz",
+    name: "Enoch Schmaltz",
     url: SITE_URL,
   };
 }

@@ -6,55 +6,59 @@ export default function Footer() {
   const year = new Date().getFullYear();
 
   return (
-    <footer className="mt-20 bg-slate-900 text-slate-100">
+    <footer className="mt-20 bg-[#1a1a1a] text-[#fcfcfc]">
       <div className="max-w-6xl mx-auto px-6 py-14 space-y-12">
         <div className="grid gap-10 md:grid-cols-4">
           <div className="md:col-span-2 space-y-4">
-            <p className="text-[11px] font-semibold uppercase tracking-[0.25em] text-teal-300">
-              E. A. Schmaltz
+            <p className="text-[11px] font-semibold uppercase tracking-[0.25em] text-[#c5a059]">
+              Enoch Schmaltz
             </p>
             <h3 className="text-2xl font-serif font-semibold">
               Essays and books on sensing, perception, and public trust.
             </h3>
-            <p className="text-slate-300 leading-relaxed max-w-xl">
-              Exploring how invisible technologies shape what we know and believe -- and what that means for policy, security, and culture.
+            <p className="text-[#d9d9d9] leading-relaxed max-w-xl">
+              Exploring how invisible technologies shape what we know and believe
+              and what that means for policy, security, and culture.
             </p>
-            <div className="flex gap-4 text-slate-300">
+            <div className="flex gap-4 text-[#d9d9d9]">
               <SocialLink href="https://x.com" label="X">
                 <XLogoIcon className="w-5 h-5" />
               </SocialLink>
-              <SocialLink href="https://www.linkedin.com" label="LinkedIn">
+              <SocialLink href="https://www.linkedin.com/in/enochschmaltz" label="LinkedIn">
                 <Linkedin className="w-5 h-5" />
               </SocialLink>
             </div>
           </div>
 
           <div className="space-y-4">
-            <h4 className="text-xs font-bold uppercase tracking-[0.22em] text-slate-400">
+            <h4 className="text-xs font-bold uppercase tracking-[0.22em] text-[#c5a059]">
               Navigation
             </h4>
-            <ul className="space-y-2 text-sm text-slate-200">
-              <li><Link href="/" className="hover:text-teal-200 transition-colors">Home</Link></li>
-              <li><Link href="/writing" className="hover:text-teal-200 transition-colors">Writing</Link></li>
-              <li><Link href="/projects" className="hover:text-teal-200 transition-colors">Projects</Link></li>
-              <li><Link href="/software" className="hover:text-teal-200 transition-colors">Software</Link></li>
-              <li><Link href="/about" className="hover:text-teal-200 transition-colors">About</Link></li>
-              <li><Link href="/enoch-schmaltz" className="hover:text-teal-200 transition-colors">Enoch Schmaltz</Link></li>
-              <li><Link href="/books" className="hover:text-teal-200 transition-colors">Books</Link></li>
-              <li><Link href="/press" className="hover:text-teal-200 transition-colors">Press</Link></li>
-              <li><Link href="/contact" className="hover:text-teal-200 transition-colors">Contact</Link></li>
+            <ul className="space-y-2 text-sm text-[#e4e4e4]">
+              <li><Link href="/" className="hover:text-[#c5a059] transition-colors">Home</Link></li>
+              <li><Link href="/writing" className="hover:text-[#c5a059] transition-colors">Writing</Link></li>
+              <li><Link href="/projects" className="hover:text-[#c5a059] transition-colors">Projects</Link></li>
+              <li><Link href="/software" className="hover:text-[#c5a059] transition-colors">Software</Link></li>
+              <li><Link href="/about" className="hover:text-[#c5a059] transition-colors">About</Link></li>
+              <li><Link href="/enoch-schmaltz" className="hover:text-[#c5a059] transition-colors">Enoch Schmaltz</Link></li>
+              <li><Link href="/books" className="hover:text-[#c5a059] transition-colors">Books</Link></li>
+              <li><Link href="/press" className="hover:text-[#c5a059] transition-colors">Press</Link></li>
+              <li><Link href="/contact" className="hover:text-[#c5a059] transition-colors">Contact</Link></li>
+              <li><Link href="/books" className="hover:text-[#c5a059] transition-colors">Books by Enoch Schmaltz</Link></li>
+              <li><Link href="/writing" className="hover:text-[#c5a059] transition-colors">Enoch Schmaltz Writer</Link></li>
+              <li><Link href="/about" className="hover:text-[#c5a059] transition-colors">Enoch Schmaltz Author</Link></li>
             </ul>
           </div>
 
           <div className="space-y-4">
-            <h4 className="text-xs font-bold uppercase tracking-[0.22em] text-slate-400">
+            <h4 className="text-xs font-bold uppercase tracking-[0.22em] text-[#c5a059]">
               Connect
             </h4>
-            <ul className="space-y-3 text-sm text-slate-200">
+            <ul className="space-y-3 text-sm text-[#e4e4e4]">
               <li className="flex items-center gap-2">
-                <Mail className="w-4 h-4 text-teal-300" />
+                <Mail className="w-4 h-4 text-[#c5a059]" />
                 <a
-                  className="hover:text-teal-200 transition-colors font-semibold"
+                  className="hover:text-[#c5a059] transition-colors font-semibold"
                   href="mailto:hello@enochschmaltz.com"
                 >
                   hello@enochschmaltz.com
@@ -64,8 +68,8 @@ export default function Footer() {
           </div>
         </div>
 
-        <div className="border-t border-slate-800 pt-6 flex flex-col md:flex-row md:items-center md:justify-between gap-3 text-[11px] uppercase tracking-[0.18em] text-slate-400">
-          <span>(c) {year} E. A. Schmaltz</span>
+        <div className="border-t border-[#3b3b3b] pt-6 flex flex-col md:flex-row md:items-center md:justify-between gap-3 text-[11px] uppercase tracking-[0.18em] text-[#bcbcbc]">
+          <span>(c) {year} Enoch Schmaltz</span>
           <span className="text-[10px]">Published via Vercel</span>
         </div>
       </div>
@@ -101,7 +105,7 @@ function SocialLink({
       aria-label={label}
       target="_blank"
       rel="noreferrer"
-      className="rounded-full border border-slate-700/70 p-2 hover:border-teal-300 hover:text-teal-200 transition-colors"
+      className="rounded-full border border-[#4a4a4a] p-2 hover:border-[#c5a059] hover:text-[#c5a059] transition-colors"
     >
       {children}
     </a>

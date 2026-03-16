@@ -1,22 +1,22 @@
 import type { Metadata } from "next";
 import Hero from "@/components/Hero";
-import BookCard from "@/components/BookCard";
 import NewsletterSection from "@/components/NewsletterSection";
 import { getAllWriting } from "@/lib/content/writing";
-import { getAllBooks } from "@/lib/content/books";
 import SubstackFeed from "@/components/SubstackFeed";
 import AuthorIdentityLink from "@/components/AuthorIdentityLink";
 import Link from "next/link";
 import JsonLd from "@/components/JsonLd";
 import { pageSchema, SITE_URL } from "@/lib/schema";
+import PublicationsSection from "@/components/PublicationsSection";
+import ResearchArchive from "@/components/ResearchArchive";
+import ProjectGovernanceSection from "@/components/ProjectGovernanceSection";
 
 export const metadata: Metadata = {
   title: {
-    absolute:
-      "E. A. Schmaltz — Author, Systems Thinker, and Technology Writer",
+    absolute: "Enoch Schmaltz | Author, Project Manager & Systems Architect",
   },
   description:
-    "E. A. Schmaltz writes about technology, perception, AI, sensing systems, and complex public policy.",
+    "Official site of Enoch Schmaltz, author of 'Puppet Skies' and 'The Controlled Release'. Investigating societal control mechanisms, psychological governance, and the history of stealth aircraft programs.",
   alternates: {
     canonical: `${SITE_URL}/`,
   },
@@ -24,15 +24,14 @@ export const metadata: Metadata = {
 
 const homePageJsonLd = pageSchema({
   url: SITE_URL,
-  name: "E. A. Schmaltz",
+  name: "Enoch Schmaltz | Author, Project Manager & Systems Architect",
   description:
-    "E. A. Schmaltz writes about technology, perception, AI, sensing systems, and complex public policy.",
+    "Official site of Enoch Schmaltz, author of 'Puppet Skies' and 'The Controlled Release'. Investigating societal control mechanisms, psychological governance, and the history of stealth aircraft programs.",
 });
 
 export default async function HomePage() {
   const writing = await getAllWriting();
   const feed = writing.slice(0, 12);
-  const books = getAllBooks();
 
   return (
     <div className="bg-white">
@@ -69,22 +68,12 @@ export default async function HomePage() {
           </div>
         </div>
       </section>
-      {books.length > 0 && (
-        <section className="py-16">
-          <div className="max-w-6xl mx-auto px-6 space-y-6">
-            <div className="flex items-center justify-between">
-              <h2 className="text-2xl font-semibold text-slate-900">Books</h2>
-            </div>
-            <div className="grid gap-6 md:grid-cols-2">
-              {books.map((book) => (
-                <BookCard key={book.slug} book={book} />
-              ))}
-            </div>
-          </div>
-        </section>
-      )}
+      <ProjectGovernanceSection />
+      <PublicationsSection />
+      <ResearchArchive />
       <SubstackFeed posts={feed} />
       <NewsletterSection />
     </div>
   );
 }
+

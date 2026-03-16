@@ -62,10 +62,23 @@ export default function AboutPage() {
                   structures that govern emerging systems.
                 </p>
                 <p>
-                  Books by E. A. Schmaltz include <em>Puppet Skies</em> and{" "}
-                  <em>The Controlled Release</em>, each focused on how complex
-                  technologies move into public life and how institutions
-                  communicate risk, capability, and consequence.
+                  Books by E. A. Schmaltz include{" "}
+                  <Link
+                    href="/books/puppet-skies"
+                    className="text-teal-700 hover:text-teal-800 underline underline-offset-4"
+                  >
+                    <em>Puppet Skies</em>
+                  </Link>{" "}
+                  and{" "}
+                  <Link
+                    href="/books/the-controlled-release"
+                    className="text-teal-700 hover:text-teal-800 underline underline-offset-4"
+                  >
+                    <em>The Controlled Release</em>
+                  </Link>
+                  , each focused on how complex technologies move into public life
+                  and how institutions communicate risk, capability, and
+                  consequence.
                 </p>
                 <p>
                   For professional background and development work see:{" "}

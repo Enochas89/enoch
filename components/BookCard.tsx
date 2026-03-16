@@ -30,7 +30,14 @@ export default function BookCard({ book }: { book: Book }) {
               <span className="text-[var(--muted)]">{formatDate(book.releaseDate)}</span>
             )}
           </div>
-          <h3 className="text-2xl font-semibold text-[var(--ink)]">{book.title}</h3>
+          <h3 className="text-2xl font-semibold text-[var(--ink)]">
+            <Link
+              href={`/books/${book.slug}`}
+              className="hover:text-[var(--accent)] underline underline-offset-4"
+            >
+              {book.title}
+            </Link>
+          </h3>
           {book.subtitle && (
             <p className="text-base font-medium text-[var(--muted)]">
               {book.subtitle}

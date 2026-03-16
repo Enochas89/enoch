@@ -1,11 +1,11 @@
 import { articleSchema, bookSchema } from "./schema";
 
 export const siteMetadata = {
-  name: "E. A. Schmaltz",
-  penName: "E. A. Schmaltz",
-  title: "E. A. Schmaltz",
+  name: "Enoch Schmaltz",
+  penName: "Enoch Schmaltz",
+  title: "Enoch Schmaltz | Author, Project Manager & Systems Architect",
   description:
-    "Author and analyst examining power, technology, and the cultural weather. Essays, books, and media by E. A. Schmaltz.",
+    "Official site of Enoch Schmaltz, author of 'Puppet Skies' and 'The Controlled Release'. Investigating societal control mechanisms, psychological governance, and the history of stealth aircraft programs.",
   siteUrl: process.env.NEXT_PUBLIC_SITE_URL || "https://www.enochschmaltz.com",
   locale: "en_US",
   twitterHandle: "@easchmaltz",
@@ -19,10 +19,19 @@ export const ogImage = (path = "/images/social-card.png") =>
 
 export const defaultMetadata = {
   title: {
-    default: `${siteMetadata.penName} | Author`,
-    template: `%s | ${siteMetadata.penName}`,
+    default: siteMetadata.title,
+    template: `%s | ${siteMetadata.name}`,
   },
   description: siteMetadata.description,
+  keywords: [
+    "societal control mechanisms",
+    "psychological manipulation",
+    "behavioral control theory",
+    "information influence systems",
+    "social engineering concepts",
+    "Enoch Schmaltz author",
+    "Puppet Skies by Enoch Schmaltz",
+  ],
   metadataBase: new URL(siteMetadata.siteUrl),
   verification: {
     google: "-KOCdeBAmOjSAghAjAACG-TYU_C3cm1oLpiDY7wO_kU",

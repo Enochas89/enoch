@@ -7,7 +7,7 @@ import { SITE_URL } from "@/lib/schema";
 export const metadata: Metadata = {
   title: "Enoch Schmaltz \u2014 Professional Profile",
   description:
-    "Professional profile for Enoch Schmaltz: writer, developer, and project systems builder focused on execution, visibility, and accountability in complex environments.",
+    "Professional profile for Enoch Schmaltz: PMP Certified leader with 14+ Years Experience as a Senior Estimator, SaaS Founder, and developer.",
   alternates: {
     canonical: `${SITE_URL}/enoch-schmaltz`,
   },
@@ -16,7 +16,7 @@ export const metadata: Metadata = {
     url: "https://www.enochschmaltz.com/enoch-schmaltz",
     title: "Enoch Schmaltz \u2014 Professional Profile",
     description:
-      "Professional profile for Enoch Schmaltz: writer, developer, and project systems builder focused on execution, visibility, and accountability in complex environments.",
+      "Professional profile for Enoch Schmaltz: PMP Certified leader with 14+ Years Experience as a Senior Estimator, SaaS Founder, and developer.",
   },
 };
 
@@ -88,9 +88,10 @@ export default function EnochSchmaltzPage() {
               Biography
             </h2>
             <p>
-              Enoch Schmaltz is a writer, developer, and project management
-              professional focused on the systems that allow complex work to
-              move from concept to completion.
+              Enoch Schmaltz is a PMP Certified project management
+              professional with 14+ Years Experience, recognized as a Senior
+              Estimator and SaaS Founder focused on systems that move complex
+              work from concept to completion.
             </p>
             <p>
               His background includes construction project management and
@@ -200,7 +201,7 @@ export default function EnochSchmaltzPage() {
           <ul className="space-y-2 text-slate-700">
             <li>
               <a
-                href="https://www.linkedin.com"
+                href="https://www.linkedin.com/in/enochschmaltz"
                 target="_blank"
                 rel="noreferrer"
                 className="text-teal-700 hover:text-teal-800 underline underline-offset-4"
@@ -210,7 +211,7 @@ export default function EnochSchmaltzPage() {
             </li>
             <li>
               <a
-                href="https://medium.com"
+                href="https://medium.com/@enochschmaltz"
                 target="_blank"
                 rel="noreferrer"
                 className="text-teal-700 hover:text-teal-800 underline underline-offset-4"
@@ -250,7 +251,7 @@ export default function EnochSchmaltzPage() {
             </li>
             <li>
               <a
-                href="https://about.me"
+                href="https://about.me/enochschmaltz"
                 target="_blank"
                 rel="noreferrer"
                 className="text-teal-700 hover:text-teal-800 underline underline-offset-4"
@@ -408,22 +409,22 @@ export default function EnochSchmaltzPage() {
             </li>
             <li>
               <a
-                href="https://medium.com"
+                href="https://medium.com/@enochschmaltz"
                 target="_blank"
                 rel="noreferrer"
                 className="text-teal-700 hover:text-teal-800 underline underline-offset-4"
               >
-                https://medium.com
+                https://medium.com/@enochschmaltz
               </a>
             </li>
             <li>
               <a
-                href="https://substack.com"
+                href="https://enochschmaltz89.substack.com"
                 target="_blank"
                 rel="noreferrer"
                 className="text-teal-700 hover:text-teal-800 underline underline-offset-4"
               >
-                https://substack.com
+                https://enochschmaltz89.substack.com
               </a>
             </li>
             <li>

@@ -43,10 +43,23 @@ export default function BooksPage() {
       <section className="pt-32 pb-20 md:pt-48">
         <div className="max-w-6xl mx-auto px-6">
           <div className="max-w-3xl mb-12">
-            <h1 className="text-5xl font-serif text-slate-900 mb-6">Puppet Skies</h1>
+            <h1 className="text-5xl font-serif text-slate-900 mb-6">Books by Enoch Schmaltz</h1>
             <p className="text-lg text-slate-600 leading-relaxed">
-              The disconnect between what advanced sensors see and what our institutions are able to reveal.
-              A critical exploration of high-altitude surveillance and automated algorithmic perception.
+              Explore{" "}
+              <Link
+                href="/books/puppet-skies"
+                className="text-teal-700 hover:text-teal-800 underline underline-offset-4"
+              >
+                Puppet Skies
+              </Link>{" "}
+              and{" "}
+              <Link
+                href="/books/the-controlled-release"
+                className="text-teal-700 hover:text-teal-800 underline underline-offset-4"
+              >
+                The Controlled Release
+              </Link>
+              , alongside related long-form investigations.
             </p>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-start">
@@ -65,7 +78,14 @@ export default function BooksPage() {
                   />
                 </div>
                 <div className="flex flex-col gap-4">
-                  <h2 className="text-3xl font-serif text-slate-900">{book.title}</h2>
+                  <h2 className="text-3xl font-serif text-slate-900">
+                    <Link
+                      href={`/books/${book.slug}`}
+                      className="hover:text-teal-700 underline underline-offset-4"
+                    >
+                      {book.title}
+                    </Link>
+                  </h2>
                   {book.subtitle && (
                     <p className="text-slate-500 font-medium">{book.subtitle}</p>
                   )}

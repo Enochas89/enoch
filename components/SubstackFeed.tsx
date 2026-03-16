@@ -2,6 +2,7 @@ import Image from "next/image";
 import { Calendar, Rss, User, ArrowRight } from "lucide-react";
 import { WritingMeta } from "@/lib/content/writing";
 import { formatDate } from "@/lib/utils";
+import Link from "next/link";
 
 type Props = {
   posts: WritingMeta[];
@@ -16,7 +17,12 @@ export default function SubstackFeed({ posts }: Props) {
             <span className="inline-flex h-9 w-9 items-center justify-center rounded-xl bg-teal-100 text-teal-700">
               <Rss className="h-5 w-5" />
             </span>
-            Latest from Puppet Skies
+            <span>
+              Latest from{" "}
+              <Link href="/books/puppet-skies" className="underline underline-offset-4">
+                Puppet Skies
+              </Link>
+            </span>
           </div>
           <div className="flex flex-col gap-4 md:flex-row md:items-center md:justify-between">
             <div>
@@ -44,7 +50,7 @@ export default function SubstackFeed({ posts }: Props) {
             <div className="w-full md:w-auto">
               <Image
                 src="/puppetskieslogo.webp"
-                alt="Puppet Skies banner"
+                alt="Publication banner"
                 width={480}
                 height={150}
                 className="h-28 w-auto object-contain"

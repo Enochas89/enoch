@@ -18,6 +18,13 @@ const REQUIRED_ROUTES = [
   "/enoch-schmaltz-writing",
   "/enoch-schmaltz-biography",
 ];
+const PROJECT_ROUTES = [
+  "/projects",
+  "/software",
+  "/enoch-schmaltz-projects",
+  "/enoch-schmaltz-software-projects",
+  "/enoch-schmaltz-developer",
+];
 const PRIMARY_ROUTES = new Set(["/about", "/books", "/enoch-schmaltz"]);
 const INTERNAL_PREFIXES = ["/api", "/_next", "/admin", "/drafts", "/private"];
 const YEARLY_PREFIXES = ["/privacy", "/terms", "/legal"];
@@ -84,6 +91,10 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const writing = await getAllWriting();
 
   for (const route of REQUIRED_ROUTES) {
+    routeSet.add(route);
+  }
+
+  for (const route of PROJECT_ROUTES) {
     routeSet.add(route);
   }
 

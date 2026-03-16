@@ -30,8 +30,8 @@ export const metadata: Metadata = {
   metadataBase: new URL("https://www.enochschmaltz.com"),
   openGraph: {
     ...defaultMetadata.openGraph,
-    title: "E. A. Schmaltz",
-    siteName: "E. A. Schmaltz",
+    title: "Enoch Schmaltz | Author, Project Manager & Systems Architect",
+    siteName: "Enoch Schmaltz",
     url: "https://www.enochschmaltz.com",
     type: "website",
   },
@@ -49,7 +49,7 @@ export default function RootLayout({
   return (
     <html lang="en" className="scroll-smooth">
       <head>
-        <meta name="author" content="E. A. Schmaltz" />
+        <meta name="author" content="Enoch Schmaltz" />
         <JsonLd data={webSiteJsonLd} />
         <JsonLd data={organizationJsonLd} />
         <JsonLd data={personJsonLd} />
