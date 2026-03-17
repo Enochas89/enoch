@@ -20,11 +20,27 @@ export default function Header() {
   const pathname = usePathname();
   const [open, setOpen] = useState(false);
 
+  const isActivePath = (href: string) => {
+    if (href === "/") {
+      return pathname === "/";
+    }
+
+    if (pathname === href || pathname.startsWith(`${href}/`)) {
+      return true;
+    }
+
+    if (href === "/enoch-schmaltz" && pathname.startsWith("/enoch-schmaltz")) {
+      return true;
+    }
+
+    return false;
+  };
+
   const linkClass = (href: string) =>
-    `text-xs uppercase tracking-[0.2em] font-bold ${
-      pathname === href
-        ? "text-teal-600"
-        : "text-slate-500 hover:text-slate-900"
+    `text-xs uppercase tracking-[0.2em] font-bold border-b-2 pb-1 transition-colors ${
+      isActivePath(href)
+        ? "text-teal-700 border-teal-700"
+        : "text-slate-500 border-transparent hover:text-slate-900"
     }`;
 
   return (
@@ -35,7 +51,12 @@ export default function Header() {
         </Link>
         <div className="hidden md:flex items-center space-x-10">
           {navItems.map((item) => (
-            <Link key={item.href} href={item.href} className={linkClass(item.href)}>
+            <Link
+              key={item.href}
+              href={item.href}
+              className={linkClass(item.href)}
+              aria-current={isActivePath(item.href) ? "page" : undefined}
+            >
               {item.label}
             </Link>
           ))}
