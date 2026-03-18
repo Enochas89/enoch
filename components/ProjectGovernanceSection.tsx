@@ -8,8 +8,9 @@ export default function ProjectGovernanceSection() {
         <h2 className="text-3xl font-serif text-[#1a1a1a]">Project Governance</h2>
         <p className="max-w-4xl leading-relaxed text-[#2a2a2a]">
           Project Governance remains a core discipline in this work: scope
-          clarity, risk framing, accountability pathways, and execution cadence
-          that connect research, writing, and software delivery.
+          clarity, editorial risk framing, accountability pathways, and an
+          execution cadence that supports research, writing, revision, and
+          writer development.
         </p>
       </div>
     </section>
