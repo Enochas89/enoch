@@ -7,13 +7,19 @@ export default function Hero() {
       <div className="max-w-6xl mx-auto px-6">
         <div className="max-w-4xl">
           <h1 className="text-[18pt] md:text-[18pt] font-serif text-slate-900 leading-snug mb-4">
-            <span className="text-[26pt] font-bold">Enoch Schmaltz</span> is a Senior Project Manager and Developer focused on delivery systems, execution visibility, and practical technology leadership.
+            <span className="text-[26pt] font-bold">Enoch Schmaltz</span> is
+            an author and independent researcher focused on secrecy, perception,
+            and institutional power.
           </h1>
           <p className="text-base md:text-lg text-slate-700 mb-6">
-            PMP Certified with 14+ Years Experience, Enoch Schmaltz has delivered outcomes as a Senior Estimator and SaaS Founder across construction and software initiatives.
+            Through books, essays, and archival analysis, he traces how
+            classified systems, narrative framing, and information gaps shape
+            what the public believes it sees.
           </p>
           <p className="text-xl md:text-2xl text-[#1a1a1a] font-sans leading-relaxed mb-10 border-l-2 border-[#c5a059] pl-6">
-            Investigating societal control mechanisms and the psychological governance that defines modern power structures.
+            Writing across history, technology, and policy, he investigates
+            societal control mechanisms and the psychological governance that
+            defines modern power structures.
           </p>
           <div className="flex flex-wrap gap-4">
             <Link
