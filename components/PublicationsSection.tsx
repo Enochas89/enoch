@@ -67,7 +67,8 @@ export default function PublicationsSection() {
                     href={publication.buyUrl}
                     target="_blank"
                     rel="noreferrer"
-                    className="inline-flex items-center justify-center bg-[#1a1a1a] text-white px-4 py-2 text-xs font-bold uppercase tracking-[0.12em] hover:bg-[#2d2d2d] transition-colors"
+                    style={{ color: "#ffffff" }}
+                    className="inline-flex items-center justify-center bg-[#1a1a1a] !text-white hover:!text-white visited:!text-white px-4 py-2 text-xs font-bold uppercase tracking-[0.12em] hover:bg-[#2d2d2d] transition-colors"
                   >
                     Buy on Amazon
                   </a>
