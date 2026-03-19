@@ -5,6 +5,7 @@ const publications = [
   {
     title: "Puppet Skies",
     href: "/books/puppet-skies",
+    buyUrl: "https://www.amazon.com/dp/B0GKS9WVWL",
     coverImage: "/images/books/puppet-skies/cover.jpg",
     description:
       "An investigation into the history of stealth aircraft programs and how secret military aircraft are developed away from public scrutiny. Investigating classified aerospace technology and the mechanisms used to hide advanced government assets.",
@@ -12,6 +13,7 @@ const publications = [
   {
     title: "The Controlled Release",
     href: "/books/the-controlled-release",
+    buyUrl: "https://www.amazon.com/dp/B0GL9GVGFW",
     coverImage: "/images/books/the-controlled-release/cover.png",
     description:
       "Exploring modern psychological warfare and the control of public perception. This work analyzes psychological manipulation and the behavioral control theory used by institutional power structures to maintain hidden societal structures.",
@@ -48,18 +50,34 @@ export default function PublicationsSection() {
                   sizes="160px"
                 />
               </Link>
-              <div>
-              <h3 className="text-2xl font-serif text-[#1a1a1a]">
-                <Link
-                  href={publication.href}
-                  className="underline underline-offset-4 decoration-[#c5a059] hover:text-[#7f5f2b]"
-                >
-                  {publication.title}
-                </Link>
-              </h3>
-              <p className="mt-4 leading-relaxed text-[#2a2a2a]">
-                {publication.description}
-              </p>
+              <div className="flex h-full flex-col">
+                <h3 className="text-2xl font-serif text-[#1a1a1a]">
+                  <Link
+                    href={publication.href}
+                    className="underline underline-offset-4 decoration-[#c5a059] hover:text-[#7f5f2b]"
+                  >
+                    {publication.title}
+                  </Link>
+                </h3>
+                <p className="mt-4 leading-relaxed text-[#2a2a2a]">
+                  {publication.description}
+                </p>
+                <div className="mt-6 flex flex-wrap gap-3">
+                  <a
+                    href={publication.buyUrl}
+                    target="_blank"
+                    rel="noreferrer"
+                    className="inline-flex items-center justify-center bg-[#1a1a1a] text-white px-4 py-2 text-xs font-bold uppercase tracking-[0.12em] hover:bg-[#2d2d2d] transition-colors"
+                  >
+                    Buy on Amazon
+                  </a>
+                  <Link
+                    href={publication.href}
+                    className="inline-flex items-center justify-center border border-[#c5a059]/60 text-[#1a1a1a] px-4 py-2 text-xs font-bold uppercase tracking-[0.12em] hover:border-[#7f5f2b] hover:text-[#7f5f2b] transition-colors"
+                  >
+                    View Book
+                  </Link>
+                </div>
               </div>
             </article>
           ))}
