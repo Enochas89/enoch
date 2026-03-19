@@ -26,6 +26,9 @@ const enochArticleJsonLd = {
   "@id": "https://www.enochschmaltz.com/enoch-schmaltz#webpage",
   name: "Enoch Schmaltz | Writer, Developer, and Project Systems Builder",
   url: "https://www.enochschmaltz.com/enoch-schmaltz",
+  mainEntity: {
+    "@id": "https://www.enochschmaltz.com/#person",
+  },
   about: {
     "@id": "https://www.enochschmaltz.com/#person",
   },

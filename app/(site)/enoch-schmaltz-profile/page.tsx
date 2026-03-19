@@ -18,6 +18,9 @@ const profilePageJsonLd = pageSchema({
   name: "Enoch Schmaltz Profile",
   description:
     "Professional profile of Enoch Schmaltz, writer and developer focused on project execution, systems thinking, leadership, and technology.",
+  mainEntity: {
+    "@id": `${SITE_URL}/#person`,
+  },
 });
 
 const profileBreadcrumbJsonLd = breadcrumbListSchema(

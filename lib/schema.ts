@@ -92,12 +92,16 @@ export function pageSchema({
   name,
   description,
   type = "WebPage",
+  mainEntity,
   inLanguage = "en-US",
 }: {
   url: string;
   name: string;
   description?: string;
   type?: "WebPage" | "AboutPage" | "ProfilePage";
+  mainEntity?: {
+    "@id": string;
+  };
   inLanguage?: string;
 }) {
   return withOptional(
@@ -118,7 +122,7 @@ export function pageSchema({
       },
       inLanguage,
     },
-    { description },
+    { description, mainEntity },
   );
 }
 
