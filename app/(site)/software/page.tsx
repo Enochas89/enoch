@@ -96,6 +96,12 @@ const DOWNLOADS = {
   macX64: "https://github.com/Enochas89/enoch/releases/download/novelcraft-v1.0.1-beta/NovelCraft-Pro-macOS-x64-1.0.1.dmg",
 };
 
+const PATCH_NOTES = [
+  "Windows x64 installer package was refreshed in place for v1.0.1.",
+  "Project Content menu + tree workflow updates are included in this installer.",
+  "Release packaging now separates installer and portable artifact outputs to prevent file collisions.",
+];
+
 export default function SoftwarePage() {
   return (
     <div className="bg-white">
@@ -273,6 +279,20 @@ export default function SoftwarePage() {
                 macOS Intel Beta
               </a>
             </div>
+          </div>
+        </div>
+      </section>
+
+      <section className="pb-20">
+        <div className="max-w-6xl mx-auto px-6">
+          <div className="border border-slate-200 bg-white p-8 space-y-4">
+            <p className="text-xs font-bold uppercase tracking-[0.2em] text-teal-600">Patch Notes</p>
+            <h2 className="text-2xl font-serif text-slate-900">v1.0.1 Refresh (March 19, 2026)</h2>
+            <ul className="list-disc pl-5 text-slate-700 space-y-2">
+              {PATCH_NOTES.map((note) => (
+                <li key={note}>{note}</li>
+              ))}
+            </ul>
           </div>
         </div>
       </section>
