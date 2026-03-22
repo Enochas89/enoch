@@ -97,9 +97,10 @@ const DOWNLOADS = {
 };
 
 const PATCH_NOTES = [
-  "Windows x64 installer package was refreshed in place for v1.0.1.",
+  "Windows x64 installer was rebuilt on March 21, 2026 (released March 22 UTC) and published as v1.0.1.",
+  "Auto-update metadata (latest.yml + blockmap) now points to the refreshed setup package.",
   "Project Content menu + tree workflow updates are included in this installer.",
-  "Release packaging now separates installer and portable artifact outputs to prevent file collisions.",
+  "Release packaging separates installer and portable outputs to prevent artifact collisions.",
 ];
 
 export default function SoftwarePage() {
@@ -254,7 +255,7 @@ export default function SoftwarePage() {
               <p className="text-xs font-bold uppercase tracking-[0.2em] text-teal-300">Ready to Install</p>
               <h2 className="text-3xl font-serif">Download NovelCraft Pro</h2>
               <p className="text-slate-300">Windows stable + macOS beta (unsigned), version 1.0.1, creator: CerebFastThinkTank.</p>
-              <p className="text-slate-300 text-sm">Windows x64 installer has the latest Project Content menu update.</p>
+              <p className="text-slate-300 text-sm">Windows x64 installer is the refreshed March 21, 2026 build with the latest Project Content menu update.</p>
             </div>
             <div className="flex flex-wrap gap-3">
               <a
@@ -287,7 +288,7 @@ export default function SoftwarePage() {
         <div className="max-w-6xl mx-auto px-6">
           <div className="border border-slate-200 bg-white p-8 space-y-4">
             <p className="text-xs font-bold uppercase tracking-[0.2em] text-teal-600">Patch Notes</p>
-            <h2 className="text-2xl font-serif text-slate-900">v1.0.1 Refresh (March 19, 2026)</h2>
+            <h2 className="text-2xl font-serif text-slate-900">v1.0.1 Build Refresh (March 21, 2026)</h2>
             <ul className="list-disc pl-5 text-slate-700 space-y-2">
               {PATCH_NOTES.map((note) => (
                 <li key={note}>{note}</li>
