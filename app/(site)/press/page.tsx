@@ -185,18 +185,18 @@ export default function PressPage() {
           </li>
           <li>
             <Link
-              href="/enoch-schmaltz-software-projects"
+              href="/software"
               className="text-teal-700 underline underline-offset-4 hover:text-teal-800"
             >
-              /enoch-schmaltz-software-projects
+              /software
             </Link>
           </li>
           <li>
             <Link
-              href="/enoch-schmaltz-books-and-research"
+              href="/books"
               className="text-teal-700 underline underline-offset-4 hover:text-teal-800"
             >
-              /enoch-schmaltz-books-and-research
+              /books
             </Link>
           </li>
         </ul>

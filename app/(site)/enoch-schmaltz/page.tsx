@@ -283,10 +283,10 @@ export default function EnochSchmaltzPage() {
           <ul className="space-y-2 text-slate-700">
             <li>
               <Link
-                href="/enoch-schmaltz-facts"
+                href="/about"
                 className="text-teal-700 hover:text-teal-800 underline underline-offset-4"
               >
-                /enoch-schmaltz-facts
+                /about
               </Link>
             </li>
             <li>
@@ -299,26 +299,26 @@ export default function EnochSchmaltzPage() {
             </li>
             <li>
               <Link
-                href="/enoch-schmaltz-writing"
+                href="/writing"
                 className="text-teal-700 hover:text-teal-800 underline underline-offset-4"
               >
-                /enoch-schmaltz-writing
+                /writing
               </Link>
             </li>
             <li>
               <Link
-                href="/enoch-schmaltz-projects"
+                href="/projects"
                 className="text-teal-700 hover:text-teal-800 underline underline-offset-4"
               >
-                /enoch-schmaltz-projects
+                /projects
               </Link>
             </li>
             <li>
               <Link
-                href="/enoch-schmaltz-links"
+                href="/press"
                 className="text-teal-700 hover:text-teal-800 underline underline-offset-4"
               >
-                /enoch-schmaltz-links
+                /press
               </Link>
             </li>
             <li>
@@ -331,18 +331,18 @@ export default function EnochSchmaltzPage() {
             </li>
             <li>
               <Link
-                href="/enoch-schmaltz-software-projects"
+                href="/software"
                 className="text-teal-700 hover:text-teal-800 underline underline-offset-4"
               >
-                /enoch-schmaltz-software-projects
+                /software
               </Link>
             </li>
             <li>
               <Link
-                href="/enoch-schmaltz-books-and-research"
+                href="/books"
                 className="text-teal-700 hover:text-teal-800 underline underline-offset-4"
               >
-                /enoch-schmaltz-books-and-research
+                /books
               </Link>
             </li>
           </ul>

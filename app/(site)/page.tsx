@@ -54,13 +54,13 @@ export default async function HomePage() {
               Credentials
             </Link>
             <Link
-              href="/enoch-schmaltz-software-projects"
+              href="/software"
               className="text-teal-700 hover:text-teal-800 underline underline-offset-4"
             >
               Software Projects
             </Link>
             <Link
-              href="/enoch-schmaltz-books-and-research"
+              href="/books"
               className="text-teal-700 hover:text-teal-800 underline underline-offset-4"
             >
               Books and Research

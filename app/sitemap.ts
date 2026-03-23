@@ -9,26 +9,33 @@ const REQUIRED_ROUTES = [
   "/",
   "/about",
   "/books",
+  "/contact",
   "/enoch-schmaltz",
-  "/enoch-schmaltz-facts",
+  "/enoch-schmaltz-credentials",
   "/enoch-schmaltz-online",
+  "/media",
   "/press",
-  "/enoch-schmaltz-profile",
-  "/who-is-enoch-schmaltz",
-  "/enoch-schmaltz-writing",
-  "/enoch-schmaltz-biography",
-];
-const PROJECT_ROUTES = [
   "/projects",
   "/software",
-  "/enoch-schmaltz-projects",
-  "/enoch-schmaltz-software-projects",
-  "/enoch-schmaltz-developer",
+  "/writing",
 ];
 const PRIMARY_ROUTES = new Set(["/about", "/books", "/enoch-schmaltz"]);
 const INTERNAL_PREFIXES = ["/api", "/_next", "/admin", "/drafts", "/private"];
 const YEARLY_PREFIXES = ["/privacy", "/terms", "/legal"];
 const PINNED_ORDER = ["/", "/enoch-schmaltz", "/about", "/books"];
+const REDIRECT_SOURCE_ROUTES = new Set([
+  "/who-is-enoch-schmaltz",
+  "/enoch-schmaltz-profile",
+  "/enoch-schmaltz-biography",
+  "/enoch-schmaltz-facts",
+  "/enoch-schmaltz-author",
+  "/enoch-schmaltz-writing",
+  "/enoch-schmaltz-books-and-research",
+  "/enoch-schmaltz-projects",
+  "/enoch-schmaltz-software-projects",
+  "/enoch-schmaltz-developer",
+  "/enoch-schmaltz-links",
+]);
 
 function isInternalRoute(pathname: string) {
   return INTERNAL_PREFIXES.some(
@@ -94,10 +101,6 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     routeSet.add(route);
   }
 
-  for (const route of PROJECT_ROUTES) {
-    routeSet.add(route);
-  }
-
   for (const book of books) {
     routeSet.add(`/books/${book.slug}`);
   }
@@ -119,6 +122,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
         normalized === "/" || (normalized.startsWith("/") && !normalized.includes("?")),
     )
     .map(({ normalized }) => normalized)
+    .filter((pathname) => !REDIRECT_SOURCE_ROUTES.has(pathname))
     .sort(sortRoutes)
     .map((pathname) => ({
       url: `${SITE_URL}${pathname}`,
