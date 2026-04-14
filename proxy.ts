@@ -49,11 +49,12 @@ export function proxy(request: NextRequest) {
 
   const originalPath = request.nextUrl.pathname;
   const normalizedPath = stripTrailingSlash(originalPath);
-  const canonicalPath = LEGACY_REDIRECTS[normalizedPath] || normalizedPath;
+  const legacyPath = LEGACY_REDIRECTS[normalizedPath];
+  const canonicalPath = legacyPath || originalPath;
 
   const needsHostRedirect = host !== CANONICAL_HOST;
   const needsHttpsRedirect = protocol !== "https";
-  const needsPathRedirect = canonicalPath !== originalPath;
+  const needsPathRedirect = Boolean(legacyPath) && canonicalPath !== originalPath;
 
   if (!needsHostRedirect && !needsHttpsRedirect && !needsPathRedirect) {
     return NextResponse.next();
