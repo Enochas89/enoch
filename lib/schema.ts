@@ -99,9 +99,7 @@ export function pageSchema({
   name: string;
   description?: string;
   type?: "WebPage" | "AboutPage" | "ProfilePage";
-  mainEntity?: {
-    "@id": string;
-  };
+  mainEntity?: Record<string, unknown>;
   inLanguage?: string;
 }) {
   return withOptional(

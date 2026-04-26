@@ -1,11 +1,12 @@
 import { articleSchema, bookSchema } from "./schema";
+import type { Metadata } from "next";
 
 export const siteMetadata = {
   name: "Enoch Schmaltz",
   penName: "Enoch Schmaltz",
   title: "Enoch Schmaltz | Author, Project Manager & Systems Architect",
   description:
-    "Official site of Enoch Schmaltz, author of 'Puppet Skies' and 'The Controlled Release'. Investigating societal control mechanisms, psychological governance, and the history of stealth aircraft programs.",
+    "Official website of Enoch Schmaltz: PMP Certified project management professional, Senior Estimator, software developer, SaaS founder, and author.",
   siteUrl: process.env.NEXT_PUBLIC_SITE_URL || "https://www.enochschmaltz.com",
   locale: "en_US",
   twitterHandle: "@easchmaltz",
@@ -14,24 +15,36 @@ export const siteMetadata = {
 export const absoluteUrl = (path = "/") =>
   new URL(path, siteMetadata.siteUrl).toString();
 
-export const ogImage = (path = "/images/social-card.png") =>
-  absoluteUrl(path);
+export const ogImage = (path = "/EnochSchmaltz.jpg") => absoluteUrl(path);
 
-export const defaultMetadata = {
+export const defaultMetadata: Metadata = {
   title: {
     default: siteMetadata.title,
     template: `%s | ${siteMetadata.name}`,
   },
   description: siteMetadata.description,
   keywords: [
-    "societal control mechanisms",
-    "psychological manipulation",
-    "behavioral control theory",
-    "information influence systems",
-    "social engineering concepts",
+    "Enoch Schmaltz",
+    "E. A. Schmaltz",
     "Enoch Schmaltz author",
-    "Puppet Skies by Enoch Schmaltz",
+    "Enoch Schmaltz project manager",
+    "Enoch Schmaltz developer",
+    "PMP Certified project manager",
+    "Senior Estimator",
+    "SaaS Founder",
+    "NovelCraft Pro",
   ],
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+      "max-video-preview": -1,
+    },
+  },
   metadataBase: new URL(siteMetadata.siteUrl),
   verification: {
     google: "-KOCdeBAmOjSAghAjAACG-TYU_C3cm1oLpiDY7wO_kU",
@@ -43,6 +56,14 @@ export const defaultMetadata = {
     title: siteMetadata.title,
     description: siteMetadata.description,
     url: siteMetadata.siteUrl,
+    images: [
+      {
+        url: ogImage(),
+        width: 1536,
+        height: 2048,
+        alt: "Enoch Schmaltz",
+      },
+    ],
   },
   twitter: {
     card: "summary_large_image",
@@ -50,6 +71,7 @@ export const defaultMetadata = {
     description: siteMetadata.description,
     site: siteMetadata.twitterHandle,
     creator: siteMetadata.twitterHandle,
+    images: [ogImage()],
   },
 };
 

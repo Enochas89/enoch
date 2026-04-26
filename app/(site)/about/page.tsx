@@ -21,7 +21,7 @@ const aboutArticleJsonLd = {
   "@id": "https://www.enochschmaltz.com/about#webpage",
   name: "About the Author - E. A. Schmaltz",
   url: "https://www.enochschmaltz.com/about",
-  headline: "About the Author — E. A. Schmaltz",
+  headline: "About the Author - E. A. Schmaltz",
   about: {
     "@id": "https://www.enochschmaltz.com/#person",
   },

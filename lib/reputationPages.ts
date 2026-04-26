@@ -389,6 +389,20 @@ export function createReputationMetadata(slug: ReputationSlug): Metadata {
       url,
       title: page.title,
       description: page.description,
+      images: [
+        {
+          url: `${SITE_URL}/EnochSchmaltz.jpg`,
+          width: 1536,
+          height: 2048,
+          alt: "Enoch Schmaltz",
+        },
+      ],
+    },
+    twitter: {
+      card: "summary_large_image",
+      title: page.title,
+      description: page.description,
+      images: [`${SITE_URL}/EnochSchmaltz.jpg`],
     },
   };
 }

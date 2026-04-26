@@ -1,6 +1,6 @@
 import Link from "next/link";
 import JsonLd from "@/components/JsonLd";
-import { pageSchema, SITE_URL } from "@/lib/schema";
+import { SCHEMA_IDS, pageSchema, SITE_URL } from "@/lib/schema";
 import type { ReputationPageData } from "@/lib/reputationPages";
 
 export default function ReputationPage({ page }: { page: ReputationPageData }) {
@@ -11,7 +11,22 @@ export default function ReputationPage({ page }: { page: ReputationPageData }) {
     description: page.description,
     type: "ProfilePage",
     mainEntity: {
-      "@id": `${SITE_URL}/#person`,
+      "@type": "Person",
+      "@id": SCHEMA_IDS.author,
+      name: "Enoch Schmaltz",
+      alternateName: "E. A. Schmaltz",
+      url: SITE_URL,
+      image: `${SITE_URL}/EnochSchmaltz.jpg`,
+      sameAs: [
+        "https://www.linkedin.com/in/enochschmaltz",
+        "https://github.com/Enochas89",
+        "https://about.me/enochschmaltz",
+        "https://medium.com/@enochschmaltz",
+        "https://enochschmaltz89.substack.com",
+        "https://www.goodreads.com/author/show/enoch-schmaltz",
+        "https://www.amazon.com/author/enochschmaltz",
+        "https://www.wikidata.org/wiki/Q138569168",
+      ],
     },
   });
 

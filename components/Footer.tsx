@@ -21,7 +21,7 @@ export default function Footer() {
               and what that means for policy, security, and culture.
             </p>
             <div className="flex gap-4 text-[#d9d9d9]">
-              <SocialLink href="https://x.com" label="X">
+              <SocialLink href="https://x.com/easchmaltz" label="X">
                 <XLogoIcon className="w-5 h-5" />
               </SocialLink>
               <SocialLink href="https://www.linkedin.com/in/enochschmaltz" label="LinkedIn">

@@ -16,7 +16,7 @@ export const metadata: Metadata = {
     absolute: "Enoch Schmaltz | Author, Project Manager & Systems Architect",
   },
   description:
-    "Official site of Enoch Schmaltz, author of 'Puppet Skies' and 'The Controlled Release'. Investigating societal control mechanisms, psychological governance, and the history of stealth aircraft programs.",
+    "Official website of Enoch Schmaltz: PMP Certified project management professional, Senior Estimator, software developer, SaaS founder, and author.",
   alternates: {
     canonical: `${SITE_URL}/`,
   },
@@ -26,7 +26,7 @@ const homePageJsonLd = pageSchema({
   url: SITE_URL,
   name: "Enoch Schmaltz | Author, Project Manager & Systems Architect",
   description:
-    "Official site of Enoch Schmaltz, author of 'Puppet Skies' and 'The Controlled Release'. Investigating societal control mechanisms, psychological governance, and the history of stealth aircraft programs.",
+    "Official website of Enoch Schmaltz: PMP Certified project management professional, Senior Estimator, software developer, SaaS founder, and author.",
 });
 
 export default async function HomePage() {

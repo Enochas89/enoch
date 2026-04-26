@@ -51,7 +51,7 @@ export default function EnochSchmaltzOnlinePage() {
             </li>
             <li>
               <a
-                href="https://medium.com"
+                href="https://medium.com/@enochschmaltz"
                 target="_blank"
                 rel="noreferrer"
                 className="text-teal-700 hover:text-teal-800 underline underline-offset-4"
@@ -61,7 +61,7 @@ export default function EnochSchmaltzOnlinePage() {
             </li>
             <li>
               <a
-                href="https://substack.com"
+                href="https://enochschmaltz89.substack.com"
                 target="_blank"
                 rel="noreferrer"
                 className="text-teal-700 hover:text-teal-800 underline underline-offset-4"

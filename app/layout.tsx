@@ -37,7 +37,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     ...defaultMetadata.twitter,
-    card: "summary",
+    card: "summary_large_image",
   },
 };
 

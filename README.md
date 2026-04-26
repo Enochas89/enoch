@@ -92,7 +92,7 @@ Page: `/media` with filter pills.
 ## Maintenance tips
 - Keep file names slugged (`YYYY-MM-DD-title.mdx`) to preserve URLs.
 - Use `topics` consistently to make filters useful.
-- Replace the placeholder social image at `public/images/social-card.png` if you add one.
+- Default Open Graph and Twitter image metadata uses `public/EnochSchmaltz.jpg`.
 - Keep `NEXT_PUBLIC_SITE_URL` aligned with `https://www.enochschmaltz.com`.
 - CI should run `npm run lint`, `npm run typecheck`, and `npm run build`.
 
