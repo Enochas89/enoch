@@ -40,3 +40,8 @@ dev-server.log
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# local scratch images (root)
+/Novel Craft pic*.png
+/prosmoke.png
+/puppetskies.webp
