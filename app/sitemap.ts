@@ -23,20 +23,6 @@ const PRIMARY_ROUTES = new Set(["/about", "/books", "/enoch-schmaltz"]);
 const INTERNAL_PREFIXES = ["/api", "/_next", "/admin", "/drafts", "/private"];
 const YEARLY_PREFIXES = ["/privacy", "/terms", "/legal"];
 const PINNED_ORDER = ["/", "/enoch-schmaltz", "/about", "/books"];
-const REDIRECT_SOURCE_ROUTES = new Set([
-  "/who-is-enoch-schmaltz",
-  "/enoch-schmaltz-profile",
-  "/enoch-schmaltz-biography",
-  "/enoch-schmaltz-facts",
-  "/enoch-schmaltz-author",
-  "/enoch-schmaltz-writing",
-  "/enoch-schmaltz-books-and-research",
-  "/enoch-schmaltz-projects",
-  "/enoch-schmaltz-software-projects",
-  "/enoch-schmaltz-developer",
-  "/enoch-schmaltz-links",
-]);
-
 function isInternalRoute(pathname: string) {
   return INTERNAL_PREFIXES.some(
     (prefix) => pathname === prefix || pathname.startsWith(`${prefix}/`),
@@ -122,7 +108,6 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
         normalized === "/" || (normalized.startsWith("/") && !normalized.includes("?")),
     )
     .map(({ normalized }) => normalized)
-    .filter((pathname) => !REDIRECT_SOURCE_ROUTES.has(pathname))
     .sort(sortRoutes)
     .map((pathname) => ({
       url: `${SITE_URL}${pathname}`,

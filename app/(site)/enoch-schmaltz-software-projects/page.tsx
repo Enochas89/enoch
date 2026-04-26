@@ -1,5 +1,17 @@
-import { permanentRedirect } from "next/navigation";
+import ReputationPage from "@/components/ReputationPage";
+import {
+  createReputationMetadata,
+  reputationPages,
+} from "@/lib/reputationPages";
 
-export default function Page() {
-  permanentRedirect("/software");
+export const metadata = createReputationMetadata(
+  "enoch-schmaltz-software-projects",
+);
+
+export default function EnochSchmaltzSoftwareProjectsPage() {
+  return (
+    <ReputationPage
+      page={reputationPages["enoch-schmaltz-software-projects"]}
+    />
+  );
 }

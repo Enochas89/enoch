@@ -47,6 +47,10 @@ export default function Footer() {
               <li><Link href="/books" className="hover:text-[#c5a059] transition-colors">Books by Enoch Schmaltz</Link></li>
               <li><Link href="/writing" className="hover:text-[#c5a059] transition-colors">Enoch Schmaltz Writer</Link></li>
               <li><Link href="/about" className="hover:text-[#c5a059] transition-colors">Enoch Schmaltz Author</Link></li>
+              <li><Link href="/who-is-enoch-schmaltz" className="hover:text-[#c5a059] transition-colors">Who Is Enoch Schmaltz</Link></li>
+              <li><Link href="/enoch-schmaltz-profile" className="hover:text-[#c5a059] transition-colors">Enoch Schmaltz Profile</Link></li>
+              <li><Link href="/enoch-schmaltz-biography" className="hover:text-[#c5a059] transition-colors">Enoch Schmaltz Biography</Link></li>
+              <li><Link href="/enoch-schmaltz-links" className="hover:text-[#c5a059] transition-colors">Enoch Schmaltz Links</Link></li>
             </ul>
           </div>
 
